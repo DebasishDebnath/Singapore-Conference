@@ -9,12 +9,12 @@ function Navbar() {
     {/* Flex Container */}
     <div className="flex items-center justify-center py-3 relative">
       {/* Logo / Title (optional placeholder) */}
-      <div className="absolute left-4 md:left-8">
+      {/* <div className="absolute left-4 md:left-8">
         <h1 className="text-[#122456] font-bold text-lg">Conference</h1>
-      </div>
+      </div> */}
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex items-center space-x-6 text-[#122456] font-semibold text-sm lg:text-base">
+      <div className="hidden md:flex flex-wrap items-center space-x-6 text-[#122456] font-semibold text-sm lg:text-base">
         <a href="#" className="hover:underline font-bold">
           Home
         </a>
