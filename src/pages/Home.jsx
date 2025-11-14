@@ -1,13 +1,10 @@
 import React from "react";
 import Heading from "../components/Heading.jsx";
 import Sidebar from "../components/Sidebar.jsx";
-import pic1 from "../../public/iem1.jpg";
-import pic2 from "../../public/iem2.jpg";
-import pic3 from "../../public/iem3.jpg";
 
 function Home() {
   return (
-    <div className="max-w-7xl mx-auto flex md:flex-row flex-col lg:gap-30 gap-20 lg:py-20 py-14 px-8">
+    <div className="max-w-7xl mx-auto flex md:flex-row flex-col lg:gap-30 gap-20 lg:py-20 py-14 px-8"> 
       {/* <Heading title1='Welcome to' title2='SENSE-SG'/> */}
       {/* <SidebarCard title='Important Deadlines' content={content1}/> */}
       <div className="md:w-2/3 w-full flex flex-col lg:gap-20 gap-14">
@@ -15,11 +12,7 @@ function Home() {
           <Heading title1="Welcome to" title2="SENSE-SG" />
           <p className="poppins-italic text-lg font-medium text-gray-800">
             <span className="text-blue-theme font-bold">SENSE-SG</span> is a
-            premier international forum dedicated to exploring the convergence
-            of{" "}
-            <span className="text-gray-700 font-bold">
-              Smart Edge Computing and Neuromorphic Systems
-            </span>
+            premier international forum dedicated to      
             . This conference brings together leading{" "}
             <span className="text-gray-700 font-bold">
               researchers, engineers, industry professionals, and innovators
@@ -34,7 +27,7 @@ function Home() {
             <div className="gap-1 flex w-full">
               <div className="w-3/5 relative">
                 <img
-                  src={pic1}
+                  src='./iem1.jpg'
                   alt="IEM Picture"
                   className="rounded-l-3xl w-full h-full object-cover"
                 />
@@ -43,7 +36,7 @@ function Home() {
               <div className="gap-1 flex flex-col w-2/5">
                 <div className="h-1/2 relative">
                   <img
-                    src={pic3}
+                    src='./iem3.jpg'
                     alt="IEM Picture"
                     className="rounded-tr-3xl w-full h-full object-cover"
                   />
@@ -51,7 +44,7 @@ function Home() {
                 </div>
                 <div className="h-1/2 relative">
                   <img
-                    src={pic2}
+                    src='./iem2.jpg'
                     alt="IEM Picture"
                     className="rounded-br-3xl w-full h-full object-cover"
                   />

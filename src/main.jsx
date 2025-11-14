@@ -45,7 +45,7 @@ const router = createBrowserRouter(
         path="/committee/technical-committee"
         element={<TechnicalCommittee />}
       />
-      <Route path="/previous-conference" element={<PreviousConference />} />
+      {/* <Route path="/previous-conference" element={<PreviousConference />} /> */}
       <Route path="/technical-sponsors" element={<TechnicalSponsors />} />
       <Route path="/contact" element={<Contact />} />
     </Route>
