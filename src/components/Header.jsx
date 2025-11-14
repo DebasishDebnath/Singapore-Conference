@@ -12,23 +12,18 @@ function Header() {
   <div
     className="absolute inset-0"
     style={{
-      backgroundImage: `
-        linear-gradient(to right, rgba(15,33,81,0.8), rgba(15,33,81,0)),
-        url('./singapore.webp')
-      `,
-      backgroundSize: 'cover',       // ensures the image covers the container
-      backgroundPosition: 'center',   // centers image on all screens
-      backgroundRepeat: 'no-repeat',  // prevents tiling
+      backgroundImage:
+        "linear-gradient(to right, rgba(15,33,81,0.8), rgba(15,33,81,0)), url('/singapore.webp')",
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
     }}
   ></div>
 </div>
 
 
-
-
   {/* Content */}
-  <div className="absolute inset-0 flex flex-col justify-start px-6 md:px-16 py-10">
-
+  <div className="absolute inset-0 flex flex-col justify-start px-6 md:px-16 py-10 z-20">
     {/* Logos Row */}
     <div className="flex items-center  mb-8">
       <img
