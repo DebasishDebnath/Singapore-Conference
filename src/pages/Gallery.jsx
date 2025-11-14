@@ -1,16 +1,18 @@
 import React, { useState } from "react";
+import Heading from '../components/Heading'
 
 export default function Gallery() {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <div className="w-full flex flex-col items-center py-10">
+    <div className="max-w-7xl mx-auto flex flex-col gap-10 items-center lg:py-20 py-14 px-8">
 
       {/* Title */}
-      <h2 className="text-3xl font-bold text-gray-700 mb-6">Gallery</h2>
+      {/* <h2 className="text-3xl font-bold text-gray-700 mb-6">Gallery</h2> */}
+      <Heading title1='Gallery' />
 
       {/* ONE GALLERY BOX */}
-      <div className="bg-white border border-gray-300 shadow-xl rounded-2xl p-4 lg:w-[1153.64px] w-full">
+      <div className="bg-white border border-gray-300 shadow-xl rounded-2xl p-4 w-full">
 
         {/* FIRST ROW */}
         <div className="flex lg:flex-row flex-col gap-4">
