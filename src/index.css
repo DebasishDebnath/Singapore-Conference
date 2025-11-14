@@ -115,3 +115,14 @@
   font-weight: 900;
   font-style: italic;
 }
+.bg-blue-theme {
+  background-color: #102768;
+}
+
+.text-blue-theme {
+  color: #102768;
+}
+
+.text-blue-theme-light {
+  color: #4A7BFF;
+}
