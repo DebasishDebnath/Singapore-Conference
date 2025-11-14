@@ -1,7 +1,7 @@
 import React from "react";
 
 function OrganizingCommittee() {
-  return <div></div>;
+  return <div>Organizing Committee</div>;
 }
 
 export default OrganizingCommittee;
