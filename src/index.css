@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.poppins-italic {
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+}
 .poppins-thin {
   font-family: "Poppins", sans-serif;
   font-weight: 100;

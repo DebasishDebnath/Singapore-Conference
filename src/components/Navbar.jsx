@@ -15,63 +15,63 @@ function Navbar() {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex flex-wrap items-center space-x-6 text-[#122456] font-semibold text-sm lg:text-base">
-        <a href="#" className="hover:underline font-bold">
+        <a href="/" className=" font-bold">
           Home
         </a>
 
         {/* Authors Dropdown */}
         <div className="relative group">
-          <button className="hover:underline">
+          <button className="">
             Authors <span className="ml-1">&#9662;</span>
           </button>
           <div className="absolute left-0 mt-1 hidden group-hover:block bg-white shadow-lg rounded z-10">
-            <a href="#" className="block px-4 py-2 hover:bg-[#e6eaff]">
+            <a href="/authors/call-for-papers" className="block px-4 py-2 hover:bg-[#e6eaff]">
               Call for Papers
             </a>
-            <a href="#" className="block px-4 py-2 hover:bg-[#e6eaff]">
+            <a href="/authors/submission" className="block px-4 py-2 hover:bg-[#e6eaff]">
               Submission
             </a>
           </div>
         </div>
 
-        <a href="#" className="hover:underline">
+        <a href="/technical-programs" className="">
           Technical Programs
         </a>
-        <a href="#" className="hover:underline">
+        <a href="/keynote-speakers" className="">
           Keynote Speakers
         </a>
-        <a href="#" className="hover:underline">
+        <a href="/gallery" className="">
           Gallery
         </a>
-        <a href="#" className="hover:underline">
+        <a href="/video-links-for-sessions" className="">
           Video links for session
         </a>
-        <a href="#" className="hover:underline">
+        <a href="/registration" className="">
           Registration
         </a>
 
         {/* Committee Dropdown */}
         <div className="relative group">
-          <button className="hover:underline">
+          <button className="">
             Committee <span className="ml-1">&#9662;</span>
           </button>
           <div className="absolute left-0 mt-1 hidden group-hover:block bg-white shadow-lg rounded z-10 min-w-[160px]">
-            <a href="#" className="block px-4 py-2 hover:bg-[#e6eaff]">
+            <a href="/committee/organizing-committee" className="block px-4 py-2 hover:bg-[#e6eaff]">
               Organizing
             </a>
-            <a href="#" className="block px-4 py-2 hover:bg-[#e6eaff]">
+            <a href="/committee/technical-committee" className="block px-4 py-2 hover:bg-[#e6eaff]">
               Technical
             </a>
           </div>
         </div>
 
-        <a href="#" className="hover:underline">
+        <a href="/previous-conference" className="">
           Previous Conference
         </a>
-        <a href="#" className="hover:underline">
+        <a href="/technical-sponsors" className="">
           Technical Sponsors
         </a>
-        <a href="#" className="hover:underline">
+        <a href="/contact" className="">
           Contact
         </a>
       </div>
@@ -88,54 +88,54 @@ function Navbar() {
     {/* Mobile Menu */}
     {menuOpen && (
       <div className="flex flex-col items-center space-y-2 py-4 text-[#122456] font-semibold text-sm sm:text-base md:hidden">
-        <a href="#" className="hover:underline font-bold">
+        <a href="/" className=" font-bold">
           Home
         </a>
 
         {/* Authors Dropdown (always visible for mobile) */}
         <div className="flex flex-col items-center space-y-1">
           <span className="font-semibold">Authors</span>
-          <a href="#" className="hover:underline">
+          <a href="/authors/call-for-papers" className="">
             Call for Papers
           </a>
-          <a href="#" className="hover:underline">
+          <a href="/authors/submission" className="">
             Submission
           </a>
         </div>
 
-        <a href="#" className="hover:underline">
+        <a href="/technical-programs" className="">
           Technical Programs
         </a>
-        <a href="#" className="hover:underline">
+        <a href="/keynote-speakers" className="">
           Keynote Speakers
         </a>
-        <a href="#" className="hover:underline">
+        <a href="/gallery" className="">
           Gallery
         </a>
-        <a href="#" className="hover:underline">
+        <a href="/video-links-for-sessions" className="">
           Video links for session
         </a>
-        <a href="#" className="hover:underline">
+        <a href="/registration" className="">
           Registration
         </a>
 
         <div className="flex flex-col items-center space-y-1">
           <span className="font-semibold">Committee</span>
-          <a href="#" className="hover:underline">
+          <a href="/committee/organizing-committee" className="">
             Organizing
           </a>
-          <a href="#" className="hover:underline">
+          <a href="/committee/technical-committee" className="">
             Technical
           </a>
         </div>
 
-        <a href="#" className="hover:underline">
+        <a href="/previous-conference" className="">
           Previous Conference
         </a>
-        <a href="#" className="hover:underline">
+        <a href="/technical-sponsors" className="">
           Technical Sponsors
         </a>
-        <a href="#" className="hover:underline">
+        <a href="/contact" className="">
           Contact
         </a>
       </div>
