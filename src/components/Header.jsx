@@ -21,7 +21,7 @@ function Header() {
   ></div>
 </div>
 
-
+    
   {/* Content */}
   <div className="absolute inset-0 flex flex-col justify-start px-6 md:px-16 py-10 z-20">
     {/* Logos Row */}
@@ -52,9 +52,20 @@ function Header() {
     </h1>
 
     {/* Location + Date */}
-    <p className="text-white text-lg md:text-xl flex items-center gap-2 mt-4 poppins-regular font-semibold">
-      <MapPin className="w-5 h-5" />Singapore |<CalendarDays className="w-5 h-5" /> <span className="font-semibold">14 Aug 2026</span>
-    </p>
+<p className="text-white text-base sm:text-lg md:text-xl flex flex-wrap items-center gap-2 sm:gap-3 mt-4 poppins-regular font-semibold">
+  <span className="flex items-center gap-1">
+    <MapPin className="w-5 h-5" />
+    Singapore
+  </span>
+
+  <span className="hidden sm:inline">|</span>
+
+  <span className="flex items-center gap-1">
+    <CalendarDays className="w-5 h-5" />
+    <span className="font-semibold">14 Aug 2026</span>
+  </span>
+</p>
+
 
   </div>
 </div>
