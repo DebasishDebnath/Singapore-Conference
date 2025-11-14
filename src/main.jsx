@@ -10,14 +10,14 @@ import {
 } from "react-router";
 import "./index.css";
 import Home from "./pages/Home";
-import CallForPapers from "./pages/Authors//CallForPapers";
+import CallForPapers from "./pages/Authors/CallForPapers";
+import OrganizedCommittee from "./pages/Committee/OrganizedCommittee";
 import Submission from "./pages/Authors/Submission";
 import TechnicalPrograms from "./pages/TechnicalPrograms";
 import KeynoteSpeakers from "./pages/KeynoteSpeakers";
 import Gallery from "./pages/Gallery";
 import VideoLinksForSessions from "./pages/VideoLinksForSessions";
 import Registration from "./pages/Registration";
-import OrganizingCommittee from "./pages/Committee/OrganizingCommittee";
 import TechnicalCommittee from "./pages/Committee/TechnicalCommittee";
 import PreviousConference from "./pages/PreviousConference";
 import TechnicalSponsors from "./pages/TechnicalSponsors";
@@ -39,7 +39,7 @@ const router = createBrowserRouter(
       <Route path="/registration" element={<Registration />} />
       <Route
         path="/committee/organizing-committee"
-        element={<OrganizingCommittee />}
+        element={<OrganizedCommittee />}
       />
       <Route
         path="/committee/technical-committee"
