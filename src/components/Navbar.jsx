@@ -116,7 +116,7 @@ function Navbar() {
               )}
             </div>
 
-            <a href="/previous-conference">Previous Conference</a>
+            {/* <a href="/previous-conference">Previous Conference</a> */}
             <a href="/technical-sponsors">Technical Sponsors</a>
             <a href="/contact">Contact</a>
           </div>
@@ -153,7 +153,7 @@ function Navbar() {
               <a href="/committee/technical-committee">Technical</a>
             </div>
 
-            <a href="/previous-conference">Previous Conference</a>
+            {/* <a href="/previous-conference">Previous Conference</a> */}
             <a href="/technical-sponsors">Technical Sponsors</a>
             <a href="/contact">Contact</a>
           </div>
