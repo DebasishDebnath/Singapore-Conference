@@ -11,7 +11,7 @@ import {
 import "./index.css";
 import Home from "./pages/Home";
 import CallForPapers from "./pages/Authors/CallForPapers";
-import OrganizingCommittee from "./pages/Committee/OrganizingCommittee.jsx";
+import OrganizedCommittee from "./pages/Committee/OrganizedCommittee";
 import Submission from "./pages/Authors/Submission";
 import TechnicalPrograms from "./pages/TechnicalPrograms";
 import KeynoteSpeakers from "./pages/KeynoteSpeakers";
@@ -39,7 +39,7 @@ const router = createBrowserRouter(
       <Route path="/registration" element={<Registration />} />
       <Route
         path="/committee/organizing-committee"
-        element={<OrganizingCommittee />}
+        element={<OrganizedCommittee />}
       />
       <Route
         path="/committee/technical-committee"
