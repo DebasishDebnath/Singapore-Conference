@@ -14,7 +14,7 @@ function Header() {
     style={{
       backgroundImage: `
         linear-gradient(to right, rgba(15,33,81,0.8), rgba(15,33,81,0)),
-        url('./singapore.png')
+        url('./singapore.webp')
       `,
       backgroundSize: 'cover',       // ensures the image covers the container
       backgroundPosition: 'center',   // centers image on all screens
