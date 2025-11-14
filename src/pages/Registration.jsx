@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CallForPapers() {
+function Registration() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function CallForPapers() {
   )
 }
 
-export default CallForPapers
+export default Registration
