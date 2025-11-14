@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
-function organizingCommittee() {
-  return (
-    <div>
-      
-    </div>
-  )
+function OrganizingCommittee() {
+  return <div></div>;
 }
 
-export default organizingCommittee
+export default OrganizingCommittee;
