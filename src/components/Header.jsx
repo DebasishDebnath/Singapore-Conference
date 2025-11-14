@@ -1,34 +1,64 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { CalendarDays, MapPin } from "lucide-react";
 
 function Header() {
   return (
     <>
-      <header className="relative w-full lg:min-h-[400px] bg-[#122456] text-white flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between lg:px-16 px-10 md:px-16 py-4 overflow-hidden poppins-regular">
-        {/* Background Image (Right Side / Overlay for small screens) */}
-        <div className="absolute inset-0 md:inset-y-0 md:right-0 md:left-auto w-full md:w-1/2 opacity-30 md:opacity-100">
-          <img
-            src="./singapore.png"
-            alt="Singapore Skyline"
-            className="w-full h-full object-cover object-right"
-          />
-        </div>
+     <div className="w-full relative">
+  {/* Background Image */}
+<div className="relative h-[420px] md:h-[440px] ">
+  {/* Overlay fading from left with background image */}
+  <div
+    className="absolute inset-0"
+    style={{
+      backgroundImage:
+        "linear-gradient(to right, rgba(15,33,81,0.8), rgba(15,33,81,0)), url('/singapore.webp')",
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+    }}
+  ></div>
+</div>
 
-        {/* Content Section */}
-        <div className="relative z-10 flex flex-col items-center md:items-start text-center md:text-left max-w-2xl gap-4">
-          <img src="./iem_logo.png" alt="IEM Logo" className="md:h-20 h-24" />
 
-          <h1 className="text-xl md:text-4xl font-bold mt-6 leading-tight">
-            <span className="block">Smart Edge & Neuromorphic</span>
-            <span className="block">Systems Conference</span>
-            <span className="block">(SENSE-SG)</span>
-          </h1>
+  {/* Content */}
+  <div className="absolute inset-0 flex flex-col justify-start px-6 md:px-16 py-10 z-20">
+    {/* Logos Row */}
+    <div className="flex items-center  mb-8">
+      <img
+        src="/iem.png"
+        alt="IEM"
+        className="h-14 md:h-18 object-contain"
+      />
+      <div>
 
-          <p className="lg:text-lg text-lg md:text-xl">
-            Singapore &nbsp;|&nbsp; 14 Aug 2026
-          </p>
-        </div>
-      </header>
+      <p className="text-white text-xs gideon-roman-regular text-center">Institute of Engineering and Management</p>
+      <hr className="border-white my-1" />
+      <p className="text-white text-xs gideon-roman-regular text-center">University of Engineering and Management</p>
+      </div>
+      <img
+        src="/uem.png"
+        alt="UEM"
+        className="h-14 md:h-18 object-contain"
+      />
+    </div>
+
+    {/* Title */}
+    <h1 className="text-white text-2xl md:text-4xl lg:text-5xl font-bold leading-snug max-w-3xl poppins-bold ">
+      Smart Edge & Neuromorphic<br />
+      Systems Conference<br />
+      (SENSE-SG)
+    </h1>
+
+    {/* Location + Date */}
+    <p className="text-white text-lg md:text-xl flex items-center gap-2 mt-4 poppins-regular font-semibold">
+      <MapPin className="w-5 h-5" />Singapore |<CalendarDays className="w-5 h-5" /> <span className="font-semibold">14 Aug 2026</span>
+    </p>
+
+  </div>
+</div>
+
       <Navbar />
     </>
   );

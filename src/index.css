@@ -126,3 +126,8 @@
 .text-blue-theme-light {
   color: #4A7BFF;
 }
+.gideon-roman-regular {
+  font-family: "Gideon Roman", serif;
+  font-weight: 400;
+  font-style: normal;
+}
