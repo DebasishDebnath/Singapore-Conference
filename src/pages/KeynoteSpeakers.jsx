@@ -1,6 +1,6 @@
 import React from 'react'
 import SpeakerCard from '../components/SpeakerCard'
-import image1 from '../assets/SiddharthaBhattacharyya.png'
+import image1 from '../../public/SiddharthaBhattacharyya.png'
 
 function KeynoteSpeakers() {
   return (
