@@ -7,7 +7,7 @@ function ConferenceCard({
   researchTopic = [],
 }) {
   return (
-    <div className="flex flex-col rounded-3xl border border-gray-200 w-fit poppins-italic pb-2">
+    <div className="flex flex-col rounded-3xl border border-gray-300 w-fit poppins-italic pb-2 shadow-md">
       <div className="rounded-t-2xl">
         <img src={imageSrc} alt="Conference Banner" />
       </div>

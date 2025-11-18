@@ -66,10 +66,10 @@ const committeeData = [
   },
 ];
 
-function TechnicalCommittee() {
+function OrganizingCommittee() {
   return (
     <div className="max-w-7xl mx-auto flex flex-col lg:gap-16 gap-10 lg:py-20 py-14 px-6 justify-start w-full">
-      <Heading title1="Technical" title2="Committee" />
+      <Heading title1="Organizing" title2="Committee" />
       <div className="flex flex-col gap-8">
         {committeeData.map((committee, index) => (
           <CommitteeCard
@@ -83,4 +83,4 @@ function TechnicalCommittee() {
   );
 }
 
-export default TechnicalCommittee;
+export default OrganizingCommittee;
