@@ -4,7 +4,7 @@ import Heading from "../components/Heading";
 
 function KeynoteSpeakers() {
   return (
-    <div className="max-w-7xl mx-auto flex flex-col lg:gap-16 gap-10 lg:py-20 py-14 px-8 items-center">
+    <div className="max-w-7xl mx-auto flex flex-col lg:gap-16 gap-10 lg:py-20 py-14 px-6 items-center">
       <Heading title1="Keynote" title2="Speakers" />
       <div className="flex flex-col gap-8 items-center">
       <SpeakerCard
