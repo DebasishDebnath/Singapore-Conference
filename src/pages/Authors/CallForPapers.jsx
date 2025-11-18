@@ -59,7 +59,7 @@ const conferenceTracks = [
 
 function CallForPapers() {
   return (
-    <div className="max-w-7xl mx-auto flex flex-col lg:gap-16 gap-10 lg:py-20 py-14 px-8 items-center">
+    <div className="max-w-7xl mx-auto flex flex-col lg:gap-16 gap-10 lg:py-20 py-14 px-6 items-center">
       <Heading title1='Conference' title2='Tracks'/>
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 justify-items-center'>
         {conferenceTracks.map((track) => (
