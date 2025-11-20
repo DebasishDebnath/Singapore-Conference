@@ -44,33 +44,33 @@ export default function Gallery() {
             >
               {/* --- LARGE IMAGE --- */}
               {row[0] && (
-                <div className="flex-1 cursor-pointer" onClick={() => openImage(row[0])}>
+                <div className="flex-1 cursor-pointer overflow-hidden" onClick={() => openImage(row[0])}>
                   <img
                     src={row[0]}
                     alt={`Gallery image ${rowIndex * 3 + 1}`}
-                    className="w-full h-full object-cover transition-all duration-300"
+                    className="w-full h-full object-cover transition-all duration-300 hover:scale-105"
                   />
                 </div>
               )}
 
               {/* --- SMALL IMAGES --- */}
               {(row[1] || row[2]) && (
-                <div className="flex-1 flex flex-col gap-1 h-100 overflow-hidden">
+                <div className="flex-1 flex flex-col gap-1 h-100">
                   {row[1] && (
-                    <div className="h-1/2 cursor-pointer" onClick={() => openImage(row[1])}>
+                    <div className="h-1/2 cursor-pointer overflow-hidden" onClick={() => openImage(row[1])}>
                       <img
                         src={row[1]}
                         alt={`Gallery image ${rowIndex * 3 + 2}`}
-                        className="w-full h-full object-cover transition-all duration-300"
+                        className="w-full h-full object-cover transition-all duration-300 hover:scale-105"
                       />
                     </div>
                   )}
                   {row[2] && (
-                    <div className="h-1/2 cursor-pointer" onClick={() => openImage(row[2])}>
+                    <div className="h-1/2 cursor-pointer overflow-hidden" onClick={() => openImage(row[2])}>
                       <img
                         src={row[2]}
                         alt={`Gallery image ${rowIndex * 3 + 3}`}
-                        className="w-full h-full object-cover transition-all duration-300"
+                        className="w-full h-full object-cover transition-all duration-300 hover:scale-105"
                       />
                     </div>
                   )}

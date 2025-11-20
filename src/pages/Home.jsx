@@ -5,8 +5,6 @@ import Sidebar from "../components/Sidebar.jsx";
 function Home() {
   return (
     <div className="max-w-7xl mx-auto flex md:flex-row flex-col lg:gap-30 gap-20 lg:py-20 py-14 px-6"> 
-      {/* <Heading title1='Welcome to' title2='SENSE-SG'/> */}
-      {/* <SidebarCard title='Important Deadlines' content={content1}/> */}
       <div className="md:w-2/3 w-full flex flex-col lg:gap-20 gap-14">
         <div className="flex flex-col gap-5">
           <Heading title1="Welcome to" title2="SENSE-SG" />

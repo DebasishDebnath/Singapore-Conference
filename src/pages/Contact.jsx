@@ -11,8 +11,8 @@ function Contact() {
         {/* LEFT SECTION — Heading + Address */}
         <div className="w-full flex flex-col md:w-1/2 lg:gap-10 gap-8">
           <div className="flex flex-col gap-2">
-            <Heading title1="Institute Of" size="text-3xl"/>
-            <Heading title2="Engineering & Management" size="text-3xl"/>
+            <Heading title1="Institute Of"/>
+            <Heading title2="Engineering & Management"/>
           </div>
 
           <div className="flex flex-col gap-2.5 text-gray-800 font-medium text-md poppins-italic">
