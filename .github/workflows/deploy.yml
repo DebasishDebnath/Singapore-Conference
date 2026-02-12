@@ -1,0 +1,27 @@
+name: Deploy React App
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted  # This targets your private VM
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Deploy to Nginx Folder
+        run: |
+          # Copy build files to Nginx web root
+          sudo cp -r build/* /var/www/html/
+          # Ensure correct permissions
+          sudo chown -R www-data:www-data /var/www/html/
