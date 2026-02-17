@@ -14,7 +14,7 @@ function TechnicalPrograms() {
           <img src="/comming_soon.png" alt="comming soon" className="mx-auto"/>
         </div>
       </div>
-      <div className="md:w-1/3 w-full flex">
+      <div className="md:w-1/3 w-full md:sticky md:top-10 md:h-fit">
         <Sidebar />
       </div>
     </div>

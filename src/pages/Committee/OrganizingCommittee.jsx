@@ -3,63 +3,71 @@ import CommitteeCard from "../../components/CommitteeCard";
 import Heading from "../../components/Heading";
 
 const committeeData = [
-  {
-    title: "Chief Patron",
-    data: [
-      {
-        name: "Prof. Banani Chakrabarti",
-        affiliation: "President of IEM - UEM Group, India",
-      },
-    ],
-  },
-  {
-    title: "Patron",
-    data: [
-      {
-        name: "Prof. (Dr.) Satyajit Chakrabarti",
-        affiliation: "Director, IEM-UEM Group",
-      },
-    ],
-  },
-  {
-    title: "Honorary Chair",
-    data: [
-      {
-        name: "Prof. (Dr.) Rajkumar Buyya",
-        affiliation: "FIEEE, Fellow, Academia Europaea, University of Melbourne, Australia",
-      },
-      {
-        name: "Prof. (Dr.) Tingwen Huang",
-        affiliation: "FIEEE, Texas A&M University, Qatar",
-      },
-      {
-        name: "Prof. (Dr.) Rajkumar Buyya",
-        affiliation: "University of Western Macedonia, Kozani, Greece",
-      },
-    ],
-  },
-  {
-    title: "General Chairs",
-    data: [
-      {
-        name: "Prof. Dr. Siddhartha Bhattacharyya",
-        affiliation: "VSB Technical University, Ostrava, Czech Republic and Algebra Bernays University College, Zagreb, Croatia",
-      },
-      {
-        name: "Prof. Dr. Jyoti Sekhar Banerjee",
-        affiliation: "Bengal Institute of Technology, Kolkata, India",
-      },
-      {
-        name: "Dr. Leo Mrsic",
-        affiliation: "Algebra Bernays University, Zagreb, Croatia",
-      },
-    ],
-  },
+  // {
+  //   title: "Chief Patron",
+  //   data: [
+  //     {
+  //       name: "Prof. Banani Chakrabarti",
+  //       affiliation: "President of IEM - UEM Group, India",
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: "Patron",
+  //   data: [
+  //     {
+  //       name: "Prof. (Dr.) Satyajit Chakrabarti",
+  //       affiliation: "Director, IEM-UEM Group",
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: "Honorary Chair",
+  //   data: [
+  //     {
+  //       name: "Prof. (Dr.) Rajkumar Buyya",
+  //       affiliation: "FIEEE, Fellow, Academia Europaea, University of Melbourne, Australia",
+  //     },
+  //     {
+  //       name: "Prof. (Dr.) Tingwen Huang",
+  //       affiliation: "FIEEE, Texas A&M University, Qatar",
+  //     },
+  //     {
+  //       name: "Prof. (Dr.) Rajkumar Buyya",
+  //       affiliation: "University of Western Macedonia, Kozani, Greece",
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: "General Chairs",
+  //   data: [
+  //     {
+  //       name: "Prof. Dr. Siddhartha Bhattacharyya",
+  //       affiliation: "VSB Technical University, Ostrava, Czech Republic and Algebra Bernays University College, Zagreb, Croatia",
+  //     },
+  //     {
+  //       name: "Prof. Dr. Jyoti Sekhar Banerjee",
+  //       affiliation: "Bengal Institute of Technology, Kolkata, India",
+  //     },
+  //     {
+  //       name: "Dr. Leo Mrsic",
+  //       affiliation: "Algebra Bernays University, Zagreb, Croatia",
+  //     },
+  //   ],
+  // },
   {
     title: "Organizing Chairs",
     data: [
       {
-        name: "Dr. Amartya Mukherjee",
+        name: "Prof. (Dr.) Amartya Mukherjee",
+        affiliation: "IEM Kolkata",
+      },
+      {
+        name: "Prof. (Dr.) Ayan Kumar Panja",
+        affiliation: "IEM Kolkata",
+      },
+      {
+        name: "Prof. (Dr.) Deepsubhra Guha Roy",
         affiliation: "IEM Kolkata",
       },
     ],
