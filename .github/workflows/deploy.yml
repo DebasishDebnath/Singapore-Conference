@@ -3,13 +3,13 @@ name: Deploy React Vite App
 on:
   push:
     branches:
-      - main  # Set this to your default branch name
+      - main
   workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: self-hosted
-    
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -18,17 +18,36 @@ jobs:
         run: npm install
 
       - name: Build Project
-        # Vite generates the production files in the 'dist' folder
+        # This creates the 'dist' folder which contains the actual website
         run: npm run build
 
-      - name: Deploy to Nginx Folder
+      - name: Sync and Configure Nginx
         run: |
-          # 1. Clean the existing web root to avoid ghost files
-          sudo rm -rf /var/www/html/*
-          
-          # 2. Copy the fresh build from 'dist' to Nginx web root
-          sudo cp -r dist/* /var/www/html/
-          
-          # 3. Set permissions so Nginx can serve the files
-          sudo chown -R www-data:www-data /var/www/html/
-          sudo chmod -R 755 /var/www/html/
+          # 1. Sync ONLY the 'dist' folder to the web root
+          # We use rsync -avz --delete to keep the server folder identical to our build
+          sudo rsync -avz --delete dist/ /var/www/html/singapore_conference/
+
+          # 2. Set permissions for the web server
+          sudo chown -R www-data:www-data /var/www/html/singapore_conference
+          sudo chmod -R 755 /var/www/html/singapore_conference
+
+          # 3. Apply the Nginx Magic Fix (Handling React Router 404s)
+          sudo tee /etc/nginx/sites-available/singapore_conference <<EOF
+          server {
+              listen 80;
+              server_name _;
+
+              root /var/www/html/singapore_conference;
+              index index.html;
+
+              location / {
+                  # Redirects all traffic to index.html so React Router works
+                  try_files \$uri \$uri/ /index.html;
+              }
+          }
+          EOF
+
+          # 4. Enable config and restart
+          sudo ln -sf /etc/nginx/sites-available/singapore_conference /etc/nginx/sites-enabled/
+          sudo rm -f /etc/nginx/sites-enabled/default
+          sudo nginx -t && sudo systemctl reload nginx
