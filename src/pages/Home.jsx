@@ -52,19 +52,19 @@ function Home() {
             </div>
           </div>
           <p className="poppins-italic text-lg font-medium text-gray-800">
-            The <span className="text-gray-700 font-bold">IEM group</span> is an
-            acclaimed educational group amongst the{" "}
-            <span className="text-gray-700 font-bold">
-              industry-centred academic training
-            </span>{" "}
-            organisations of today. IEM has set sublime standards in addressing
-            the technical and managerial resource shortage in the new era of
-            dynamic globalisation. The IEM group has risen to fame for its
-            strong foundation in teaching and R&D in multifaceted areas.
+            The <span className="text-gray-700 font-bold">IEM group</span> is an acclaimed educational group amongst the <span className="text-gray-700 font-bold"> industry-centred academic training </span> organisations of today. IEM has set sublime standards in addressing the technical and managerial resource shortage in the new era of dynamic globalisation. The IEM group has risen to fame for its strong foundation in teaching and R&D in multifaceted areas. It aims to serve the future generation as well as the Nation through its commitment towards self-sufficiency and unmatchable excellence. IEM is one of <span className="text-gray-700 font-bold">the top-ranked engineering colleges</span> in Kolkata and Eastern India which provides the best engineering course with <span className="text-gray-700 font-bold">100% job assistance</span>. Contact today to know the course details of computer science engineering, mechanical engineering, electrical and electronics engineering, electronics and communication engineering.
           </p>
+          <ul className="list-disc list-outside poppins-italic text-lg font-medium text-gray-800 ml-5">
+            <li>Ranked ‘A’ Category by NAAC (National Assessment and Accreditation Council)</li>
+            <li>Winner of the “Jewel of the East” title by Telegraph</li>
+            <li>Ranked 3rd best engineering college in West Bengal by NIRF, Ministry of HRD, Govt of India, and 79th all over India</li>
+            <li>Awarded “Picture Perfect” by ABP Group</li>
+            <li>Achieved Best Institute of India in Star News Award</li>
+            <li>Strong placement record: 1-2 job offers on average for every student since inception</li>
+          </ul>
         </div>
       </div>
-      <div className="md:w-1/3 w-full">
+      <div className="md:w-1/3 w-full md:sticky md:top-10 md:h-fit">
         <Sidebar />
       </div>
     </div>
