@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -36,7 +37,7 @@ function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex flex-wrap items-center space-x-6 text-[#122456] font-semibold text-sm lg:text-base">
-            <a href="/" className="font-bold">Home</a>
+            <Link to="/" className="font-bold">Home</Link>
 
             {/* AUTHORS DROPDOWN */}
             <div
@@ -58,27 +59,27 @@ function Navbar() {
 
               {authorsOpen && (
                 <div className="absolute left-0 mt-1 bg-white shadow-lg rounded z-10 w-48">
-                  <a
-                    href="/authors/call-for-papers"
+                  <Link
+                    to="/authors/call-for-papers"
                     className="block px-4 py-2 hover:bg-[#e6eaff]"
                   >
                     Call for Papers
-                  </a>
-                  <a
-                    href="/authors/submission"
+                  </Link>
+                  <Link
+                    to="/authors/submission"
                     className="block px-4 py-2 hover:bg-[#e6eaff]"
                   >
                     Submission
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>
 
-            <a href="/technical-programs">Technical Programs</a>
-            <a href="/keynote-speakers">Keynote Speakers</a>
-            <a href="/gallery">Gallery</a>
-            <a href="/video-links-for-sessions">Video links for session</a>
-            <a href="/registration">Registration</a>
+            <Link to="/technical-programs">Technical Programs</Link>
+            <Link to="/keynote-speakers">Keynote Speakers</Link>
+            <Link to="/gallery">Gallery</Link>
+            <Link to="/video-links-for-sessions">Video links for session</Link>
+            <Link to="/registration">Registration</Link>
 
             {/* COMMITTEE DROPDOWN */}
             <div
@@ -100,25 +101,25 @@ function Navbar() {
 
               {committeeOpen && (
                 <div className="absolute left-0 mt-1 bg-white shadow-lg rounded z-10 min-w-40">
-                  <a
-                    href="/committee/organizing-committee"
+                  <Link
+                    to="/committee/organizing-committee"
                     className="block px-4 py-2 hover:bg-[#e6eaff]"
                   >
                     Organizing
-                  </a>
-                  <a
-                    href="/committee/technical-committee"
+                  </Link>
+                  <Link
+                    to="/committee/technical-committee"
                     className="block px-4 py-2 hover:bg-[#e6eaff]"
                   >
                     Technical
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>
 
-            {/* <a href="/previous-conference">Previous Conference</a> */}
-            <a href="/technical-sponsors">Technical Sponsors</a>
-            <a href="/contact">Contact</a>
+            {/* <Link to="/previous-conference">Previous Conference</Link> */}
+            <Link to="/technical-sponsors">Technical Sponsors</Link>
+            <Link to="/contact">Contact</Link>
           </div>
 
           {/* Mobile Toggle Button */}
@@ -133,29 +134,29 @@ function Navbar() {
         {/* MOBILE MENU */}
         {menuOpen && (
           <div className="flex flex-col items-center space-y-2 py-4 text-[#122456] font-semibold text-sm sm:text-base md:hidden">
-            <a href="/" className="font-bold">Home</a>
+            <Link to="/" className="font-bold">Home</Link>
 
             <div className="flex flex-col items-center space-y-1">
               <span className="font-semibold">Authors</span>
-              <a href="/authors/call-for-papers">Call for Papers</a>
-              <a href="/authors/submission">Submission</a>
+              <Link to="/authors/call-for-papers">Call for Papers</Link>
+              <Link to="/authors/submission">Submission</Link>
             </div>
 
-            <a href="/technical-programs">Technical Programs</a>
-            <a href="/keynote-speakers">Keynote Speakers</a>
-            <a href="/gallery">Gallery</a>
-            <a href="/video-links-for-sessions">Video links for session</a>
-            <a href="/registration">Registration</a>
+            <Link to="/technical-programs">Technical Programs</Link>
+            <Link to="/keynote-speakers">Keynote Speakers</Link>
+            <Link to="/gallery">Gallery</Link>
+            <Link to="/video-links-for-sessions">Video links for session</Link>
+            <Link to="/registration">Registration</Link>
 
             <div className="flex flex-col items-center space-y-1">
               <span className="font-semibold">Committee</span>
-              <a href="/committee/organizing-committee">Organizing</a>
-              <a href="/committee/technical-committee">Technical</a>
+              <Link to="/committee/organizing-committee">Organizing</Link>
+              <Link to="/committee/technical-committee">Technical</Link>
             </div>
 
-            {/* <a href="/previous-conference">Previous Conference</a> */}
-            <a href="/technical-sponsors">Technical Sponsors</a>
-            <a href="/contact">Contact</a>
+            {/* <Link to="/previous-conference">Previous Conference</Link> */}
+            <Link to="/technical-sponsors">Technical Sponsors</Link>
+            <Link to="/contact">Contact</Link>
           </div>
         )}
       </div>

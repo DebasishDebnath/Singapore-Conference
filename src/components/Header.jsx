@@ -5,70 +5,72 @@ import { CalendarDays, MapPin } from "lucide-react";
 function Header() {
   return (
     <>
-     <div className="w-full relative">
-  {/* Background Image */}
-<div className="relative h-[420px] md:h-[440px] ">
-  {/* Overlay fading from left with background image */}
-  <div
-    className="absolute inset-0"
-    style={{
-      backgroundImage:
-        "linear-gradient(to right, rgba(15,33,81,0.8), rgba(15,33,81,0)), url('/singapore.webp')",
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-    }}
-  ></div>
-</div>
+      <div className="w-full relative">
+        {/* Background Image */}
+        <div className="relative h-[420px] md:h-[440px] ">
+          {/* Overlay fading from left with background image */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, rgba(15,33,81,0.8), rgba(15,33,81,0)), url('/singapore.webp')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          ></div>
+        </div>
 
-    
-  {/* Content */}
-  <div className="absolute inset-0 flex flex-col justify-start px-6 md:px-16 py-10 z-20">
-    {/* Logos Row */}
-    <div className="flex items-center  mb-8">
-      <img
-        src="/iem.png"
-        alt="IEM"
-        className="h-14 md:h-18 object-contain"
-      />
-      <div>
+        {/* Content */}
+        <div className="absolute inset-0 flex flex-col justify-start px-6 md:px-16 py-10 z-20">
+          {/* Logos Row */}
+          <div className="flex items-center  mb-8">
+            <img
+              src="/iem.png"
+              alt="IEM"
+              className="h-14 md:h-18 object-contain"
+            />
+            <div>
+              <p className="text-white text-xs gideon-roman-regular text-center">
+                Institute of Engineering and Management
+              </p>
+              <hr className="border-white my-1" />
+              <p className="text-white text-xs gideon-roman-regular text-center">
+                University of Engineering and Management
+              </p>
+            </div>
+            <img
+              src="/uem.png"
+              alt="UEM"
+              className="h-14 md:h-18 object-contain"
+            />
+          </div>
 
-      <p className="text-white text-xs gideon-roman-regular text-center">Institute of Engineering and Management</p>
-      <hr className="border-white my-1" />
-      <p className="text-white text-xs gideon-roman-regular text-center">University of Engineering and Management</p>
+          {/* Title */}
+          <h1 className="text-white text-2xl md:text-4xl lg:text-5xl font-bold leading-snug max-w-3xl poppins-bold ">
+            Smart Edge & Neuromorphic
+            <br />
+            Systems Conference
+            <br />
+            (SENSE-SG)
+          </h1>
+
+          {/* Location + Date */}
+          <p className="text-white text-base sm:text-lg md:text-xl flex flex-wrap items-center gap-2 sm:gap-3 mt-4 poppins-regular font-semibold">
+            <span className="flex items-center gap-1">
+              <MapPin className="w-5 h-5" />
+              Singapore
+            </span>
+
+            <span className="hidden sm:inline">|</span>
+
+            <span className="flex items-center gap-1">
+              <CalendarDays className="w-5 h-5" />
+              <span className="font-semibold">16th - 18th June 2026</span>
+            </span>
+          </p>
+        </div>
       </div>
-      <img
-        src="/uem.png"
-        alt="UEM"
-        className="h-14 md:h-18 object-contain"
-      />
-    </div>
-
-    {/* Title */}
-    <h1 className="text-white text-2xl md:text-4xl lg:text-5xl font-bold leading-snug max-w-3xl poppins-bold ">
-      Smart Edge & Neuromorphic<br />
-      Systems Conference<br />
-      (SENSE-SG)
-    </h1>
-
-    {/* Location + Date */}
-<p className="text-white text-base sm:text-lg md:text-xl flex flex-wrap items-center gap-2 sm:gap-3 mt-4 poppins-regular font-semibold">
-  <span className="flex items-center gap-1">
-    <MapPin className="w-5 h-5" />
-    Singapore
-  </span>
-
-  <span className="hidden sm:inline">|</span>
-
-  <span className="flex items-center gap-1">
-    <CalendarDays className="w-5 h-5" />
-    <span className="font-semibold">14 Aug 2026</span>
-  </span>
-</p>
-
-
-  </div>
-</div>
 
       <Navbar />
     </>
