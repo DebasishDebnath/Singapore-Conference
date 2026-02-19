@@ -3,12 +3,7 @@ import Heading from '../components/Heading'
 import SponsorCard from '../components/SponsorCard'
 
 const sponsorsData = [
-  { imgSrc: "/HCI_logo.png", title: "IEM IIT Mandi" },
-  { imgSrc: "/CEDS_logo.png", title: "Centre of Excellence in Data Science (CEDS)" },
-  { imgSrc: "/HCI_logo.png", title: "IEM IIT Mandi" },
-  { imgSrc: "/CEDS_logo.png", title: "Centre of Excellence in Data Science (CEDS)" },
-  { imgSrc: "/HCI_logo.png", title: "IEM IIT Mandi" },
-  { imgSrc: "/CEDS_logo.png", title: "Centre of Excellence in Data Science (CEDS)" },
+  { imgSrc: "/c2iot.avif", title: "IEM Centre of Excellence for Cloud Computing & IoT" },
 ];
 
 function TechnicalSponsors() {
