@@ -24,26 +24,41 @@ function Header() {
         {/* Content */}
         <div className="absolute inset-0 flex flex-col justify-start px-6 md:px-16 py-10 z-20">
           {/* Logos Row */}
-          <div className="flex items-center  mb-8">
-            <img
-              src="/iem.png"
-              alt="IEM"
-              className="h-14 md:h-18 object-contain"
-            />
-            <div>
-              <p className="text-white text-xs gideon-roman-regular text-center">
-                Institute of Engineering and Management
-              </p>
-              <hr className="border-white my-1" />
-              <p className="text-white text-xs gideon-roman-regular text-center">
-                University of Engineering and Management
-              </p>
+          <div className="flex justify-between">
+            <div className="flex mb-8 items-center">
+              <img
+                src="/iem.png"
+                alt="IEM"
+                className="h-14 md:h-18 object-contain"
+              />
+              <div>
+                <p className="text-white text-xs gideon-roman-regular text-center">
+                  Institute of Engineering and Management
+                </p>
+                <hr className="border-white my-1" />
+                <p className="text-white text-xs gideon-roman-regular text-center">
+                  University of Engineering and Management
+                </p>
+              </div>
+              <img
+                src="/uem.png"
+                alt="UEM"
+                className="h-14 md:h-18 object-contain"
+              />
             </div>
-            <img
-              src="/uem.png"
-              alt="UEM"
-              className="h-14 md:h-18 object-contain"
-            />
+            <div className="flex gap-5 items-center m-2">
+              {" "}
+              <img
+                src="/images.png"
+                alt="UEM"
+                className="h-14 md:h-18 object-contain"
+              />
+              <img
+                src="/wiley.svg"
+                alt="UEM"
+                className="h-14 md:h-18 object-contain"
+              />
+            </div>
           </div>
 
           {/* Title */}
