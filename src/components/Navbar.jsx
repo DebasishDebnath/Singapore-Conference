@@ -75,10 +75,10 @@ function Navbar() {
               )}
             </div>
 
-            <Link to="/technical-programs">Technical Programs</Link>
+            {/* <Link to="/technical-programs">Technical Programs</Link> */}
             <Link to="/keynote-speakers">Keynote Speakers</Link>
             <Link to="/gallery">Gallery</Link>
-            <Link to="/video-links-for-sessions">Video links for session</Link>
+            {/* <Link to="/video-links-for-sessions">Video links for session</Link> */}
             <Link to="/registration">Registration</Link>
 
             {/* COMMITTEE DROPDOWN */}

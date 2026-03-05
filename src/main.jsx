@@ -13,10 +13,10 @@ import Home from "./pages/Home";
 import CallForPapers from "./pages/Authors/CallForPapers";
 import OrganizingCommittee from "./pages/Committee/OrganizingCommittee";
 import Submission from "./pages/Authors/Submission";
-import TechnicalPrograms from "./pages/TechnicalPrograms";
+// import TechnicalPrograms from "./pages/TechnicalPrograms";
 import KeynoteSpeakers from "./pages/KeynoteSpeakers";
 import Gallery from "./pages/Gallery";
-import VideoLinksForSessions from "./pages/VideoLinksForSessions";
+// import VideoLinksForSessions from "./pages/VideoLinksForSessions";
 import Registration from "./pages/Registration";
 import TechnicalCommittee from "./pages/Committee/TechnicalCommittee";
 import PreviousConference from "./pages/PreviousConference";
@@ -29,13 +29,13 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="/authors/call-for-papers" element={<CallForPapers />} />
       <Route path="/authors/submission" element={<Submission />} />
-      <Route path="/technical-programs" element={<TechnicalPrograms />} />
+      {/* <Route path="/technical-programs" element={<TechnicalPrograms />} /> */}
       <Route path="/keynote-speakers" element={<KeynoteSpeakers />} />
       <Route path="/gallery" element={<Gallery />} />
-      <Route
+      {/* <Route
         path="/video-links-for-sessions"
         element={<VideoLinksForSessions />}
-      />
+      /> */}
       <Route path="/registration" element={<Registration />} />
       <Route
         path="/committee/organizing-committee"
