@@ -7,7 +7,7 @@ function Header() {
     <>
       <div className="w-full relative">
         {/* Background Image */}
-        <div className="relative h-[420px] md:h-[440px] ">
+        <div className="relative h-[400px] md:h-[440px] ">
           {/* Overlay fading from left with background image */}
           <div
             className="absolute inset-0"
@@ -24,8 +24,8 @@ function Header() {
         {/* Content */}
         <div className="absolute inset-0 flex flex-col justify-start px-6 md:px-16 py-10 z-20">
           {/* Logos Row */}
-          <div className="flex justify-between">
-            <div className="flex mb-8 items-center">
+          <div className="flex md:flex-row flex-col justify-between ">
+            <div className="flex md:mb-8 items-center whitespace-nowrap">
               <img
                 src="/iem.png"
                 alt="IEM"
@@ -46,17 +46,17 @@ function Header() {
                 className="h-14 md:h-18 object-contain"
               />
             </div>
-            <div className="flex gap-5 items-center m-2">
+            <div className="flex gap-6 justify-center m-2">
               {" "}
               <img
                 src="/images.png"
                 alt="UEM"
-                className="h-14 md:h-18 object-contain"
+                className="h-10 md:h-18 object-contain"
               />
               <img
                 src="/wiley.svg"
                 alt="UEM"
-                className="h-14 md:h-18 object-contain"
+                className="h-10 md:h-18 object-contain"
               />
             </div>
           </div>
@@ -71,7 +71,7 @@ function Header() {
           </h1>
 
           {/* Location + Date */}
-          <p className="text-white text-base sm:text-lg md:text-xl flex flex-wrap items-center gap-2 sm:gap-3 mt-4 poppins-regular font-semibold">
+          <p className="text-white text-base sm:text-lg md:text-xl flex md:flex-row flex-col flex-wrap md:items-center gap-2 sm:gap-3 mt-4 poppins-regular font-semibold">
             <span className="flex items-center gap-1">
               <MapPin className="w-5 h-5" />
               Singapore

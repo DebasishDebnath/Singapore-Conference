@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 function Submission() {
   const navigate = useNavigate();
   return (
-    <div className="max-w-7xl w-7xl mx-auto flex flex-col lg:gap-16 gap-10 lg:py-20 py-14 px-6 items-left">
+      <div className="max-w-7xl w-full mx-auto flex flex-col lg:gap-16 gap-10 lg:py-20 py-14 px-6 items-start">
       <div className="flex flex-col gap-8 w-full text-sm poppins">
         <Heading title1="Submission" title2="Guidelines" />
         {/* <p className="poppins-italic text-lg font-medium text-gray-800">

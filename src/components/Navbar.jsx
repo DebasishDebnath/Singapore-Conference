@@ -125,7 +125,7 @@ function Navbar() {
           {/* Mobile Toggle Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-[#122456] absolute right-4"
+            className="md:hidden text-[#122456] absolute right-4 text-xl"
           >
             {menuOpen ? "✕" : "☰"}
           </button>
@@ -134,29 +134,29 @@ function Navbar() {
         {/* MOBILE MENU */}
         {menuOpen && (
           <div className="flex flex-col items-center space-y-2 py-4 text-[#122456] font-semibold text-sm sm:text-base md:hidden">
-            <Link to="/" className="font-bold">Home</Link>
+            <Link to="/" className="font-bold" onClick={() => setMenuOpen(false)}>Home</Link>
 
             <div className="flex flex-col items-center space-y-1">
               <span className="font-semibold">Authors</span>
-              <Link to="/authors/call-for-papers">Call for Papers</Link>
-              <Link to="/authors/submission-n-publication">Submission & Publication</Link>
+              <Link to="/authors/call-for-papers" onClick={() => setMenuOpen(false)}>Call for Papers</Link>
+              <Link to="/authors/submission-n-publication" onClick={() => setMenuOpen(false)}>Submission & Publication</Link>
             </div>
 
-            <Link to="/technical-programs">Technical Programs</Link>
-            <Link to="/keynote-speakers">Keynote Speakers</Link>
-            <Link to="/gallery">Gallery</Link>
-            <Link to="/video-links-for-sessions">Video links for session</Link>
-            <Link to="/registration">Registration</Link>
+            {/* <Link to="/technical-programs">Technical Programs</Link> */}
+            <Link to="/keynote-speakers" onClick={() => setMenuOpen(false)}>Keynote Speakers</Link>
+            <Link to="/gallery" onClick={() => setMenuOpen(false)}>Gallery</Link>
+            {/* <Link to="/video-links-for-sessions">Video links for session</Link> */}
+            <Link to="/registration" onClick={() => setMenuOpen(false)}>Registration</Link>
 
             <div className="flex flex-col items-center space-y-1">
               <span className="font-semibold">Committee</span>
-              <Link to="/committee/organizing-committee">Organizing</Link>
-              <Link to="/committee/technical-committee">Technical</Link>
+              <Link to="/committee/organizing-committee" onClick={() => setMenuOpen(false)}>Organizing</Link>
+              <Link to="/committee/technical-committee" onClick={() => setMenuOpen(false)}>Technical</Link>
             </div>
 
             {/* <Link to="/previous-conference">Previous Conference</Link> */}
-            <Link to="/technical-sponsors">Technical Sponsors</Link>
-            <Link to="/contact">Contact</Link>
+            <Link to="/technical-sponsors" onClick={() => setMenuOpen(false)}>Technical Sponsors</Link>
+            <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
           </div>
         )}
       </div>
