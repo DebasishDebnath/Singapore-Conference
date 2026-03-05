@@ -66,10 +66,10 @@ function Navbar() {
                     Call for Papers
                   </Link>
                   <Link
-                    to="/authors/submission"
+                    to="/authors/submission-n-publication"
                     className="block px-4 py-2 hover:bg-[#e6eaff]"
                   >
-                    Submission
+                    Submission & Publication
                   </Link>
                 </div>
               )}
@@ -139,7 +139,7 @@ function Navbar() {
             <div className="flex flex-col items-center space-y-1">
               <span className="font-semibold">Authors</span>
               <Link to="/authors/call-for-papers">Call for Papers</Link>
-              <Link to="/authors/submission">Submission</Link>
+              <Link to="/authors/submission-n-publication">Submission & Publication</Link>
             </div>
 
             <Link to="/technical-programs">Technical Programs</Link>

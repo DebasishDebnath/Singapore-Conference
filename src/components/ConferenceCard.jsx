@@ -37,7 +37,7 @@ function ConferenceCard({
               {focus}
             </div>
         </div>
-        <div className="bg-gray-300 w-full h-px"></div>
+        {/* <div className="bg-gray-300 w-full h-px"></div>
         <div className="flex flex-col gap-3">
           <h2 className="text-xl text-blue-theme-light font-bold poppins-italic pb-2">
             Research Topic
@@ -50,7 +50,7 @@ function ConferenceCard({
               <li> {chair}</li>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
