@@ -75,7 +75,7 @@ function Contact() {
               title="Map"
               className="w-full h-full"
               loading="lazy"
-              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d14736.204515329586!2d88.430916297625!3d22.577190970285905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sManagement%20House%2C%20D-1%2C%20Sector-V%2C%20Saltlake%20Electronics%20Kolkata%20%E2%80%93%20700%20091%2C%20West%20Bengal%2C%20India.!5e0!3m2!1sen!2sin!4v1763365169109!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8020804141656!2d103.7734796!3d1.2932081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1aff3f1cf5b1%3A0x7ae21f4141402cfd!2sShaw%20Foundation%20Alumni%20House!5e0!3m2!1sen!2sin!4v1772774266337!5m2!1sen!2sin"
             ></iframe>
           </div>
         </div>

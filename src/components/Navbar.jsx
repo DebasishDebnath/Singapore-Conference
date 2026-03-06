@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,7 +37,7 @@ function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex flex-wrap items-center space-x-6 text-[#122456] font-semibold text-sm lg:text-base">
-            <Link to="/" className="font-bold">Home</Link>
+            <NavLink to="/" end className={({ isActive }) => isActive ? "font-bold" : ""}>Home</NavLink>
 
             {/* AUTHORS DROPDOWN */}
             <div
@@ -59,27 +59,27 @@ function Navbar() {
 
               {authorsOpen && (
                 <div className="absolute left-0 mt-1 bg-white shadow-lg rounded z-10 w-48">
-                  <Link
+                  <NavLink
                     to="/authors/call-for-papers"
-                    className="block px-4 py-2 hover:bg-[#e6eaff]"
+                    className={({ isActive }) => `block px-4 py-2 hover:bg-[#e6eaff]${isActive ? " font-bold" : ""}`}
                   >
                     Call for Papers
-                  </Link>
-                  <Link
+                  </NavLink>
+                  <NavLink
                     to="/authors/submission-n-publication"
-                    className="block px-4 py-2 hover:bg-[#e6eaff]"
+                    className={({ isActive }) => `block px-4 py-2 hover:bg-[#e6eaff]${isActive ? " font-bold" : ""}`}
                   >
                     Submission & Publication
-                  </Link>
+                  </NavLink>
                 </div>
               )}
             </div>
 
-            {/* <Link to="/technical-programs">Technical Programs</Link> */}
-            <Link to="/keynote-speakers">Keynote Speakers</Link>
-            <Link to="/gallery">Gallery</Link>
-            {/* <Link to="/video-links-for-sessions">Video links for session</Link> */}
-            <Link to="/registration">Registration</Link>
+            {/* <NavLink to="/technical-programs">Technical Programs</NavLink> */}
+            <NavLink to="/keynote-speakers" className={({ isActive }) => isActive ? "font-bold" : ""}>Keynote Speakers</NavLink>
+            <NavLink to="/gallery" className={({ isActive }) => isActive ? "font-bold" : ""}>Gallery</NavLink>
+            {/* <NavLink to="/video-links-for-sessions">Video links for session</NavLink> */}
+            <NavLink to="/registration" className={({ isActive }) => isActive ? "font-bold" : ""}>Registration</NavLink>
 
             {/* COMMITTEE DROPDOWN */}
             <div
@@ -101,25 +101,25 @@ function Navbar() {
 
               {committeeOpen && (
                 <div className="absolute left-0 mt-1 bg-white shadow-lg rounded z-10 min-w-40">
-                  <Link
+                  <NavLink
                     to="/committee/organizing-committee"
-                    className="block px-4 py-2 hover:bg-[#e6eaff]"
+                    className={({ isActive }) => `block px-4 py-2 hover:bg-[#e6eaff]${isActive ? " font-bold" : ""}`}
                   >
                     Organizing
-                  </Link>
-                  <Link
+                  </NavLink>
+                  <NavLink
                     to="/committee/technical-committee"
-                    className="block px-4 py-2 hover:bg-[#e6eaff]"
+                    className={({ isActive }) => `block px-4 py-2 hover:bg-[#e6eaff]${isActive ? " font-bold" : ""}`}
                   >
                     Technical
-                  </Link>
+                  </NavLink>
                 </div>
               )}
             </div>
 
-            {/* <Link to="/previous-conference">Previous Conference</Link> */}
-            <Link to="/technical-sponsors">Technical Sponsors</Link>
-            <Link to="/contact">Contact</Link>
+            {/* <NavLink to="/previous-conference">Previous Conference</NavLink> */}
+            <NavLink to="/technical-sponsors" className={({ isActive }) => isActive ? "font-bold" : ""}>Technical Sponsors</NavLink>
+            <NavLink to="/contact" className={({ isActive }) => isActive ? "font-bold" : ""}>Contact</NavLink>
           </div>
 
           {/* Mobile Toggle Button */}
@@ -134,29 +134,29 @@ function Navbar() {
         {/* MOBILE MENU */}
         {menuOpen && (
           <div className="flex flex-col items-center space-y-2 py-4 text-[#122456] font-semibold text-sm sm:text-base md:hidden">
-            <Link to="/" className="font-bold" onClick={() => setMenuOpen(false)}>Home</Link>
+            <NavLink to="/" end className={({ isActive }) => isActive ? "font-bold" : ""} onClick={() => setMenuOpen(false)}>Home</NavLink>
 
             <div className="flex flex-col items-center space-y-1">
               <span className="font-semibold">Authors</span>
-              <Link to="/authors/call-for-papers" onClick={() => setMenuOpen(false)}>Call for Papers</Link>
-              <Link to="/authors/submission-n-publication" onClick={() => setMenuOpen(false)}>Submission & Publication</Link>
+              <NavLink to="/authors/call-for-papers" className={({ isActive }) => isActive ? "font-bold" : ""} onClick={() => setMenuOpen(false)}>Call for Papers</NavLink>
+              <NavLink to="/authors/submission-n-publication" className={({ isActive }) => isActive ? "font-bold" : ""} onClick={() => setMenuOpen(false)}>Submission & Publication</NavLink>
             </div>
 
-            {/* <Link to="/technical-programs">Technical Programs</Link> */}
-            <Link to="/keynote-speakers" onClick={() => setMenuOpen(false)}>Keynote Speakers</Link>
-            <Link to="/gallery" onClick={() => setMenuOpen(false)}>Gallery</Link>
-            {/* <Link to="/video-links-for-sessions">Video links for session</Link> */}
-            <Link to="/registration" onClick={() => setMenuOpen(false)}>Registration</Link>
+            {/* <NavLink to="/technical-programs">Technical Programs</NavLink> */}
+            <NavLink to="/keynote-speakers" className={({ isActive }) => isActive ? "font-bold" : ""} onClick={() => setMenuOpen(false)}>Keynote Speakers</NavLink>
+            <NavLink to="/gallery" className={({ isActive }) => isActive ? "font-bold" : ""} onClick={() => setMenuOpen(false)}>Gallery</NavLink>
+            {/* <NavLink to="/video-links-for-sessions">Video links for session</NavLink> */}
+            <NavLink to="/registration" className={({ isActive }) => isActive ? "font-bold" : ""} onClick={() => setMenuOpen(false)}>Registration</NavLink>
 
             <div className="flex flex-col items-center space-y-1">
               <span className="font-semibold">Committee</span>
-              <Link to="/committee/organizing-committee" onClick={() => setMenuOpen(false)}>Organizing</Link>
-              <Link to="/committee/technical-committee" onClick={() => setMenuOpen(false)}>Technical</Link>
+              <NavLink to="/committee/organizing-committee" className={({ isActive }) => isActive ? "font-bold" : ""} onClick={() => setMenuOpen(false)}>Organizing</NavLink>
+              <NavLink to="/committee/technical-committee" className={({ isActive }) => isActive ? "font-bold" : ""} onClick={() => setMenuOpen(false)}>Technical</NavLink>
             </div>
 
-            {/* <Link to="/previous-conference">Previous Conference</Link> */}
-            <Link to="/technical-sponsors" onClick={() => setMenuOpen(false)}>Technical Sponsors</Link>
-            <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+            {/* <NavLink to="/previous-conference">Previous Conference</NavLink> */}
+            <NavLink to="/technical-sponsors" className={({ isActive }) => isActive ? "font-bold" : ""} onClick={() => setMenuOpen(false)}>Technical Sponsors</NavLink>
+            <NavLink to="/contact" className={({ isActive }) => isActive ? "font-bold" : ""} onClick={() => setMenuOpen(false)}>Contact</NavLink>
           </div>
         )}
       </div>
