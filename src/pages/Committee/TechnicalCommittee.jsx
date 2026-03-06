@@ -4,217 +4,171 @@ import Heading from "../../components/Heading";
 
 const committeeData = [
   {
-    title: "Chief Patron",
+    title: "International",
     data: [
       {
-        name: "Prof. Banani Chakrabarti",
-        affiliation: "President of IEM - UEM Group, India",
-      },
-    ],
-  },
-  {
-    title: "Patron",
-    data: [
-      {
-        name: "Prof. (Dr.) Satyajit Chakrabarti",
-        affiliation: "Director, IEM - UEM Group, India",
-      },
-    ],
-  },
-  {
-    title: "Honorary Chair",
-    data: [
-      {
-        name: "Prof. (Dr.) Rajkumar Buyya",
-        affiliation:
-          "FIEEE, Fellow, Academia Europaea, University of Melbourne, Australia",
+        name: "Madhurima Ray",
+        affiliation: "Pennsylvania State University, USA",
       },
       {
-        name: "Prof. (Dr.) Tingwen Huang",
-        affiliation: "FIEEE, Texas A&M University, Qatar",
+        name: "Somenath Chakraborty",
+        affiliation: "West Virginia University Institute of Technology, USA",
       },
       {
-        name: "Prof. (Dr.) Panagiotis Stathopoulos",
-        affiliation: "University of Western Macedonia, Kozani, Greece",
-      },
-    ],
-  },
-  {
-    title: "General Chairs",
-    data: [
-      {
-        name: "Prof. (Dr.) Siddhartha Bhattacharyya",
-        affiliation:
-          "VSB Technical University of Ostrava, Czech Republic and Algebra Bernays University College, Zagreb, Croatia",
+        name: "Phillip Bradford",
+        affiliation: "The University of Connecticut, USA",
       },
       {
-        name: "Prof. (Dr.) Jyoti Sekhar Banerjee",
-        affiliation: "Bengal Institute of Technology, Kolkata, India",
+        name: "Chua Chin Heng Matthew",
+        affiliation: "Yong Loo Lin School of Medicine, NUS, Singapore",
       },
       {
-        name: "Dr. Leo Mrsic",
-        affiliation: "Algebra Bernays University, Zagreb, Croatia",
-      },
-    ],
-  },
-  {
-    title: "Organizing Chairs",
-    data: [
-      {
-        name: "Dr. Amartya Mukherjee",
-        affiliation: "IEM Kolkata, India",
+        name: "Esteban Alfaro Cortés",
+        affiliation: "Facultad de Ciencias Económicas y Empresariales (UCLM), Spain",
       },
       {
-        name: "Dr. Sandeep Singh Sengar",
-        affiliation: "Cardiff Metropolitan University, UK",
+        name: "Gabor Benedek",
+        affiliation: "Lynx Analytics Pte Ltd, Singapore",
       },
-    ],
-  },
-  {
-    title: "TPC Chair",
-    data: [
       {
-        name: "Prof. (Dr.) Siddhartha Bhattacharyya",
-        affiliation:
-          "VSB Technical University of Ostrava, Czech Republic and Algebra Bernays University, Zagreb, Croatia",
+        name: "Panagiotis Sarigiannidis",
+        affiliation: "University of Western Macedonia, Greece",
       },
-    ],
-  },
-  {
-    title: "Convener Chair",
-    data: [
       {
-        name: "Prof. (Dr.) Indrajit De",
-        affiliation: "IEM Kolkata, India",
+        name: "Dimitris Pliatsios",
+        affiliation: "University of Western Macedonia, Greece",
       },
-    ],
-  },
-  {
-    title: "Co-convener",
-    data: [
       {
-        name: "Mr. Subhadip Chandra",
-        affiliation: "IEM Kolkata, India",
+        name: "Ilias Cherkaoui",
+        affiliation: "Walton Institute for Information and Communication Systems Science, Ireland",
       },
-    ],
-  },
-  {
-    title: "Program Chairs",
-    data: [
       {
-        name: "Prof. (Dr.) Sheng-Lung Peng",
+        name: "Rahul Umesh Mhapsekar",
+        affiliation: "Walton Institute for Information and Communication Systems Science, Ireland",
+      },
+      {
+        name: "Sandeep Singh Sengar",
+        affiliation: "Cardiff Metropolitan University, United Kingdom",
+      },
+      {
+        name: "Peter Leong",
+        affiliation: "NUS, Singapore",
+      },
+      {
+        name: "Maxim Bobyr",
+        affiliation: "South-West State University, Russia",
+      },
+      {
+        name: "Sheng Lung Peng",
         affiliation: "National Taipei University of Business, Taiwan",
       },
       {
-        name: "Prof. (Dr.) Mohamed Lahby",
-        affiliation:
-          "University Hassan II, Higher Normal School of Casablanca, Morocco",
-      },
-    ],
-  },
-  {
-    title: "Industry Chairs",
-    data: [
-      {
-        name: "Dr. Tanushyam Chattopadhyay",
-        affiliation: "Practice Head, Sirius Digitech",
+        name: "Swarnendu Ghosh",
+        affiliation: "University of Ljubljana, Slovenia, Slovenia",
       },
       {
-        name: "Mr. Snehasis Banerjee",
-        affiliation: "TCS Research & Innovation, Kolkata, India",
+        name: "Avirup Das",
+        affiliation: "Singapore University of Technology and Design, Singapore",
       },
       {
-        name: "Dr. Sanmitra Sarkar",
-        affiliation:
-          "Senior Director and Global Head of Generative and Agentic AI, Capgemini",
+        name: "Soumya Das",
+        affiliation: "Eindhoven University of Technology, Netherlands",
       },
-    ],
-  },
-  {
-    title: "Industry Academic Partnership Chair",
-    data: [
       {
-        name: "Mr. Souvik Das",
-        affiliation:
-          "Academic Alliance Head of India East, TCS, India",
+        name: "Branko Šter",
+        affiliation: "University of Ljubljana, Slovenia, Slovenia",
+      },
+      {
+        name: "Ratco Pilipovic",
+        affiliation: "University of Ljubljana, Slovenia, Slovenia",
+      },
+      {
+        name: "Nandita Sengupta",
+        affiliation: "University College Bahrain, Kingdom of Bahrain",
+      },
+      {
+        name: "Blerta Prevalla Etemi",
+        affiliation: "Rochester Institute of Technology, Kosovo",
+      },
+      {
+        name: "Robert Muharremi",
+        affiliation: "Rochester Institute of Technology, Kosovo",
+      },
+      {
+        name: "Debabrata Samanta",
+        affiliation: "Rochester Institute of Technology, Tirana",
+      },
+      {
+        name: "Wai-keung FUNG",
+        affiliation: "Cardiff Metropolitan University, United Kingdom",
+      },
+      {
+        name: "Priyesh Dhole",
+        affiliation: "Cardiff Metropolitan University, United Kingdom",
+      },
+      {
+        name: "Amrita Prasad",
+        affiliation: "Cardiff Metropolitan University, United Kingdom",
+      },
+      {
+        name: "Priyatharshini Rajaram",
+        affiliation: "Cardiff Metropolitan University, United Kingdom",
+      },
+      {
+        name: "Pavel Basti",
+        affiliation: "Czech Technical University, Czech Republic",
+      },
+      {
+        name: "Baidya Saha",
+        affiliation: "Concordia University of Edmonton, Canada",
       },
     ],
   },
   {
-    title: "Organizing Committee",
-    data: [
-      { name: "Prof. (Dr.) Indrajit De", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Amartya Mukherjee", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. DeepSubhra Guha Roy", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Piyali Dutta", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Mousumi Laha", affiliation: "IEM Kolkata, India" },
-      { name: "Mr. Subhadip Chandra", affiliation: "IEM Kolkata, India" },
-      { name: "Mr. Pabak Indu", affiliation: "IEM Kolkata, India" },
-      { name: "Mrs. Bipasha Guha Roy", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Sreya Ghosh", affiliation: "IEM Kolkata, India" },
-      { name: "Mrs. Ankita Ray Chowdhury", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Somenath Kuiry", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Sukanya Mitra", affiliation: "IEM Kolkata, India" },
-      { name: "Prof. (Dr.) Goutam Saha", affiliation: "IEM Kolkata, India" },
-      { name: "Mr. Heerok Banerjee", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Sudipta Bhattacharya", affiliation: "IEM Kolkata, India" },
-      { name: "Mrs. Mamani Bandyopadhyay", affiliation: "IEM Kolkata, India" },
-      { name: "Ms. Manjarini Mallik", affiliation: "IEM Kolkata, India" },
-      { name: "Mrs. Debasree Sarkar", affiliation: "IEM Kolkata, India" },
-      { name: "Mrs. Tumpa Nath", affiliation: "IEM Kolkata, India" },
-    ],
-  },
-  {
-    title: "Publication Chairs",
-    data: [
-      { name: "Dr. Amartya Mukherjee", affiliation: "IEM Kolkata, India" },
-      { name: "Prof. (Dr.) Indrajit De", affiliation: "IEM Kolkata, India" },
-      { name: "Prof. (Dr.) Goutam Saha", affiliation: "IEM Kolkata, India" },
-    ],
-  },
-  {
-    title: "Publicity Chairs",
-    data: [
-      { name: "Dr. Piyali Dutta", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Mousumi Laha", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Sreya Ghosh", affiliation: "IEM Kolkata, India" },
-      { name: "Mrs. Debasree Sarkar", affiliation: "IEM Kolkata, India" },
-    ],
-  },
-  {
-    title: "Finance Chairs",
-    data: [
-      { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. DeepSubhra Guha Roy", affiliation: "IEM Kolkata, India" },
-      { name: "Mr. Pabak Indu", affiliation: "IEM Kolkata, India" },
-    ],
-  },
-  {
-    title: "Hospitality Chairs",
-    data: [
-      { name: "Dr. Sukanya Mitra", affiliation: "IEM Kolkata, India" },
-      { name: "Mrs. Bipasha Guha Roy", affiliation: "IEM Kolkata, India" },
-      { name: "Mrs. Ankita Ray Chowdhury", affiliation: "IEM Kolkata, India" },
-      { name: "Mrs. Tumpa Nath", affiliation: "IEM Kolkata, India" },
-    ],
-  },
-  {
-    title: "Transport Chairs",
-    data: [
-      { name: "Mr. Heerok Banerjee", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Sudipta Bhattacharya", affiliation: "IEM Kolkata, India" },
-      { name: "Mrs. Mamani Bandyopadhyay", affiliation: "IEM Kolkata, India" },
-    ],
-  },
-  {
-    title: "Web Chairs",
-    data: [
-      { name: "Mr. Heerok Banerjee", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Somenath Kuiry", affiliation: "IEM Kolkata, India" },
-      { name: "Ms. Manjarini Mallik", affiliation: "IEM Kolkata, India" },
-    ],
-  },
+  title: "National",
+  data: [
+    { name: "Arup Kumar Pal", affiliation: "IITISM, Dhanbad, India" },
+    { name: "Rajat Kumar Pal", affiliation: "University of Calcutta, Kolkata, India" },
+    { name: "Anwesha Mukherjee", affiliation: "Mahishadal Raj college, West Bengal, India" },
+    { name: "Sahadev Roy", affiliation: "NIT, Arunachal, India" },
+    { name: "Ramesh Dharavath H. N.", affiliation: "IIT Dhanbad, India" },
+    { name: "Anindita Kundu", affiliation: "VIT Vellore, India" },
+    { name: "Nabajyoti Mazumdar", affiliation: "IIIT, Allahabad, India" },
+    { name: "Abhishek Basu", affiliation: "RCCIIT, Kolkata, India" },
+    { name: "Sabyasachi Chatterjee", affiliation: "Heritage Institute of Technology, India" },
+    { name: "Arpan Deyasi", affiliation: "RCCIIT, India" },
+    { name: "Anup Kumar Halder", affiliation: "IIIT Raichur, India" },
+    { name: "Mehbub Alam", affiliation: "IIIT Raichur, India" },
+    { name: "Debanjali Sadhu", affiliation: "Heritage Institute of Technology, India" },
+    { name: "Tumpa nath", affiliation: "IEM Kolkata, India" },
+    { name: "Debashree Sarkar", affiliation: "IEM Kolkata, India" },
+    { name: "Sudipto Bhattacharyya", affiliation: "IEM Kolkata, India" },
+    { name: "Somnath Kuiry", affiliation: "IEM Kolkata, India" },
+    { name: "Heerok Banerjee", affiliation: "IEM Kolkata, India" },
+    { name: "Arpita Sarkar", affiliation: "Jadavpur University, India" },
+    { name: "Arnab Kumar Maji", affiliation: "NEHU, Shillong, India" },
+    { name: "Amitava Nag", affiliation: "CIT Kokrajhar, India" },
+    { name: "Kuntal Dey", affiliation: "Accenture Labs, India" },
+    { name: "Lidia Ghosh", affiliation: "RCC IIT, India" },
+    { name: "Nilotpal Chakraborty", affiliation: "RCC IIT, India" },
+    { name: "Nandadulal Jana", affiliation: "NIT Durgapur, India" },
+    { name: "Manab Das", affiliation: "IEM Kolkata, India" },
+    { name: "Nilanjana Basu", affiliation: "Heritage Institute of Technology, India" },
+    { name: "Reshma Roychowdhury", affiliation: "Heritage institute of Technology, India" },
+    { name: "Smritikona Barai", affiliation: "Heritage institute of Technology, India" },
+    { name: "Pradip Kumar K", affiliation: "Dayanand Sagar University, India" },
+    { name: "Atrayee Chatterjee", affiliation: "Heritage Academy, India" },
+    { name: "Ajoy Kumar Khan", affiliation: "Mizoram University, India" },
+    { name: "Lincoln Renee", affiliation: "NEHU Shillong, India" },
+    { name: "Soumya Sen", affiliation: "University Of Calcutta, India" },
+    { name: "Prodipto Das", affiliation: "Assam University, India" },
+    { name: "Ashim Datta", affiliation: "Tezpur University, India" },
+    { name: "Mamani Bandyopadhyay", affiliation: "IEM Kolkata, India" },
+    { name: "Anindita Raychaudhuri", affiliation: "Sarojini Naidu College for Women, West Bengal, India" },
+    { name: "Bharat Soni", affiliation: "IIIT Raichur, India" },
+  
+  ],
+}
 ];
 
 function TechnicalCommittee() {
