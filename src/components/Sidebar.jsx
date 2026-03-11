@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 import SidebarCard from './SidebarCard'
 
 const content1=[
-  {Date: 'April 15th, 2026', Detail: 'Full Paper Submission'},
-  {Date: 'May 15th, 2026', Detail: 'Acceptance Notification'},
-  {Date: 'May 15th - 22nd, 2026', Detail: 'Early Bird Registration'},
-  {Date: 'June 5th, 2026', Detail: 'Camera ready paper submission'},
-  {Date: 'June 10th, 2026', Detail: 'Registration'},
-  {Date: 'June 16th, 17th  & 18th, 2026', Detail: 'Conference Date'},
+  {Date: 'April 10th, 2026', Detail: 'Full Paper Submission Deadline'},
+  {Date: 'May 5th, 2026', Detail: 'Notification of Acceptance'},
+  // {Date: 'May 15th - 22nd, 2026', Detail: 'Early Bird Registration'},
+  {Date: 'May 15th, 2026', Detail: 'Camera Ready Paper Submission'},
+  {Date: 'May 20th, 2026', Detail: 'Author Registration Deadline'},
+  {Date: 'June 9th, 10th  & 11th, 2026', Detail: 'Conference Dates'},
 ];
 
 const content2=[{Date: '', Detail: 'Best Paper Award Will be Given for Each track.'}];
