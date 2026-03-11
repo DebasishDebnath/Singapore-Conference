@@ -206,13 +206,13 @@ function Navbar() {
             >
               Keynote Speakers
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/gallery"
               className={({ isActive }) => (isActive ? "font-bold" : "")}
               onClick={() => setMenuOpen(false)}
             >
               Gallery
-            </NavLink>
+            </NavLink> */}
             {/* <NavLink to="/video-links-for-sessions">Video links for session</NavLink> */}
             <NavLink
               to="/registration"
