@@ -8,7 +8,7 @@ function Header() {
 
       <div className="w-full relative">
         {/* Background Image */}
-        <div className="relative h-[370px] md:h-[450px]">
+        <div className="relative h-[400px] md:h-[460px]">
           <div
             className="absolute inset-0"
             style={{
@@ -29,40 +29,42 @@ function Header() {
               <img
                 src="/iem.png"
                 alt="IEM"
-                className="h-14 md:h-18 object-contain"
+                className="h-16 md:h-18 object-contain"
               />
               <div>
-                <p className="text-white text-xs gideon-roman-regular text-center">
+                <p className="text-white text-xs gideon-roman-regular text-center hidden md:block">
                   Institute of Engineering & Management
                 </p>
-                <hr className="border-white my-1" />
-                <p className="text-white text-xs gideon-roman-regular text-center">
+                <hr className="border-white my-1 hidden md:block" />
+                <p className="text-white text-xs gideon-roman-regular text-center hidden md:block">
                   University of Engineering and Management
                 </p>
               </div>
               <img
                 src="/uem.png"
                 alt="UEM"
-                className="h-14 md:h-18 object-contain"
+                className="h-16 md:h-18 object-contain"
               />
             </div>
 
-            <div className="flex gap-6 justify-center">
+            <div className="flex gap-6 justify-between items-center">
               <img
                 src="/logo.jpeg"
                 alt="SENSE-SG Logo"
                 className="h-12 md:h-18 object-contain md:hidden block"
               />
-              <img
-                src="/images.png"
-                alt="IEEE"
-                className="h-12 md:h-18 object-contain"
-              />
-              <img
-                src="/wiley.svg"
-                alt="Wiley"
-                className="h-12 md:h-18 object-contain"
-              />
+              <div className="flex items-center gap-6">
+                <img
+                  src="/images.png"
+                  alt="IEEE"
+                  className="h-12 md:h-18 object-contain"
+                />
+                <img
+                  src="/wiley.svg"
+                  alt="Wiley"
+                  className="h-12 md:h-18 object-contain"
+                />
+              </div>
             </div>
           </div>
 
