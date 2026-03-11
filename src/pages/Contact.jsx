@@ -44,15 +44,14 @@ function Contact() {
 
       if (!response.ok) {
         throw new Error(
-          result.error || "Unable to send your message right now."
+          result.error || "Unable to send your message right now.",
         );
       }
 
       setFormData(INITIAL_FORM);
       setStatus({
         type: "success",
-        message:
-          result.message || "Your message has been sent successfully.",
+        message: result.message || "Your message has been sent successfully.",
       });
     } catch (error) {
       setStatus({
@@ -144,24 +143,27 @@ function Contact() {
               required
               className="w-full p-3 border border-gray-300 text-gray-700 rounded-3xl shadow-md text-sm outline-none fixed-resize"
             />
-            <div className="flex justify-between items-center">
-            {status.message ? (
-              <p
-                className={`text-sm ${
-                  status.type === "success" ? "text-green-700" : "text-red-600"
-                }`}
-                role="status"
+            <div className="flex flex-row-reverse justify-between items-center">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="px-4 py-2.5 justify-end flex bg-blue-theme rounded-2xl text-white font-medium text-center poppins text-sm h-fit w-fit whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {status.message}
-              </p>
-            ) : null}
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="self-end px-4 py-2.5 justify-center flex bg-blue-theme rounded-2xl text-white font-medium text-center poppins text-sm h-fit w-fit whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
-            >
-              {isSubmitting ? "Sending..." : "Send Message"}
-            </button></div>
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </button>
+              {status.message ? (
+                <p
+                  className={`text-sm ${
+                    status.type === "success"
+                      ? "text-green-700"
+                      : "text-red-600"
+                  }`}
+                  role="status"
+                >
+                  {status.message}
+                </p>
+              ) : null}
+            </div>
           </form>
           <div className="w-full h-full rounded-3xl shadow-md overflow-hidden border border-gray-300 text-gray-700">
             <iframe
