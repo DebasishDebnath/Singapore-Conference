@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
 import { CalendarDays, MapPin } from "lucide-react";
-import logo from "/logo.jpeg";
 function Header() {
   return (
     <>
@@ -92,7 +91,7 @@ function Header() {
           </p>
         </div>
       </div>
-      <div className="w-full bg-[#0f2151] text-white py-2 overflow-hidden border-b border-blue-400">
+      {/* <div className="w-full bg-[#0f2151] text-white py-2 overflow-hidden border-b border-blue-400">
         <div className="flex items-center gap-6 animate-none">
           <marquee
             behavior="scroll"
@@ -101,11 +100,6 @@ function Header() {
             className="text-sm sm:text-base font-medium tracking-wide"
           >
             <span className="flex items-center gap-3">
-              {/* <img
-                src={logo}
-                alt="SENSE-SG Logo"
-                className="h-8 object-contain inline-block align-middle mx-3"
-              /> */}
               <span>
                 CMT Acknowledgement: The Microsoft CMT service was used for
                 managing the peer-reviewing process for this conference. This
@@ -113,11 +107,6 @@ function Header() {
                 expenses, including costs for Azure cloud services as well as
                 for software development and support.
               </span>
-              {/* <img
-                src="/WhatsApp_Image_2026-03-11_at_3_35_24_PM.jpeg"
-                alt="SENSE-SG Logo"
-                className="h-8 object-contain inline-block align-middle mx-3"
-              /> */}
               <span>
                 CMT Acknowledgement: The Microsoft CMT service was used for
                 managing the peer-reviewing process for this conference. This
@@ -128,7 +117,7 @@ function Header() {
             </span>
           </marquee>
         </div>
-      </div>
+      </div> */}
       <Navbar />
     </>
   );

@@ -5,8 +5,14 @@ import Sidebar from "../components/Sidebar.jsx";
 function Home() {
   return (
     <div className="max-w-7xl mx-auto flex md:flex-row flex-col lg:gap-30 gap-20 lg:py-20 py-14 px-6"> 
-      <div className="md:w-2/3 w-full flex flex-col lg:gap-20 gap-14">
-        <div className="flex flex-col gap-5">
+      <div className="md:w-2/3 w-full flex flex-col lg:gap-10 gap-10">
+        <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-5">
+          <Heading title1="CMT" title2="Acknowledgement" />
+          <p className="poppins-italic text-lg font-medium text-gray-800">
+            The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support
+          </p></div>
+          <div className="flex flex-col gap-5">
           <Heading title1="Welcome to" title2="SENSE-SG" />
           <p className="poppins-italic text-lg font-medium text-gray-800">
             <span className="text-blue-theme font-bold">SENSE-SG</span> is a
@@ -17,7 +23,7 @@ function Home() {
             </span>{" "}
             to share cutting-edge advancements and discuss the future of
             brain-inspired computation at the network edge.
-          </p>
+          </p></div>
         </div>
         <div className="flex flex-col gap-5">
           <Heading title1="About IEM" title2="" />
