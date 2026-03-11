@@ -9,7 +9,7 @@ function Home() {
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-5">
           <Heading title1="CMT" title2="Acknowledgement" />
-          <p className="poppins-italic text-lg font-medium text-gray-800">
+          <p className="poppins text-lg font-medium text-gray-800">
             The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support
           </p></div>
           <div className="flex flex-col gap-5">
