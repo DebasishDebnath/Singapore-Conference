@@ -8,7 +8,7 @@ function Header() {
 
       <div className="w-full relative">
         {/* Background Image */}
-        <div className="relative h-[400px] md:h-[440px]">
+        <div className="relative h-[400px] md:h-[460px]">
           <div
             className="absolute inset-0"
             style={{
@@ -25,54 +25,59 @@ function Header() {
         <div className="absolute inset-0 flex flex-col justify-start px-6 md:px-16 py-10 z-20">
           {/* Logos Row */}
           <div className="flex md:flex-row flex-col justify-between">
-            <div className="flex md:mb-8 items-center whitespace-nowrap">
+            <div className="flex md:mb-4 mb-3 items-center whitespace-nowrap">
               <img
                 src="/iem.png"
                 alt="IEM"
-                className="h-14 md:h-18 object-contain"
+                className="h-16 md:h-18 object-contain"
               />
               <div>
-                <p className="text-white text-xs gideon-roman-regular text-center">
+                <p className="text-white text-xs gideon-roman-regular text-center hidden md:block">
                   Institute of Engineering & Management
                 </p>
-                <hr className="border-white my-1" />
-                <p className="text-white text-xs gideon-roman-regular text-center">
+                <hr className="border-white my-1 hidden md:block" />
+                <p className="text-white text-xs gideon-roman-regular text-center hidden md:block">
                   University of Engineering and Management
                 </p>
               </div>
               <img
                 src="/uem.png"
                 alt="UEM"
-                className="h-14 md:h-18 object-contain"
+                className="h-16 md:h-18 object-contain"
               />
             </div>
 
-            <div className="flex gap-6 justify-center m-2">
+            <div className="flex gap-6 justify-between items-center">
               <img
-                src="/images.png"
-                alt="IEEE"
-                className="h-10 md:h-18 object-contain"
+                src="/logo.jpeg"
+                alt="SENSE-SG Logo"
+                className="h-12 md:h-18 object-contain md:hidden block"
               />
-              <img
-                src="/wiley.svg"
-                alt="Wiley"
-                className="h-10 md:h-18 object-contain"
-              />
+              <div className="flex items-center gap-6">
+                <img
+                  src="/images.png"
+                  alt="IEEE"
+                  className="h-12 md:h-18 object-contain"
+                />
+                <img
+                  src="/wiley.svg"
+                  alt="Wiley"
+                  className="h-12 md:h-18 object-contain"
+                />
+              </div>
             </div>
           </div>
 
           {/* SENSE-SG Logo + Title */}
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mt-2">
+          <div className="flex flex-col md:flex-col items-start gap-4 mt-2">
             <img
               src="/logo.jpeg"
               alt="SENSE-SG Logo"
-              className="h-20 md:h-28 object-contain bg-white/10 rounded-xl p-1 backdrop-blur-sm"
+              className="h-12 md:h-18 object-contain backdrop-blur-sm md:block hidden"
             />
-            <h1 className="text-white text-2xl md:text-4xl lg:text-5xl font-bold leading-snug max-w-3xl poppins-bold">
-              Smart Edge & Neuromorphic
-              <br />
-              Systems Conference
-              <br />
+            <h1 className="text-white text-2xl md:text-4xl lg:text-5xl font-bold leading-snug max-w-4xl poppins-bold">
+              Smart Edge & Neuromorphic Systems Conference{" "}
+              <br className="block md:hidden" />
               (SENSE-SG)
             </h1>
           </div>
@@ -90,34 +95,27 @@ function Header() {
             </span>
           </p>
         </div>
+        {/* <div className="w-full text-white py-2 overflow-hidden -mt-10">
+          <div className="flex items-center gap-6 animate-none">
+            <marquee
+              behavior="scroll"
+              direction="left"
+              scrollamount="10"
+              className="text-sm sm:text-base font-medium tracking-wide shadow-lg"
+            >
+              <span className="flex items-center gap-3">
+                <span>
+                  CMT Acknowledgement: The Microsoft CMT service was used for
+                  managing the peer-reviewing process for this conference. This
+                  service was provided for free by Microsoft and they bore all
+                  expenses, including costs for Azure cloud services as well as
+                  for software development and support.
+                </span>
+              </span>
+            </marquee>
+          </div>
+        </div> */}
       </div>
-      {/* <div className="w-full bg-[#0f2151] text-white py-2 overflow-hidden border-b border-blue-400">
-        <div className="flex items-center gap-6 animate-none">
-          <marquee
-            behavior="scroll"
-            direction="left"
-            scrollamount="6"
-            className="text-sm sm:text-base font-medium tracking-wide"
-          >
-            <span className="flex items-center gap-3">
-              <span>
-                CMT Acknowledgement: The Microsoft CMT service was used for
-                managing the peer-reviewing process for this conference. This
-                service was provided for free by Microsoft and they bore all
-                expenses, including costs for Azure cloud services as well as
-                for software development and support.
-              </span>
-              <span>
-                CMT Acknowledgement: The Microsoft CMT service was used for
-                managing the peer-reviewing process for this conference. This
-                service was provided for free by Microsoft and they bore all
-                expenses, including costs for Azure cloud services as well as
-                for software development and support.
-              </span>
-            </span>
-          </marquee>
-        </div>
-      </div> */}
       <Navbar />
     </>
   );
