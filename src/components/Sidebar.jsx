@@ -16,7 +16,7 @@ function Sidebar() {
   const [timeLeft, setTimeLeft] = useState("00 days 00 hrs 00 mins 00 sec");
 
   useEffect(() => {
-    const targetDate = new Date("June 16, 2026 00:00:00").getTime();
+    const targetDate = new Date("June 9, 2026 00:00:00").getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();

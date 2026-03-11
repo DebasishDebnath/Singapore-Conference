@@ -81,7 +81,7 @@ function Header() {
 
             <span className="flex items-center gap-1">
               <CalendarDays className="w-5 h-5" />
-              <span className="font-semibold">16th - 18th June 2026</span>
+              <span className="font-semibold">9th - 11th June 2026</span>
             </span>
           </p>
         </div>
