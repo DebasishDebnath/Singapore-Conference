@@ -1,68 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Heading from "../components/Heading";
 
-const INITIAL_FORM = {
-  name: "",
-  email: "",
-  phone: "",
-  message: "",
-};
-
-const FORM_ENDPOINT =
-  import.meta.env.VITE_CONTACT_FORM_ENDPOINT || "/api/contact";
+const WEB3FORMS_ACCESS_KEY =
+  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE";
 
 function Contact() {
-  const [formData, setFormData] = useState(INITIAL_FORM);
-  const [status, setStatus] = useState({
-    type: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = ({ target: { name, value } }) => {
-    setFormData((current) => ({
-      ...current,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setStatus({ type: "", message: "" });
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json().catch(() => ({}));
-
-      if (!response.ok) {
-        throw new Error(
-          result.error || "Unable to send your message right now.",
-        );
-      }
-
-      setFormData(INITIAL_FORM);
-      setStatus({
-        type: "success",
-        message: result.message || "Your message has been sent successfully.",
-      });
-    } catch (error) {
-      setStatus({
-        type: "error",
-        message: error.message || "Something went wrong. Please try again.",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <div className="max-w-7xl mx-auto flex flex-col lg:gap-16 gap-10 lg:py-20 py-14 px-6 items-center w-full">
       <Heading title1="Contact" />
@@ -107,13 +49,20 @@ function Contact() {
 
         {/* Right side: form + map */}
         <div className="w-full flex flex-col md:w-1/2 gap-4 poppins">
-          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            className="flex flex-col gap-4"
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              value={WEB3FORMS_ACCESS_KEY}
+            />
             <input
               type="text"
               name="name"
               placeholder="name"
-              value={formData.name}
-              onChange={handleChange}
               required
               className="w-full p-3 border border-gray-300 text-gray-700 rounded-3xl shadow-md text-sm outline-none"
             />
@@ -122,8 +71,6 @@ function Contact() {
                 type="email"
                 name="email"
                 placeholder="email address"
-                value={formData.email}
-                onChange={handleChange}
                 required
                 className="w-full lg:w-1/2 p-3 border border-gray-300 text-gray-700 rounded-3xl shadow-md text-sm outline-none"
               />
@@ -131,8 +78,6 @@ function Contact() {
                 type="text"
                 name="phone"
                 placeholder="phone number"
-                value={formData.phone}
-                onChange={handleChange}
                 className="w-full lg:w-1/2 p-3 border border-gray-300 text-gray-700 rounded-3xl shadow-md text-sm outline-none"
               />
             </div>
@@ -140,31 +85,16 @@ function Contact() {
               name="message"
               placeholder="add a message"
               rows="5"
-              value={formData.message}
-              onChange={handleChange}
               required
               className="w-full p-3 border border-gray-300 text-gray-700 rounded-3xl shadow-md text-sm outline-none fixed-resize"
             />
-            <div className="flex flex-row-reverse justify-between items-center">
+            <div className="flex flex-row-reverse items-center">
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="px-4 py-2.5 justify-end flex bg-blue-theme rounded-2xl text-white font-medium text-center poppins text-sm h-fit w-fit whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
+                className="px-4 py-2.5 justify-end flex bg-blue-theme rounded-2xl text-white font-medium text-center poppins text-sm h-fit w-fit whitespace-nowrap"
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                Send Message
               </button>
-              {status.message ? (
-                <p
-                  className={`text-sm ${
-                    status.type === "success"
-                      ? "text-green-700"
-                      : "text-red-600"
-                  }`}
-                  role="status"
-                >
-                  {status.message}
-                </p>
-              ) : null}
             </div>
           </form>
           <div className="w-full h-full rounded-3xl shadow-md overflow-hidden border border-gray-300 text-gray-700">
