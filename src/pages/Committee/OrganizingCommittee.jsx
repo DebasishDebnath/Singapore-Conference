@@ -23,7 +23,7 @@ const committeeData = [
   },
   {
     title: "Honorary Chair",
-    data: [      
+    data: [
       {
         name: "Prof. (Dr.) Tingwen Huang",
         affiliation: "FIEEE, Texas A&M University, Qatar",
@@ -35,7 +35,7 @@ const committeeData = [
     data: [
       { name: "Dr. Amartya Mukherjee", affiliation: "IEM Kolkata, India" },
       { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Deepsubhra Guha Roy", affiliation: "IEM Kolkata, India"  },
+      { name: "Dr. Deepsubhra Guha Roy", affiliation: "IEM Kolkata, India" },
     ],
   },
   {
@@ -49,9 +49,7 @@ const committeeData = [
   },
   {
     title: "TPC Chair",
-    data: [
-      { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
-          ],
+    data: [{ name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" }],
   },
   {
     title: "Convener Chair",
@@ -61,42 +59,39 @@ const committeeData = [
   },
   {
     title: "Co-convener",
-    data: [
-      { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
-    ],
+    data: [{ name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" }],
   },
   {
     title: "Program Chairs",
     data: [
-      // {
-      //   name: "Prof. (Dr.) Sheng-Lung Peng",
-      //   affiliation: "National Taipei University of Business, Taiwan",
-      // },
-      // {
-      //   name: "Prof. (Dr.) Mohamed Lahby",
-      //   affiliation:
-      //     "University Hassan II, Higher Normal School of Casablanca, Morocco",
-      // },
+      {
+        name: "Dr. Amartya Mukherjee",
+        affiliation: "IEM Kolkata, India",
+      },
+      {
+        name: "Dr. Ayan Kr. Panja",
+        affiliation: "IEM Kolkata, India",
+      },
     ],
   },
-  {
-    title: "Industry Chairs",
-    data: [
-      // {
-      //   name: "Dr. Tanushyam Chattopadhyay",
-      //   affiliation: "Practice Head, Sirius Digitech",
-      // },
-      // {
-      //   name: "Mr. Snehasis Banerjee",
-      //   affiliation: "TCS Research & Innovation, Kolkata, India",
-      // },
-      // {
-      //   name: "Dr. Sanmitra Sarkar",
-      //   affiliation:
-      //     "Senior Director and Global Head of Generative and Agentic AI, Capgemini",
-      // },
-    ],
-  },
+  // {
+  //   title: "Industry Chairs",
+  //   data: [
+  //     {
+  //       name: "Dr. Tanushyam Chattopadhyay",
+  //       affiliation: "Practice Head, Sirius Digitech",
+  //     },
+  //     {
+  //       name: "Mr. Snehasis Banerjee",
+  //       affiliation: "TCS Research & Innovation, Kolkata, India",
+  //     },
+  //     {
+  //       name: "Dr. Sanmitra Sarkar",
+  //       affiliation:
+  //         "Senior Director and Global Head of Generative and Agentic AI, Capgemini",
+  //     },
+  //   ],
+  // },
   // {
   //   title: "Industry Academic Partnership Chair",
   //   data: [
@@ -114,6 +109,9 @@ const committeeData = [
       { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
       { name: "Dr. Amartya Mukherjee", affiliation: "IEM Kolkata, India" },
       { name: "Dr. Deepsubhra Guha Roy", affiliation: "IEM Kolkata, India" },
+      { name: "Dr. Prabir Kumar Das", affiliation: "IEM Kolkata, India" },
+      { name: "Dr. Ranabir Banik", affiliation: "IEM Kolkata, India" },
+      { name: "Dr. Animesh Kundu", affiliation: "IEM Kolkata, India" },
       // { name: "Dr. Piyali Dutta", affiliation: "IEM Kolkata, India" },
       // { name: "Dr. Mousumi Laha", affiliation: "IEM Kolkata, India" },
       // { name: "Mr. Subhadip Chandra", affiliation: "IEM Kolkata, India" },
@@ -135,9 +133,9 @@ const committeeData = [
   {
     title: "Publication Chairs",
     data: [
-      // { name: "Dr. Amartya Mukherjee", affiliation: "IEM Kolkata, India" },
-      // { name: "Prof. (Dr.) Indrajit De", affiliation: "IEM Kolkata, India" },
-      // { name: "Prof. (Dr.) Goutam Saha", affiliation: "IEM Kolkata, India" },
+      { name: "Dr. Biswadip Basu Mallik", affiliation: "IEM Kolkata, India" },
+      { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
+      { name: "Dr. Deepsubhra Guha Roy", affiliation: "IEM Kolkata, India" },
     ],
   },
   // {
@@ -153,7 +151,7 @@ const committeeData = [
     title: "Finance Chairs",
     data: [
       { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Deepsubhra Guha Roy", affiliation: "IEM Kolkata, India" },
+      // { name: "Dr. Deepsubhra Guha Roy", affiliation: "IEM Kolkata, India" },
       // { name: "Mr. Pabak Indu", affiliation: "IEM Kolkata, India" },
     ],
   },

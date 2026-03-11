@@ -33,7 +33,7 @@ function Header() {
               />
               <div>
                 <p className="text-white text-xs gideon-roman-regular text-center">
-                  Institute of Engineering and Management
+                  Institute of Engineering & Management
                 </p>
                 <hr className="border-white my-1" />
                 <p className="text-white text-xs gideon-roman-regular text-center">
