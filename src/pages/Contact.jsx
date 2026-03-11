@@ -96,10 +96,12 @@ function Contact() {
               <h3 className="font-bold">Email</h3>
               <p className="underline cursor-pointer">ayan.panja@iem.edu.in</p>
             </div>
-            {/* <div>
+            <div>
               <h3 className="font-bold">Conference E-mail</h3>
-              <p className="underline cursor-pointer">win60@iem.edu.in</p>
-            </div> */}
+              <p className="underline cursor-pointer">
+                sense.conference@iem.edu.in
+              </p>
+            </div>
           </div>
         </div>
 

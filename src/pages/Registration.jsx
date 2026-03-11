@@ -60,10 +60,10 @@ export default function Registration() {
             conference e-mail id{" "}
             <span>
               <a
-                href="mailto:win60@iem.edu.in"
+                href="mailto:sense.conference@iem.edu.in"
                 class="text-blue-theme underline "
               >
-                (win60@iem.edu.in)
+                (Sense.conference@iem.edu.in)
               </a>
             </span>
             along with their paper id and paper title. If any author will not
