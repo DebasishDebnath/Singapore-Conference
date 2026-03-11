@@ -1,8 +1,8 @@
 import React from "react";
 import Heading from "../components/Heading";
 
-const WEB3FORMS_ACCESS_KEY =
-  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE";
+// const WEB3FORMS_ACCESS_KEY =
+//   import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE";
 
 function Contact() {
   return (
@@ -10,46 +10,48 @@ function Contact() {
       <Heading title1="Contact" />
 
       {/* Big white box area */}
-      <div className="w-full rounded-3xl shadow-md border border-gray-300 lg:p-16 md:p-12 p-8  flex flex-col md:flex-row lg:gap-20 md:gap-14 gap-10 ">
-        {/* LEFT SECTION — Heading + Address */}
-        <div className="w-full flex flex-col md:w-1/2 lg:gap-10 gap-8">
-          <div className="flex flex-col gap-2">
-            <Heading title1="Institute Of" />
-            <Heading title2="Engineering & Management" />
-          </div>
-
-          <div className="flex flex-col gap-2.5 text-gray-800 font-medium text-md poppins-italic">
-            <div>
-              <h3 className="font-bold">Address</h3>
-              <p className="">
-                The Shaw Foundation Alumni House <br />
-                11 Kent Ridge Dr, #01-02, Singapore 119244
-              </p>
-            </div>
-            <div>
-              <h3 className="font-bold">Professor Contact</h3>
-              <p className="">Prof.(Dr.) Ayan Kumar Panja</p>
-            </div>
-            <div>
-              <h3 className="font-bold">Phone</h3>
-              <p className="">+91 98309 82976</p>
-            </div>
-            <div>
-              <h3 className="font-bold">Email</h3>
-              <p className="underline cursor-pointer">ayan.panja@iem.edu.in</p>
-            </div>
-            <div>
-              <h3 className="font-bold">Conference E-mail</h3>
-              <p className="underline cursor-pointer">
-                sense.conference@iem.edu.in
-              </p>
-            </div>
-          </div>
+      <div className="w-full rounded-3xl shadow-md border border-gray-300 lg:p-16 md:p-12 p-8 flex flex-col md:gap-10 gap-10 ">
+        <div className="flex flex-col gap-2">
+          <Heading title1="Institute Of" />
+          <Heading title2="Engineering & Management" />
         </div>
+        <div className="flex flex-col md:flex-row gap-10 w-full">
+          {/* LEFT SECTION — Heading + Address */}
+          <div className="w-full flex flex-col md:w-1/2 lg:gap-10 gap-8">
+            <div className="flex flex-col gap-2.5 text-gray-800 font-medium text-md poppins-italic">
+              <div>
+                <h3 className="font-bold">Address</h3>
+                <p className="">
+                  The Shaw Foundation Alumni House <br />
+                  11 Kent Ridge Dr, #01-02, Singapore 119244
+                </p>
+              </div>
+              <div>
+                <h3 className="font-bold">Professor Contact</h3>
+                <p className="">Prof.(Dr.) Ayan Kumar Panja</p>
+              </div>
+              <div>
+                <h3 className="font-bold">Phone</h3>
+                <p className="">+91 98309 82976</p>
+              </div>
+              <div>
+                <h3 className="font-bold">Email</h3>
+                <p className="underline cursor-pointer">
+                  ayan.panja@iem.edu.in
+                </p>
+              </div>
+              <div>
+                <h3 className="font-bold">Conference E-mail</h3>
+                <p className="underline cursor-pointer">
+                  sense.conference@iem.edu.in
+                </p>
+              </div>
+            </div>
+          </div>
 
-        {/* Right side: form + map */}
-        <div className="w-full flex flex-col md:w-1/2 gap-4 poppins">
-          <form
+          {/* Right side: form + map */}
+          <div className="w-full flex flex-col md:w-1/2 gap-4 poppins">
+            {/* <form
             action="https://api.web3forms.com/submit"
             method="POST"
             className="flex flex-col gap-4"
@@ -96,14 +98,15 @@ function Contact() {
                 Send Message
               </button>
             </div>
-          </form>
-          <div className="w-full h-full rounded-3xl shadow-md overflow-hidden border border-gray-300 text-gray-700">
-            <iframe
-              title="Map"
-              className="w-full h-full"
-              loading="lazy"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8020804141656!2d103.7734796!3d1.2932081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1aff3f1cf5b1%3A0x7ae21f4141402cfd!2sShaw%20Foundation%20Alumni%20House!5e0!3m2!1sen!2sin!4v1772774266337!5m2!1sen!2sin"
-            ></iframe>
+          </form> */}
+            <div className="w-full h-full rounded-3xl shadow-md overflow-hidden border border-gray-300 text-gray-700">
+              <iframe
+                title="Map"
+                className="w-full h-full"
+                loading="lazy"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8020804141656!2d103.7734796!3d1.2932081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1aff3f1cf5b1%3A0x7ae21f4141402cfd!2sShaw%20Foundation%20Alumni%20House!5e0!3m2!1sen!2sin!4v1772774266337!5m2!1sen!2sin"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
