@@ -1,7 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import Heading from "../components/Heading";
 
+const INITIAL_FORM = {
+  name: "",
+  email: "",
+  phone: "",
+  message: "",
+};
+
+const FORM_ENDPOINT =
+  import.meta.env.VITE_CONTACT_FORM_ENDPOINT || "/api/contact";
+
 function Contact() {
+  const [formData, setFormData] = useState(INITIAL_FORM);
+  const [status, setStatus] = useState({
+    type: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = ({ target: { name, value } }) => {
+    setFormData((current) => ({
+      ...current,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setStatus({ type: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(
+          result.error || "Unable to send your message right now."
+        );
+      }
+
+      setFormData(INITIAL_FORM);
+      setStatus({
+        type: "success",
+        message:
+          result.message || "Your message has been sent successfully.",
+      });
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: error.message || "Something went wrong. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="max-w-7xl mx-auto flex flex-col lg:gap-16 gap-10 lg:py-20 py-14 px-6 items-center w-full">
       <Heading title1="Contact" />
@@ -11,36 +73,32 @@ function Contact() {
         {/* LEFT SECTION — Heading + Address */}
         <div className="w-full flex flex-col md:w-1/2 lg:gap-10 gap-8">
           <div className="flex flex-col gap-2">
-            <Heading title1="Institute Of"/>
-            <Heading title2="Engineering & Management"/>
+            <Heading title1="Institute Of" />
+            <Heading title2="Engineering & Management" />
           </div>
 
           <div className="flex flex-col gap-2.5 text-gray-800 font-medium text-md poppins-italic">
             <div>
               <h3 className="font-bold">Address</h3>
               <p className="">
-                Management House, D-1, Sector-V, Saltlake Electronics <br />
-                Kolkata – 700 091, West Bengal, India.
+                The Shaw Foundation Alumni House <br />
+                11 Kent Ridge Dr, #01-02, Singapore 119244
               </p>
             </div>
             <div>
-              <h3 className="font-bold">
-                Professor Contact
-              </h3>
-              <p className="">Prof.(Dr.) Indrajit De</p>
+              <h3 className="font-bold">Professor Contact</h3>
+              <p className="">Prof.(Dr.) Ayan Kumar Panja</p>
             </div>
             <div>
               <h3 className="font-bold">Phone</h3>
-              <p className="">9836275061</p>
+              <p className="">+91 98309 82976</p>
             </div>
             <div>
               <h3 className="font-bold">Email</h3>
-              <p className="underline cursor-pointer">Indrajit.De@iem.edu.in</p>
+              <p className="underline cursor-pointer">ayan.panja@iem.edu.in</p>
             </div>
             <div>
-              <h3 className="font-bold">
-                Conference E-mail
-              </h3>
+              <h3 className="font-bold">Conference E-mail</h3>
               <p className="underline cursor-pointer">win60@iem.edu.in</p>
             </div>
           </div>
@@ -48,28 +106,63 @@ function Contact() {
 
         {/* Right side: form + map */}
         <div className="w-full flex flex-col md:w-1/2 gap-4 poppins">
-          <input
-            type="text"
-            placeholder="name"
-            className="w-full p-3 border border-gray-300 text-gray-700 rounded-3xl shadow-md text-sm outline-none"
-          />
-          <div className="flex flex-col lg:flex-row gap-4">
-            <input
-              type="email"
-              placeholder="email address"
-              className="w-full lg:w-1/2 p-3 border border-gray-300 text-gray-700 rounded-3xl shadow-md text-sm outline-none"
-            />
+          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <input
               type="text"
-              placeholder="phone number"
-              className="w-full lg:w-1/2 p-3 border border-gray-300 text-gray-700 rounded-3xl shadow-md text-sm outline-none"
+              name="name"
+              placeholder="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full p-3 border border-gray-300 text-gray-700 rounded-3xl shadow-md text-sm outline-none"
             />
-          </div>
-          <textarea
-            placeholder="add a message"
-            rows="3"
-            className="w-full p-3 border border-gray-300 text-gray-700 rounded-3xl shadow-md text-sm outline-none fixed-resize"
-          />
+            <div className="flex flex-col lg:flex-row gap-4">
+              <input
+                type="email"
+                name="email"
+                placeholder="email address"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full lg:w-1/2 p-3 border border-gray-300 text-gray-700 rounded-3xl shadow-md text-sm outline-none"
+              />
+              <input
+                type="text"
+                name="phone"
+                placeholder="phone number"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full lg:w-1/2 p-3 border border-gray-300 text-gray-700 rounded-3xl shadow-md text-sm outline-none"
+              />
+            </div>
+            <textarea
+              name="message"
+              placeholder="add a message"
+              rows="5"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              className="w-full p-3 border border-gray-300 text-gray-700 rounded-3xl shadow-md text-sm outline-none fixed-resize"
+            />
+            <div className="flex justify-between items-center">
+            {status.message ? (
+              <p
+                className={`text-sm ${
+                  status.type === "success" ? "text-green-700" : "text-red-600"
+                }`}
+                role="status"
+              >
+                {status.message}
+              </p>
+            ) : null}
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="self-end px-4 py-2.5 justify-center flex bg-blue-theme rounded-2xl text-white font-medium text-center poppins text-sm h-fit w-fit whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </button></div>
+          </form>
           <div className="w-full h-full rounded-3xl shadow-md overflow-hidden border border-gray-300 text-gray-700">
             <iframe
               title="Map"
