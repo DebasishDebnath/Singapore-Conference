@@ -107,11 +107,11 @@ function Header() {
                 className="h-8 object-contain inline-block align-middle mx-3"
               /> */}
               <span>
-                Acknowledgement: The Microsoft CMT service was used for managing
-                the peer-reviewing process for this conference. This service was
-                provided for free by Microsoft and they bore all expenses,
-                including costs for Azure cloud services as well as for software
-                development and support.
+                CMT Acknowledgement: The Microsoft CMT service was used for
+                managing the peer-reviewing process for this conference. This
+                service was provided for free by Microsoft and they bore all
+                expenses, including costs for Azure cloud services as well as
+                for software development and support.
               </span>
               {/* <img
                 src="/WhatsApp_Image_2026-03-11_at_3_35_24_PM.jpeg"
@@ -119,11 +119,11 @@ function Header() {
                 className="h-8 object-contain inline-block align-middle mx-3"
               /> */}
               <span>
-                Acknowledgement: The Microsoft CMT service was used for managing
-                the peer-reviewing process for this conference. This service was
-                provided for free by Microsoft and they bore all expenses,
-                including costs for Azure cloud services as well as for software
-                development and support.
+                CMT Acknowledgement: The Microsoft CMT service was used for
+                managing the peer-reviewing process for this conference. This
+                service was provided for free by Microsoft and they bore all
+                expenses, including costs for Azure cloud services as well as
+                for software development and support.
               </span>
             </span>
           </marquee>
