@@ -107,8 +107,8 @@ function Header() {
                 className="h-8 object-contain inline-block align-middle mx-3"
               /> */}
               <span>
-                The Microsoft CMT service was used for managing the
-                peer-reviewing process for this conference. This service was
+                Acknowledgement: The Microsoft CMT service was used for managing
+                the peer-reviewing process for this conference. This service was
                 provided for free by Microsoft and they bore all expenses,
                 including costs for Azure cloud services as well as for software
                 development and support.
@@ -119,8 +119,8 @@ function Header() {
                 className="h-8 object-contain inline-block align-middle mx-3"
               /> */}
               <span>
-                The Microsoft CMT service was used for managing the
-                peer-reviewing process for this conference. This service was
+                Acknowledgement: The Microsoft CMT service was used for managing
+                the peer-reviewing process for this conference. This service was
                 provided for free by Microsoft and they bore all expenses,
                 including costs for Azure cloud services as well as for software
                 development and support.
