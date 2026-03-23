@@ -4,10 +4,10 @@ import Heading from "../components/Heading";
 export default function Registration() {
   return (
 
-    <div className="max-w-7xl mx-auto flex flex-col lg:gap-16 gap-10 lg:py-20 py-14 px-6 items-center">
+    <div className="max-w-7xl w-full mx-auto flex flex-col lg:gap-16 gap-10 lg:py-20 py-14 px-6 items-center">
       <Heading title2="Registration" />
 
-      <div className="flex flex-col rounded-3xl border border-gray-300 w-full shadow-md">
+      {/* <div className="flex flex-col rounded-3xl border border-gray-300 w-full shadow-md">
         <div className="poppins font-semibold text-md py-2.5 px-4 flex justify-center text-center bg-blue-theme text-white rounded-t-3xl">
           How to Register
         </div>
@@ -78,7 +78,7 @@ export default function Registration() {
             There will be no cancellation after Registration”
           </p>
         </div>
-      </div>
+      </div> */}
 
       <div className="flex flex-col rounded-3xl border border-gray-300 md:w-full w-[88vw] shadow-md overflow-auto">
           <table className="w-full">
@@ -86,10 +86,10 @@ export default function Registration() {
               <tr className="text-left text-sm ">
                 <th className="p-4 pl-6">Category</th>
                 <th className="p-4 text-center">
-                  Registration Fees for Early Birds
+                  Registration Fees for Online
                 </th>
                 <th className="p-4 text-center">
-                  Registration Fees for Regular
+                  Registration Fees for Offline
                 </th>
                 <th className="p-4 text-center">Special Registration Fees</th>
               </tr>
@@ -97,40 +97,48 @@ export default function Registration() {
             <tbody className="divide-y divide-gray-200 text-gray-800 font-medium poppins-italic">
               <tr className="hover:bg-gray-50 text-sm">
                 <td className="p-4">Students (UG, PG, PhD)</td>
-                <td className="p-4 text-center">200 SGD</td>
-                <td className="p-4 text-center">300 SGD</td>
+                <td className="p-4 text-center">250 SGD</td>
+                <td className="p-4 text-center">350 SGD</td>
                 <td className="p-4 text-center">-</td>
               </tr>
               <tr className="hover:bg-gray-50 text-sm">
                 <td className="p-4">Postdoc/Academia/Industry</td>
-                <td className="p-4 text-center">300 SGD</td>
-                <td className="p-4 text-center">400 SGD</td>
+                <td className="p-4 text-center">350 SGD</td>
+                <td className="p-4 text-center">450 SGD</td>
                 <td className="p-4 text-center">-</td>
               </tr>
               <tr className="hover:bg-gray-50 text-sm">
                 <td className="p-4">Attendee</td>
-                <td className="p-4 text-center">100 SGD</td>
-                <td className="p-4 text-center">200 SGD</td>
+                <td className="p-4 text-center">150 SGD</td>
+                <td className="p-4 text-center">250 SGD</td>
                 <td className="p-4 text-center">-</td>
               </tr>
               <tr className="hover:bg-gray-50 text-sm">
                 <td className="p-4">Developing Countries</td>
                 <td className="p-4 text-center">-</td>
                 <td className="p-4 text-center">-</td>
-                <td className="p-4 text-center">200 SGD</td>
+                <td className="p-4 text-center">250 SGD</td>
               </tr>
             </tbody>
           </table>
       </div>
 
-      <div className="flex flex-col rounded-3xl border border-gray-300 w-full shadow-md">
+      <button
+              type="submit"
+              className="px-6 py-2.5 justify-center flex bg-blue-theme rounded-lg text-white font-medium text-center poppins text-sm h-fit w-fit whitespace-nowrap cursor-pointer hover:bg-[#102768] transition-colors disabled:bg-blue-300 disabled:cursor-not-allowed"
+            >
+              Register Now
+            </button>
+
+      {/* <div className="flex flex-col rounded-3xl border border-gray-300 w-full shadow-md">
         <div className="poppins font-semibold text-md py-2.5 px-4 flex justify-center text-center bg-blue-theme text-white rounded-t-3xl">
           Register
         </div>
         <div className="p-6 poppins-italic text-sm flex flex-col gap-4 justify-center items-center">
           <img src="./payid.png" alt="Bank Logo" className="mb-6 w-90 h-auto" />
+
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

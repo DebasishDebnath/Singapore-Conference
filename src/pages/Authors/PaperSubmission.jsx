@@ -99,6 +99,11 @@ function PaperSubmission() {
     submitData.append("title", form.get("title"));
     submitData.append("abstract", form.get("abstract"));
     submitData.append("authors", form.get("authors"));
+    submitData.append("firstName", form.get("firstName"));
+    submitData.append("lastName", form.get("lastName"));
+    submitData.append("email", form.get("email"));
+    submitData.append("organization", form.get("organization"));
+    submitData.append("country", form.get("country"));
     selectedTracks.forEach((keyword) => submitData.append("keywords", keyword));
     submitData.append("document", selectedFile);
 
@@ -130,6 +135,79 @@ function PaperSubmission() {
         <form onSubmit={handleSubmit} onReset={handleReset} className="flex flex-col gap-6 poppins">
           <input type="hidden" />
           
+          {/* Author Contact Details */}
+          <div className="flex flex-col md:flex-row gap-4 w-full">
+            <div className="flex flex-col gap-2 w-full md:w-1/3">
+              <label htmlFor="firstName" className="font-semibold text-gray-800 text-sm">
+                First Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="firstName"
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                required
+                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+              />
+            </div>
+            <div className="flex flex-col gap-2 w-full md:w-1/3">
+              <label htmlFor="lastName" className="font-semibold text-gray-800 text-sm">
+                Last Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="lastName"
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                required
+                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+              />
+            </div>
+            <div className="flex flex-col gap-2 w-full md:w-1/3">
+              <label htmlFor="email" className="font-semibold text-gray-800 text-sm">
+                Email <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+              />
+            </div>
+          </div>
+
+          {/* Organization & Country */}
+          <div className="flex flex-col md:flex-row gap-4 w-full">
+            <div className="flex flex-col gap-2 w-full md:w-1/2">
+              <label htmlFor="organization" className="font-semibold text-gray-800 text-sm">
+                Organization <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="organization"
+                type="text"
+                name="organization"
+                placeholder="Organization/Institution"
+                required
+                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+              />
+            </div>
+            <div className="flex flex-col gap-2 w-full md:w-1/2">
+              <label htmlFor="country" className="font-semibold text-gray-800 text-sm">
+                Country <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="country"
+                type="text"
+                name="country"
+                placeholder="Country"
+                required
+                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+              />
+            </div>
+          </div>
+
           {/* Title */}
           <div className="flex flex-col gap-2">
             <label htmlFor="title" className="font-semibold text-gray-800 text-sm">
