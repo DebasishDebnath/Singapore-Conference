@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { NavLink } from "react-router";
+import { NavLink, Link } from "react-router";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,9 +8,11 @@ function Navbar() {
   // Desktop dropdowns
   const [authorsOpen, setAuthorsOpen] = useState(false);
   const [committeeOpen, setCommitteeOpen] = useState(false);
+  const [pastConfOpen, setPastConfOpen] = useState(false);
 
   let authorsTimeout;
   let committeeTimeout;
+  let pastConfTimeout;
 
   function handleAuthorsEnter() {
     clearTimeout(authorsTimeout);
@@ -26,6 +28,14 @@ function Navbar() {
   }
   function handleCommitteeLeave() {
     committeeTimeout = setTimeout(() => setCommitteeOpen(false), 100);
+  }
+
+  function handlePastConfEnter() {
+    clearTimeout(pastConfTimeout);
+    setPastConfOpen(true);
+  }
+  function handlePastConfLeave() {
+    pastConfTimeout = setTimeout(() => setPastConfOpen(false), 100);
   }
 
   return (
@@ -165,6 +175,38 @@ function Navbar() {
             >
               Contact
             </NavLink>
+
+            {/* PAST CONFERENCE DROPDOWN */}
+            <div
+              className="relative inline-block cursor-pointer"
+              onMouseEnter={handlePastConfEnter}
+              onMouseLeave={handlePastConfLeave}
+            >
+              <button
+                className="flex items-center gap-1 px-2 py-2 cursor-pointer"
+                tabIndex={0}
+              >
+                Past Conference
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${
+                    pastConfOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {pastConfOpen && (
+                <div className="absolute right-0 mt-1 bg-white shadow-lg rounded z-10 w-40">
+                  <Link
+                    to="https://2025win60.iem.edu.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-2 hover:bg-[#e6eaff]"
+                  >
+                    win6.0 2025
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile Toggle Button */}
@@ -270,6 +312,19 @@ function Navbar() {
             >
               Contact
             </NavLink>
+
+            <div className="flex flex-col items-center space-y-1">
+              <span className="font-semibold">Past Conference</span>
+              <Link
+                to="https://2025win60.iem.edu.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:font-bold transition-all"
+                onClick={() => setMenuOpen(false)}
+              >
+                win6.0 2025
+              </Link>
+            </div>
           </div>
         )}
       </div>
