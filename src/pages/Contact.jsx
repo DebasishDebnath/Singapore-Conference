@@ -43,7 +43,7 @@ function Contact() {
               <div>
                 <h3 className="font-bold">Conference E-mail</h3>
                 <p className="underline cursor-pointer">
-                  sense.conference@iem.edu.in
+                  sensesg.conference@gmail.com
                 </p>
               </div>
             </div>
