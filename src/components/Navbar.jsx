@@ -79,6 +79,14 @@ function Navbar() {
                   >
                     Submission & Publication
                   </NavLink>
+                  <NavLink
+                    to="/authors/submit-your-manuscript"
+                    className={({ isActive }) =>
+                      `block px-4 py-2 hover:bg-[#e6eaff]${isActive ? " font-bold" : ""}`
+                    }
+                  >
+                    Submit Your Manuscript
+                  </NavLink>
                 </div>
               )}
             </div>
@@ -195,6 +203,13 @@ function Navbar() {
                 onClick={() => setMenuOpen(false)}
               >
                 Submission & Publication
+              </NavLink>
+              <NavLink
+                to="/authors/submit-your-manuscript"
+                className={({ isActive }) => (isActive ? "font-bold" : "")}
+                onClick={() => setMenuOpen(false)}
+              >
+                Submit Your Manuscript
               </NavLink>
             </div>
 
