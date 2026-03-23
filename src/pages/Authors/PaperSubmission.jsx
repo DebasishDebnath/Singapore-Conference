@@ -109,7 +109,7 @@ function PaperSubmission() {
 
     try {
       setIsSubmitting(true);
-      const response = await fetch("http://192.168.1.226:5000/api/v1/manuscripts", {
+      const response = await fetch("https://iem-singapore-backend.smartsociety.org/api/v1/manuscripts", {
         method: "POST",
         body: submitData, // Sending as multipart/form-data
       });
