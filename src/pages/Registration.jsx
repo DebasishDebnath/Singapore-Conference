@@ -1,9 +1,61 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import Heading from "../components/Heading";
 
 export default function Registration() {
-  return (
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const fileInputRef = useRef(null);
 
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setIsDragging(false);
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      setSelectedFile(e.dataTransfer.files[0]);
+      if (fileInputRef.current) {
+        fileInputRef.current.files = e.dataTransfer.files;
+      }
+      e.dataTransfer.clearData();
+    }
+  };
+
+  const handleFileChange = (e) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setSelectedFile(e.target.files[0]);
+    }
+  };
+
+  const handleReset = () => {
+    setSelectedFile(null);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!selectedFile) {
+      alert("Please upload the payment proof screenshot.");
+      return;
+    }
+    setIsSubmitting(true);
+
+    // Placeholder for actual API submission
+    setTimeout(() => {
+      alert("Registration submitted successfully!");
+      setIsSubmitting(false);
+      e.target.reset();
+    }, 1500);
+  };
+
+  return (
     <div className="max-w-7xl w-full mx-auto flex flex-col lg:gap-16 gap-10 lg:py-20 py-14 px-6 items-center">
       <Heading title2="Registration" />
 
@@ -81,54 +133,346 @@ export default function Registration() {
       </div> */}
 
       <div className="flex flex-col rounded-3xl border border-gray-300 md:w-full w-[88vw] shadow-md overflow-auto">
-          <table className="w-full">
-            <thead className="bg-blue-theme poppins text-white w-full">
-              <tr className="text-left text-sm ">
-                <th className="p-4 pl-6">Category</th>
-                <th className="p-4 text-center">
-                  Registration Fees for Online
-                </th>
-                <th className="p-4 text-center">
-                  Registration Fees for Offline
-                </th>
-                <th className="p-4 text-center">Special Registration Fees</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200 text-gray-800 font-medium poppins-italic">
-              <tr className="hover:bg-gray-50 text-sm">
-                <td className="p-4">Students (UG, PG, PhD)</td>
-                <td className="p-4 text-center">250 SGD</td>
-                <td className="p-4 text-center">350 SGD</td>
-                <td className="p-4 text-center">-</td>
-              </tr>
-              <tr className="hover:bg-gray-50 text-sm">
-                <td className="p-4">Postdoc/Academia/Industry</td>
-                <td className="p-4 text-center">350 SGD</td>
-                <td className="p-4 text-center">450 SGD</td>
-                <td className="p-4 text-center">-</td>
-              </tr>
-              <tr className="hover:bg-gray-50 text-sm">
-                <td className="p-4">Attendee</td>
-                <td className="p-4 text-center">150 SGD</td>
-                <td className="p-4 text-center">250 SGD</td>
-                <td className="p-4 text-center">-</td>
-              </tr>
-              <tr className="hover:bg-gray-50 text-sm">
-                <td className="p-4">Developing Countries</td>
-                <td className="p-4 text-center">-</td>
-                <td className="p-4 text-center">-</td>
-                <td className="p-4 text-center">250 SGD</td>
-              </tr>
-            </tbody>
-          </table>
+        <table className="w-full">
+          <thead className="bg-blue-theme poppins text-white w-full">
+            <tr className="text-left text-sm ">
+              <th className="p-4 pl-6">Category</th>
+              <th className="p-4 text-center">Registration Fees for Online</th>
+              <th className="p-4 text-center">Registration Fees for Offline</th>
+              <th className="p-4 text-center">Special Registration Fees</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-200 text-gray-800 font-medium poppins-italic">
+            <tr className="hover:bg-gray-50 text-sm">
+              <td className="p-4">Students (UG, PG, PhD)</td>
+              <td className="p-4 text-center">250 SGD</td>
+              <td className="p-4 text-center">350 SGD</td>
+              <td className="p-4 text-center">-</td>
+            </tr>
+            <tr className="hover:bg-gray-50 text-sm">
+              <td className="p-4">Postdoc/Academia/Industry</td>
+              <td className="p-4 text-center">350 SGD</td>
+              <td className="p-4 text-center">450 SGD</td>
+              <td className="p-4 text-center">-</td>
+            </tr>
+            <tr className="hover:bg-gray-50 text-sm">
+              <td className="p-4">Attendee</td>
+              <td className="p-4 text-center">150 SGD</td>
+              <td className="p-4 text-center">250 SGD</td>
+              <td className="p-4 text-center">-</td>
+            </tr>
+            <tr className="hover:bg-gray-50 text-sm">
+              <td className="p-4">Developing Countries</td>
+              <td className="p-4 text-center">-</td>
+              <td className="p-4 text-center">-</td>
+              <td className="p-4 text-center">250 SGD</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
-      <button
+      <div className="w-full rounded-3xl shadow-md border border-gray-300 lg:p-16 md:p-12 p-8 flex flex-col md:gap-10 gap-10 ">
+        <form
+          onSubmit={handleSubmit}
+          onReset={handleReset}
+          className="flex flex-col gap-6 poppins"
+        >
+          <input type="hidden" />
+
+          <div className="flex flex-col md:flex-row gap-4 w-full">
+            <div className="flex flex-col gap-2 w-full md:w-1/2">
+              <label
+                htmlFor="name"
+                className="font-semibold text-gray-800 text-sm"
+              >
+                Full Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                required
+                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+              />
+            </div>
+            <div className="flex flex-col gap-2 w-full md:w-1/2">
+              <label
+                htmlFor="address"
+                className="font-semibold text-gray-800 text-sm"
+              >
+                Address <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="address"
+                type="text"
+                name="address"
+                placeholder="Full Address"
+                required
+                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-4 w-full">
+            <div className="flex flex-col gap-2 w-full md:w-1/2">
+              <label
+                htmlFor="institute"
+                className="font-semibold text-gray-800 text-sm"
+              >
+                Institute/Company <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="institute"
+                type="text"
+                name="institute"
+                placeholder="Institute / Company"
+                required
+                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+              />
+            </div>
+            <div className="flex flex-col gap-2 w-full md:w-1/2">
+              <label
+                htmlFor="designation"
+                className="font-semibold text-gray-800 text-sm"
+              >
+                Designation <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="designation"
+                type="text"
+                name="designation"
+                placeholder="Designation"
+                required
+                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-4 w-full">
+            <div className="flex flex-col gap-2 w-full md:w-1/2">
+              <label
+                htmlFor="email"
+                className="font-semibold text-gray-800 text-sm"
+              >
+                Email <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+              />
+            </div>
+            <div className="flex flex-col gap-2 w-full md:w-1/2">
+              <label
+                htmlFor="phone"
+                className="font-semibold text-gray-800 text-sm"
+              >
+                Phone Number <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="phone"
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                required
+                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-4 w-full">
+            <div className="flex flex-col gap-2 w-full md:w-1/2">
+              <label
+                htmlFor="category"
+                className="font-semibold text-gray-800 text-sm"
+              >
+                Registration Category <span className="text-red-500">*</span>
+              </label>
+              <select
+                id="category"
+                name="category"
+                required
+                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none bg-white"
+              >
+                <option value="">Select Category</option>
+                <option value="Students">Students (UG, PG, PhD)</option>
+                <option value="Postdoc/Academia/Industry">Postdoc / Academia / Industry</option>
+                <option value="Attendee">Attendee</option>
+                <option value="Developing Countries">Developing Countries</option>
+              </select>
+            </div>
+            <div className="flex flex-col gap-2 w-full md:w-1/2">
+              <label
+                htmlFor="presentationMode"
+                className="font-semibold text-gray-800 text-sm"
+              >
+                Mode of Presentation <span className="text-red-500">*</span>
+              </label>
+              <select
+                id="presentationMode"
+                name="presentationMode"
+                required
+                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none bg-white"
+              >
+                <option value="">Select Mode</option>
+                <option value="online">Online</option>
+                <option value="offline">Offline</option>
+              </select>
+            </div>
+            
+          </div><div className="flex flex-col gap-2 w-full">
+              <label
+                htmlFor="paperId"
+                className="font-semibold text-gray-800 text-sm"
+              >
+                Paper ID <span className="text-red-500">*</span>
+              </label>
+              <input
+              required
+                id="paperId"
+                type="text"
+                name="paperId"
+                placeholder="Paper ID"
+                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+              />
+            </div>
+
+          {/* Payment Section */}
+          <div className="flex flex-col gap-4 w-full mt-4 pt-4 border-t border-gray-200">
+            <h3 className="font-semibold text-gray-800 text-lg">
+              Payment Details
+            </h3>
+
+            <div className="flex flex-col gap-2 w-full">
+              <label
+                htmlFor="cardHolderName"
+                className="font-semibold text-gray-800 text-sm"
+              >
+                Card Holder Name
+              </label>
+              <input
+                id="cardHolderName"
+                name="cardHolderName"
+                type="text"
+                placeholder="John Doe"
+                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+              />
+            </div>
+
+            <div className="flex flex-col md:flex-row gap-4 w-full items-end">
+              <div className="flex flex-col gap-2 w-full md:w-4/7">
+                <label
+                  htmlFor="cardNumber"
+                  className="font-semibold text-gray-800 text-sm"
+                >
+                  Card Number
+                </label>
+                <input
+                  id="cardNumber"
+                  name="cardNumber"
+                  type="text"
+                  placeholder="XXXX-XXXX-XXXX-XXXX"
+                  className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+                />
+              </div>
+              <div className="flex flex-col gap-2 w-full md:w-2/7">
+                <label
+                  htmlFor="cardExpiry"
+                  className="font-semibold text-gray-800 text-sm"
+                >
+                  Expiry Date
+                </label>
+                <input
+                  id="cardExpiry"
+                  name="cardExpiry"
+                  type="text"
+                  placeholder="MM/YY"
+                  className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+                />
+              </div>
+              <div className="w-full md:w-1/7">
+                <button
+                  type="button"
+                  className="w-full p-3 bg-blue-theme text-white font-semibold rounded-lg shadow-md text-sm outline-none hover:bg-[#102768] transition-colors"
+                >
+                  Pay
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <label className="font-semibold text-gray-800 text-sm">
+              Upload Screenshot of Payment Proof{" "}
+              {/* <span className="text-red-500">*</span> */}
+            </label>
+            <div
+              className={`w-full p-6 gap-3 border-2 border-dashed rounded-lg shadow-sm text-center flex flex-col items-center justify-center transition-colors ${
+                isDragging
+                  ? "border-[#102768] bg-blue-50"
+                  : "border-gray-300 bg-gray-50 hover:bg-gray-100"
+              }`}
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              onDrop={handleDrop}
+            >
+              <p className="text-sm text-gray-600 poppins">
+                {selectedFile ? (
+                  <span className="font-medium text-blue-theme">
+                    {selectedFile.name}
+                  </span>
+                ) : (
+                  "Drag and drop your payment screenshot here, or"
+                )}
+              </p>
+              <label
+                htmlFor="file-upload"
+                className="px-6 py-2.5 bg-blue-theme text-white rounded-xl text-sm font-medium cursor-pointer hover:bg-[#102768] transition-colors poppins"
+              >
+                {selectedFile ? "Change File" : "Browse Files"}
+              </label>
+              <input
+                id="file-upload"
+                type="file"
+                name="paymentProof"
+                accept="image/*,.pdf"
+                // required={!selectedFile}
+                className="hidden"
+                ref={fileInputRef}
+                onChange={handleFileChange}
+              />
+            </div>
+          </div>
+
+          {/* Submit and Cancel Buttons */}
+          <div className="flex flex-row-reverse items-center gap-4">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="px-6 py-2.5 justify-center flex bg-blue-theme rounded-lg text-white font-medium text-center poppins text-sm h-fit w-fit whitespace-nowrap cursor-pointer hover:bg-[#102768] transition-colors disabled:bg-blue-300 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? "Submitting..." : "Submit Registration"}
+            </button>
+            <button
+              type="reset"
+              className="px-6 py-2.5 justify-center flex bg-gray-200 rounded-lg text-gray-700 font-medium text-center poppins text-sm h-fit w-fit whitespace-nowrap cursor-pointer hover:bg-gray-300 transition-colors"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+
+      {/* <button
               type="submit"
               className="px-6 py-2.5 justify-center flex bg-blue-theme rounded-lg text-white font-medium text-center poppins text-sm h-fit w-fit whitespace-nowrap cursor-pointer hover:bg-[#102768] transition-colors disabled:bg-blue-300 disabled:cursor-not-allowed"
             >
               Register Now
-            </button>
+            </button> */}
 
       {/* <div className="flex flex-col rounded-3xl border border-gray-300 w-full shadow-md">
         <div className="poppins font-semibold text-md py-2.5 px-4 flex justify-center text-center bg-blue-theme text-white rounded-t-3xl">
