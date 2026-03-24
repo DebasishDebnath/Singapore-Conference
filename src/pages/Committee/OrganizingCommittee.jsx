@@ -49,7 +49,10 @@ const committeeData = [
   },
   {
     title: "TPC Chair",
-    data: [{ name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" }],
+    data: [
+      { name: "Dr. Amartya Mukherjee", affiliation: "IEM Kolkata, India" },
+      // { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
+    ],
   },
   {
     title: "Convener Chair",
@@ -59,8 +62,10 @@ const committeeData = [
   },
   {
     title: "Co-convener",
-    data: [{ name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Sukanya Mitra", affiliation: "IEM Kolkata, India" },],
+    data: [
+      { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
+      { name: "Dr. Sukanya Mitra", affiliation: "IEM Kolkata, India" },
+    ],
   },
   {
     title: "Program Chairs",
