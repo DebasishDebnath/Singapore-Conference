@@ -4,6 +4,8 @@ import SponsorCard from '../components/SponsorCard'
 
 const sponsorsData = [
   { imgSrc: "/c2iot.avif", title: "IEM Centre of Excellence for Cloud Computing & IoT" },
+  { imgSrc: "/ceds.png", title: "IEM Centre of Excellence for Data Science" },
+
 ];
 
 function TechnicalSponsors() {

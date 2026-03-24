@@ -34,7 +34,7 @@ const committeeData = [
     title: "General Chairs",
     data: [
       { name: "Dr. Amartya Mukherjee", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
+      // { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
       { name: "Dr. Deepsubhra Guha Roy", affiliation: "IEM Kolkata, India" },
     ],
   },
@@ -59,7 +59,8 @@ const committeeData = [
   },
   {
     title: "Co-convener",
-    data: [{ name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" }],
+    data: [{ name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
+      { name: "Dr. Sukanya Mitra", affiliation: "IEM Kolkata, India" },],
   },
   {
     title: "Program Chairs",
@@ -68,10 +69,10 @@ const committeeData = [
         name: "Dr. Amartya Mukherjee",
         affiliation: "IEM Kolkata, India",
       },
-      {
-        name: "Dr. Ayan Kr. Panja",
-        affiliation: "IEM Kolkata, India",
-      },
+      // {
+      //   name: "Dr. Ayan Kr. Panja",
+      //   affiliation: "IEM Kolkata, India",
+      // },
     ],
   },
   // {
@@ -105,10 +106,10 @@ const committeeData = [
   {
     title: "Organizing Committee",
     data: [
-      // { name: "Prof. (Dr.) Indrajit De", affiliation: "IEM Kolkata, India" },
       { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
       { name: "Dr. Amartya Mukherjee", affiliation: "IEM Kolkata, India" },
       { name: "Dr. Deepsubhra Guha Roy", affiliation: "IEM Kolkata, India" },
+      { name: "Dr. Sukanya Mitra", affiliation: "IEM Kolkata, India" },
       { name: "Dr. Prabir Kumar Das", affiliation: "IEM Kolkata, India" },
       { name: "Dr. Ranabir Banik", affiliation: "IEM Kolkata, India" },
       { name: "Dr. Animesh Kundu", affiliation: "IEM Kolkata, India" },
@@ -134,7 +135,7 @@ const committeeData = [
     title: "Publication Chairs",
     data: [
       { name: "Dr. Biswadip Basu Mallik", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
+      // { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
       { name: "Dr. Deepsubhra Guha Roy", affiliation: "IEM Kolkata, India" },
     ],
   },
