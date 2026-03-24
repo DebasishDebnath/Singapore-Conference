@@ -89,14 +89,14 @@ function Navbar() {
                   >
                     Submission & Publication
                   </NavLink>
-                  <NavLink
-                    to="/authors/submit-your-manuscript"
-                    className={({ isActive }) =>
-                      `block px-4 py-2 hover:bg-[#e6eaff]${isActive ? " font-bold" : ""}`
-                    }
+                  <Link
+                    to="https://cmt3.research.microsoft.com/SENSE2026/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-2 hover:bg-[#e6eaff]"
                   >
                     Submit Your Manuscript
-                  </NavLink>
+                  </Link>
                 </div>
               )}
             </div>
@@ -246,13 +246,15 @@ function Navbar() {
               >
                 Submission & Publication
               </NavLink>
-              <NavLink
-                to="/authors/submit-your-manuscript"
-                className={({ isActive }) => (isActive ? "font-bold" : "")}
+              <Link
+                to="https://cmt3.research.microsoft.com/SENSE2026/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:font-bold transition-all"
                 onClick={() => setMenuOpen(false)}
               >
                 Submit Your Manuscript
-              </NavLink>
+              </Link>
             </div>
 
             {/* <NavLink to="/technical-programs">Technical Programs</NavLink> */}

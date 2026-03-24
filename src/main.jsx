@@ -13,7 +13,7 @@ import Home from "./pages/Home";
 import CallForPapers from "./pages/Authors/CallForPapers";
 import OrganizingCommittee from "./pages/Committee/OrganizingCommittee";
 import Submission from "./pages/Authors/Submission";
-import PaperSubmission from "./pages/Authors/PaperSubmission";
+// import PaperSubmission from "./pages/Authors/PaperSubmission";
 // import TechnicalPrograms from "./pages/TechnicalPrograms";
 import KeynoteSpeakers from "./pages/KeynoteSpeakers";
 import Gallery from "./pages/Gallery";
@@ -30,7 +30,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="/authors/call-for-papers" element={<CallForPapers />} />
       <Route path="/authors/submission-n-publication" element={<Submission />} />
-      <Route path="/authors/submit-your-manuscript" element={<PaperSubmission />} />
+      {/* <Route path="/authors/submit-your-manuscript" element={<PaperSubmission />} /> */}
       {/* <Route path="/technical-programs" element={<TechnicalPrograms />} /> */}
       <Route path="/keynote-speakers" element={<KeynoteSpeakers />} />
       <Route path="/gallery" element={<Gallery />} />
