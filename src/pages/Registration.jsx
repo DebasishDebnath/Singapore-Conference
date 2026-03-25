@@ -41,18 +41,57 @@ export default function Registration() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!selectedFile) {
-      alert("Please upload the payment proof screenshot.");
-      return;
-    }
     setIsSubmitting(true);
 
-    // Placeholder for actual API submission
-    setTimeout(() => {
-      alert("Registration submitted successfully!");
+    const form = new FormData(e.target);
+
+    // Format expiry date from MM/YY to YYYY-MM
+    let expiryVal = form.get("cardExpiry");
+    if (expiryVal && expiryVal.includes("/")) {
+      const [month, year] = expiryVal.split("/");
+      if (month && year) {
+        expiryVal = `20${year.trim()}-${month.trim()}`;
+      }
+    }
+
+    const payload = {
+      cardNo: form.get("cardNumber")?.replace(/[\s-]/g, ""), 
+      expiry: expiryVal, 
+      cardHolderName: form.get("cardHolderName"), 
+      category: form.get("category"), 
+      type: form.get("presentationMode"),
+      name: form.get("name"),
+      email: form.get("email"),
+      phoneNo: form.get("phone"),
+      designation: form.get("designation"),
+      instituteOrCompany: form.get("institute"),
+      address: form.get("address"),
+      paperId: form.get("paperId")
+    };
+    // const url = "https://iem-singapore-backend.smartsociety.org";
+    const url = "http://192.168.1.226:5000";
+
+    try {
+      const response = await fetch(`${url}/api/v1/payments/paypal-card-payment`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        alert("Registration submitted successfully!");
+        e.target.reset();
+        setSelectedFile(null); // Optional: clear file if selected
+      } else {
+        const errorData = await response.json();
+        alert(`Payment failed: ${errorData.message || "Please try again."}`);
+      }
+    } catch (error) {
+      console.error("Error submitting registration:", error);
+      alert("An error occurred during submission. Please check your network connection.");
+    } finally {
       setIsSubmitting(false);
-      e.target.reset();
-    }, 1500);
+    }
   };
 
   return (
@@ -364,7 +403,7 @@ export default function Registration() {
             </div>
 
             <div className="flex flex-col md:flex-row gap-4 w-full items-end">
-              <div className="flex flex-col gap-2 w-full md:w-4/7">
+              <div className="flex flex-col gap-2 w-full md:w-1/2">
                 <label
                   htmlFor="cardNumber"
                   className="font-semibold text-gray-800 text-sm"
@@ -379,7 +418,7 @@ export default function Registration() {
                   className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
                 />
               </div>
-              <div className="flex flex-col gap-2 w-full md:w-2/7">
+              <div className="flex flex-col gap-2 w-full md:w-1/2">
                 <label
                   htmlFor="cardExpiry"
                   className="font-semibold text-gray-800 text-sm"
@@ -394,14 +433,14 @@ export default function Registration() {
                   className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
                 />
               </div>
-              <div className="w-full md:w-1/7">
+              {/* <div className="w-full md:w-1/7">
                 <button
                   type="button"
                   className="w-full p-3 bg-blue-theme text-white font-semibold rounded-lg shadow-md text-sm outline-none hover:bg-[#102768] transition-colors"
                 >
                   Pay
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
 

@@ -50,6 +50,7 @@ const committeeData = [
   {
     title: "TPC Chair",
     data: [
+
       { name: "Dr. Amartya Mukherjee", affiliation: "IEM Kolkata, India" },
       // { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
     ],
