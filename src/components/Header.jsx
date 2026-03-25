@@ -87,7 +87,7 @@ function Header() {
             <span className="flex items-center gap-1">
               <MapPin className="w-5 h-5" />
               {/* Singapore */}
-              The Shaw Foundation Alumni House, 11 Kent Ridge Dr, #01-02, Singapore 119244
+              The Shaw Foundation Alumni House, Singapore
             </span>
             <span className="hidden">|</span>
             <span className="flex items-center gap-1">
