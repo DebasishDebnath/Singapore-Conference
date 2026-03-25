@@ -167,79 +167,173 @@ const committeeData = [
   {
     title: "Technical Program Committee",
     data: [
-      // { name: "Dr. Gabor Benedek", affiliation: "Lynx Analytics, Singapore" },
-      // { name: "Dr. Tan Kian Hua", affiliation: "LiGGS University, Singapore" },
-      // { name: "Dr. Marton Szel", affiliation: "Lynx Analytics, Singapore" },
-      // {
-      //   name: "Dr. Peter Leong",
-      //   affiliation: "Singapore Polytechnic, Singapore",
-      // },
-      // {
-      //   name: "Dr. Kian Hui Lim",
-      //   affiliation: "Singapore University of Technology and Design, Singapore",
-      // },
-      // {
-      //   name: "Dr. Yilliang Zhao",
-      //   affiliation: "Open Space Ventures, Singapore",
-      // },
-      // {
-      //   name: "Dr. Chua Mathew",
-      //   affiliation: "National University of Singapore, Singapore",
-      // },
-      // {
-      //   name: "Nirmal Das",
-      //   affiliation: "Czech Technical University in Prague",
-      // },
       { name: "Arpan Adhikary", affiliation: "Haldia Institute of Technology" },
-  { name: "Deeksha Dwivedi", affiliation: "Leslie's USA" },
-  { name: "Dr. Anand Motwani", affiliation: "VIT BHOPAL UNIVERSITY" },
-  { name: "Mainak Adhikari", affiliation: "School of Data Science, Indian Institute of Science Education and Research Thiruvananthapuram" },
-  { name: "Sampath Kumar HK", affiliation: "Bodyclone Innovations Pvt Ltd.   NMIT." },
-  { name: "SUBHAJIT ADHIKARI", affiliation: "Department of Computer Application, Techno India University, WB" },
-  { name: "Siparna Rabi Das", affiliation: "BPPIMT kolkata" },
-  { name: "Sunirmal Khatua", affiliation: "University of Calcutta" },
-  { name: "Kaushiki Roy", affiliation: "IIIT Raichur" },
-  { name: "Dr.Archana J N", affiliation: "Vimal Jyothi Engineering College (Autonomous)" },
-  { name: "Patrali Pradhan", affiliation: "Haldia Institute of Technology" },
-  { name: "Khaja Mannanuddin", affiliation: "School of CS &AI, SR University" },
-  { name: "Dr. Anuradha Bhardwaj", affiliation: "Amity University" },
-  { name: "Arnab Das", affiliation: "Swami vivekananda university" },
-  { name: "Dr Pabitra Pal", affiliation: "MAKAUT" },
-  { name: "Anandaraj M", affiliation: "PSNA COLLEGE OF ENGINEERING AND TECHNOLOGY" },
-  { name: "Dr Soamdeep Singha Singha", affiliation: "Vidyasagar University" },
-  { name: "Ayanabha Ghosh", affiliation: "Indian Institute of Technology Jodhpur" },
-  { name: "Mr. Ranjit Subba", affiliation: "Dept. Of Computer Science, Hijli College, Kharagpur, Paschim Medinipur, West Bengal" },
-  { name: "Bhagyashree Hambarde", affiliation: "St. Vincent Pallotti College of Engineering and Technology Nagpur" },
-  { name: "Dr. Debarati Dey Roy", affiliation: "B. P. Poddar Institute of Management and Technology, Applied Artificial Intelligence Research Centre UNEC,Baku, Azerbaijan" },
-  { name: "Anindita Kundu", affiliation: "VIT Vellore" },
-  { name: "Priyajit Sen", affiliation: "Indian Statistical Institute, Kolkata" },
-  { name: "Dr. KYAMELIA ROY", affiliation: "Siliguri Government Polytechnic" },
-  { name: "Nitu Saha", affiliation: "University of Engineering and Management, Kolkata" },
-  { name: "Dr. Ramesh Saha", affiliation: "Indian Institute of Information Technology (IIIT) Sonepat" },
-  { name: "Anwesha Mukherjee", affiliation: "Mahishadal Raj College" },
-  { name: "Pritusna Banik", affiliation: "Narula Institute of Technology" },
-  { name: "Debasish Swapnesh Kumar Nayak", affiliation: "Centurion University of Technology and Management" },
-  { name: "Dr.I.Karthiga Kathiravan", affiliation: "Bs Abdur Rahman crescent institute of science and technology" },
-  { name: "Proshanta Sarkar", affiliation: "B. P. Poddar Institute of Management & Technology" },
-  { name: "Dr. Moumita Das", affiliation: "Haldia Institute of Technology" },
-  { name: "Dr. Sandeep Dwarkanath Pande", affiliation: "MIT Academy of Engineering Alandi" },
-  { name: "Soham Goswami", affiliation: "MCKV Institute of Engineering, Howrah" },
-  { name: "Dr. Sudakshina Mandal", affiliation: "Narula Institute of technology" },
-  { name: "Dr. Sivaprakash S", affiliation: "Vellore Institute of Technology, Vellore" },
-  { name: "Anjul Bhardwaj", affiliation: "Divine Institute of Management & Studies, Ziradei, Bihar" },
-  { name: "Sahana Das", affiliation: "Adamas University" },
-  { name: "Dr. Rahul Soni", affiliation: "Navrachana University" },
-  { name: "Shailja Gupta", affiliation: "ADP" },
-  { name: "Moumita Chatterjee", affiliation: "Department of Computer Science and Engineering, Aliah University" },
-  { name: "Surojit Bhattacharyya", affiliation: "MCKV Institute of Engineering" },
-  { name: "Tanmoy Kundu", affiliation: "AIT" },
-    ]
-  }]
+      { name: "Deeksha Dwivedi", affiliation: "Leslie's USA" },
+      { name: "Dr. Anand Motwani", affiliation: "VIT BHOPAL UNIVERSITY" },
+      {
+        name: "Mainak Adhikari",
+        affiliation:
+          "School of Data Science, Indian Institute of Science Education and Research Thiruvananthapuram",
+      },
+      {
+        name: "Sampath Kumar HK",
+        affiliation: "Bodyclone Innovations Pvt Ltd.   NMIT.",
+      },
+      {
+        name: "SUBHAJIT ADHIKARI",
+        affiliation:
+          "Department of Computer Application, Techno India University, WB",
+      },
+      { name: "Dr. Gabor Benedek", affiliation: "Lynx Analytics, Singapore" },
+      { name: "Siparna Rabi Das", affiliation: "BPPIMT kolkata" },
+      { name: "Sunirmal Khatua", affiliation: "University of Calcutta" },
+      { name: "Kaushiki Roy", affiliation: "IIIT Raichur" },
+      {
+        name: "Dr.Archana J N",
+        affiliation: "Vimal Jyothi Engineering College (Autonomous)",
+      },
+      { name: "Dr. Tan Kian Hua", affiliation: "LiGGS University, Singapore" },
+      {
+        name: "Patrali Pradhan",
+        affiliation: "Haldia Institute of Technology",
+      },
+      {
+        name: "Khaja Mannanuddin",
+        affiliation: "School of CS &AI, SR University",
+      },
+      { name: "Dr. Anuradha Bhardwaj", affiliation: "Amity University" },
+      { name: "Dr. Marton Szel", affiliation: "Lynx Analytics, Singapore" },
+      { name: "Arnab Das", affiliation: "Swami vivekananda university" },
+      { name: "Dr Pabitra Pal", affiliation: "MAKAUT" },
+      {
+        name: "Anandaraj M",
+        affiliation: "PSNA COLLEGE OF ENGINEERING AND TECHNOLOGY",
+      },
+      {
+        name: "Dr. Peter Leong",
+        affiliation: "Singapore Polytechnic, Singapore",
+      },
+      {
+        name: "Dr Soamdeep Singha Singha",
+        affiliation: "Vidyasagar University",
+      },
+      {
+        name: "Ayanabha Ghosh",
+        affiliation: "Indian Institute of Technology Jodhpur",
+      },
+      {
+        name: "Mr. Ranjit Subba",
+        affiliation:
+          "Dept. Of Computer Science, Hijli College, Kharagpur, Paschim Medinipur, West Bengal",
+      },
+      {
+        name: "Bhagyashree Hambarde",
+        affiliation:
+          "St. Vincent Pallotti College of Engineering and Technology Nagpur",
+      },
+      {
+        name: "Dr. Kian Hui Lim",
+        affiliation: "Singapore University of Technology and Design, Singapore",
+      },
+      {
+        name: "Dr. Debarati Dey Roy",
+        affiliation:
+          "B. P. Poddar Institute of Management and Technology, Applied Artificial Intelligence Research Centre UNEC,Baku, Azerbaijan",
+      },
+      { name: "Anindita Kundu", affiliation: "VIT Vellore" },
+      {
+        name: "Priyajit Sen",
+        affiliation: "Indian Statistical Institute, Kolkata",
+      },
+      {
+        name: "Dr. KYAMELIA ROY",
+        affiliation: "Siliguri Government Polytechnic",
+      },
+      {
+        name: "Nitu Saha",
+        affiliation: "University of Engineering and Management, Kolkata",
+      },
+      {
+        name: "Dr. Ramesh Saha",
+        affiliation:
+          "Indian Institute of Information Technology (IIIT) Sonepat",
+      },
+      { name: "Anwesha Mukherjee", affiliation: "Mahishadal Raj College" },
+      {
+        name: "Dr. Yilliang Zhao",
+        affiliation: "Open Space Ventures, Singapore",
+      },
+      { name: "Pritusna Banik", affiliation: "Narula Institute of Technology" },
+      {
+        name: "Debasish Swapnesh Kumar Nayak",
+        affiliation: "Centurion University of Technology and Management",
+      },
+      {
+        name: "Dr.I.Karthiga Kathiravan",
+        affiliation:
+          "Bs Abdur Rahman crescent institute of science and technology",
+      },
+      {
+        name: "Proshanta Sarkar",
+        affiliation: "B. P. Poddar Institute of Management & Technology",
+      },
+      {
+        name: "Dr. Moumita Das",
+        affiliation: "Haldia Institute of Technology",
+      },
+      {
+        name: "Dr. Sandeep Dwarkanath Pande",
+        affiliation: "MIT Academy of Engineering Alandi",
+      },
+      {
+        name: "Soham Goswami",
+        affiliation: "MCKV Institute of Engineering, Howrah",
+      },
+      {
+        name: "Dr. Sudakshina Mandal",
+        affiliation: "Narula Institute of technology",
+      },
+      {
+        name: "Dr. Sivaprakash S",
+        affiliation: "Vellore Institute of Technology, Vellore",
+      },
+      {
+        name: "Dr. Chua Mathew",
+        affiliation: "National University of Singapore, Singapore",
+      },
+      {
+        name: "Anjul Bhardwaj",
+        affiliation: "Divine Institute of Management & Studies, Ziradei, Bihar",
+      },
+      { name: "Sahana Das", affiliation: "Adamas University" },
+      { name: "Dr. Rahul Soni", affiliation: "Navrachana University" },
+      { name: "Shailja Gupta", affiliation: "ADP" },
+      {
+        name: "Nirmal Das",
+        affiliation: "Czech Technical University in Prague",
+      },
+      {
+        name: "Moumita Chatterjee",
+        affiliation:
+          "Department of Computer Science and Engineering, Aliah University",
+      },
+      {
+        name: "Surojit Bhattacharyya",
+        affiliation: "MCKV Institute of Engineering",
+      },
+      { name: "Tanmoy Kundu", affiliation: "AIT" },
+    ],
+  },
+];
 
 function PaginationControls({ currentPage, totalPages, onPageChange }) {
   const pages = [];
   for (let i = 1; i <= totalPages; i++) {
-    if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+    if (
+      i === 1 ||
+      i === totalPages ||
+      (i >= currentPage - 1 && i <= currentPage + 1)
+    ) {
       pages.push(i);
     } else if (pages[pages.length - 1] !== "...") {
       pages.push("...");
@@ -258,7 +352,9 @@ function PaginationControls({ currentPage, totalPages, onPageChange }) {
 
       {pages.map((page, i) =>
         page === "..." ? (
-          <span key={i} className="px-2 text-gray-400 text-sm select-none">…</span>
+          <span key={i} className="px-2 text-gray-400 text-sm select-none">
+            …
+          </span>
         ) : (
           <button
             key={i}
@@ -271,7 +367,7 @@ function PaginationControls({ currentPage, totalPages, onPageChange }) {
           >
             {page}
           </button>
-        )
+        ),
       )}
 
       <button

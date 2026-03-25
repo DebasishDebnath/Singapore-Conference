@@ -83,12 +83,13 @@ function Header() {
           </div>
 
           {/* Location + Date */}
-          <p className="text-white text-base sm:text-lg md:text-xl flex md:flex-row flex-col flex-wrap md:items-center gap-2 sm:gap-3 mt-4 poppins-regular font-semibold">
+          <p className="text-white text-base sm:text-lg md:text-xl flex flex-col flex-wrap md:items-start items-center gap-2 sm:gap-3 mt-4 poppins-regular font-semibold">
             <span className="flex items-center gap-1">
               <MapPin className="w-5 h-5" />
-              Singapore
+              {/* Singapore */}
+              The Shaw Foundation Alumni House, 11 Kent Ridge Dr, #01-02, Singapore 119244
             </span>
-            <span className="hidden sm:inline">|</span>
+            <span className="hidden">|</span>
             <span className="flex items-center gap-1">
               <CalendarDays className="w-5 h-5" />
               <span className="font-semibold">9th - 11th June 2026</span>
