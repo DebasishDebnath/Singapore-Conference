@@ -37,11 +37,11 @@ const committeeData = [
   {
     title: "General Chairs",
     data: [
-      { name: "Dr. Amartya Mukherjee", affiliation: "IEM Kolkata, India" },
       {
         name: "Dr. Chua Mathew ",
         affiliation: "National University of Singapore, Singapore",
       },
+      { name: "Dr. Amartya Mukherjee", affiliation: "IEM Kolkata, India" },
       { name: "Dr. Deepsubhra Guha Roy", affiliation: "IEM Kolkata, India" },
     ],
   },
