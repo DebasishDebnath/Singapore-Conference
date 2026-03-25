@@ -87,7 +87,7 @@ function Navbar() {
                       `block px-4 py-2 hover:bg-[#e6eaff]${isActive ? " font-bold" : ""}`
                     }
                   >
-                    Submission & Publication
+                    Submission Guidelines
                   </NavLink>
                   <Link
                     to="https://cmt3.research.microsoft.com/SENSE2026/"
@@ -148,12 +148,12 @@ function Navbar() {
                       `block px-4 py-2 hover:bg-[#e6eaff]${isActive ? " font-bold" : ""}`
                     }
                   >
-                    Organizing
+                    Organizing Committee
                   </NavLink>
                   <NavLink
                     to="/committee/technical-committee"
                     className={({ isActive }) =>
-                      `block px-4 py-2 hover:bg-[#e6eaff] justify-center text-[14px] ${isActive ? " font-bold" : ""}`
+                      `block px-4 py-2 hover:bg-[#e6eaff]${isActive ? " font-bold" : ""}`
                     }
                   >
                     Technical Program Committee
@@ -177,7 +177,7 @@ function Navbar() {
             </NavLink>
 
             {/* PAST CONFERENCE DROPDOWN */}
-            <div
+            {/* <div
               className="relative inline-block cursor-pointer"
               onMouseEnter={handlePastConfEnter}
               onMouseLeave={handlePastConfLeave}
@@ -186,7 +186,7 @@ function Navbar() {
                 className="flex items-center gap-1 px-2 py-2 cursor-pointer"
                 tabIndex={0}
               >
-                Past Conference
+                CSE(AIML) Past Conference
                 <ChevronDown
                   className={`h-4 w-4 transition-transform ${
                     pastConfOpen ? "rotate-180" : ""
@@ -206,7 +206,7 @@ function Navbar() {
                   </Link>
                 </div>
               )}
-            </div>
+            </div> */}
           </div>
 
           {/* Mobile Toggle Button */}
@@ -315,8 +315,8 @@ function Navbar() {
               Contact
             </NavLink>
 
-            <div className="flex flex-col items-center space-y-1">
-              <span className="font-semibold">Past Conference</span>
+            {/* <div className="flex flex-col items-center space-y-1">
+              <span className="font-semibold">CSE(AIML) Past Conference</span>
               <Link
                 to="https://2025win60.iem.edu.in/"
                 target="_blank"
@@ -326,7 +326,7 @@ function Navbar() {
               >
                 win6.0 2025
               </Link>
-            </div>
+            </div> */}
           </div>
         )}
       </div>

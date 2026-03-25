@@ -22,8 +22,7 @@ function Contact() {
               <div>
                 <h3 className="font-bold">Address</h3>
                 <p className="">
-                  The Shaw Foundation Alumni House <br />
-                  11 Kent Ridge Dr, #01-02, Singapore 119244
+                  JDS House, Electronics Complex, Gurukul, Y-12, EP Block, Sector V, Bidhannagar, Kolkata, West Bengal 700091
                 </p>
               </div>
               <div>
@@ -43,7 +42,8 @@ function Contact() {
               <div>
                 <h3 className="font-bold">Conference E-mail</h3>
                 <p className="underline cursor-pointer">
-                  sensesg.conference@gmail.com
+                  {/* sensesg.conference@gmail.com */}
+                  sense.conference@iem.edu.in
                 </p>
               </div>
             </div>
@@ -104,7 +104,7 @@ function Contact() {
                 title="Map"
                 className="w-full h-full"
                 loading="lazy"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8020804141656!2d103.7734796!3d1.2932081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1aff3f1cf5b1%3A0x7ae21f4141402cfd!2sShaw%20Foundation%20Alumni%20House!5e0!3m2!1sen!2sin!4v1772774266337!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d894.8226581755872!2d88.43700137970286!3d22.57267587305133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027514cd20d659%3A0x4b66eefc1cb3ed78!2sIEM%20Kolkata!5e0!3m2!1sen!2sin!4v1774434955730!5m2!1sen!2sin"
               ></iframe>
             </div>
           </div>

@@ -21,15 +21,15 @@ const committeeData = [
       },
     ],
   },
-  {
-    title: "Honorary Chair",
-    data: [
-      {
-        name: "Prof. (Dr.) Tingwen Huang",
-        affiliation: "FIEEE, Texas A&M University, Qatar",
-      },
-    ],
-  },
+  // {
+  //   title: "Honorary Chair",
+  //   data: [
+  //     {
+  //       name: "Prof. (Dr.) Tingwen Huang",
+  //       affiliation: "FIEEE, Texas A&M University, Qatar",
+  //     },
+  //   ],
+  // },
   {
     title: "General Chairs",
     data: [
