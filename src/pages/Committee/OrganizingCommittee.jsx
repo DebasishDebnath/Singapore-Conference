@@ -81,24 +81,33 @@ const committeeData = [
       // },
     ],
   },
-  // {
-  //   title: "Industry Chairs",
-  //   data: [
-  //     {
-  //       name: "Dr. Tanushyam Chattopadhyay",
-  //       affiliation: "Practice Head, Sirius Digitech",
-  //     },
-  //     {
-  //       name: "Mr. Snehasis Banerjee",
-  //       affiliation: "TCS Research & Innovation, Kolkata, India",
-  //     },
-  //     {
-  //       name: "Dr. Sanmitra Sarkar",
-  //       affiliation:
-  //         "Senior Director and Global Head of Generative and Agentic AI, Capgemini",
-  //     },
-  //   ],
-  // },
+  {
+    title: "Industry Chairs",
+    data: [
+      // {
+      //   name: "Dr. Tanushyam Chattopadhyay",
+      //   affiliation: "Practice Head, Sirius Digitech",
+      // },
+      // {
+      //   name: "Mr. Snehasis Banerjee",
+      //   affiliation: "TCS Research & Innovation, Kolkata, India",
+      // },
+      // {
+      //   name: "Dr. Sanmitra Sarkar",
+      //   affiliation:
+      //     "Senior Director and Global Head of Generative and Agentic AI, Capgemini",
+      // },
+      {
+        name: "Dr. Marton Szel",
+        affiliation: "Lynx Analytics, Singapore",
+      },
+      {
+        name: "Dr. Gabor Benedek",
+        affiliation:
+          "Lynx Analytics, Singapore",
+      },
+    ],
+  },
   // {
   //   title: "Industry Academic Partnership Chair",
   //   data: [
