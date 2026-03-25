@@ -1,96 +1,39 @@
 import React, { useState, useRef } from "react";
 import Heading from "../components/Heading";
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 export default function Registration() {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [isDragging, setIsDragging] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const fileInputRef = useRef(null);
-
-  const handleDragOver = (e) => {
-    e.preventDefault();
-    setIsDragging(true);
-  };
-
-  const handleDragLeave = (e) => {
-    e.preventDefault();
-    setIsDragging(false);
-  };
-
-  const handleDrop = (e) => {
-    e.preventDefault();
-    setIsDragging(false);
-    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      setSelectedFile(e.dataTransfer.files[0]);
-      if (fileInputRef.current) {
-        fileInputRef.current.files = e.dataTransfer.files;
-      }
-      e.dataTransfer.clearData();
-    }
-  };
-
-  const handleFileChange = (e) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setSelectedFile(e.target.files[0]);
-    }
-  };
+  const [category, setCategory] = useState("");
+  const [presentationMode, setPresentationMode] = useState("");
+  const [step, setStep] = useState(1);
+  const [paymentId, setPaymentId] = useState(null);
+  const formRef = useRef(null);
+  const paymentIdRef = useRef(null);
+  // const url = "http://192.168.1.226:5000"
+  const url = "https://iem-singapore-backend.smartsociety.org"
 
   const handleReset = () => {
-    setSelectedFile(null);
+    setCategory("");
+    setPresentationMode("");
+    setStep(1);
+    setPaymentId(null);
+    paymentIdRef.current = null;
+  };
+
+  const getAmount = () => {
+    if (category === "Developing Countries") return "250";
+    if (!presentationMode) return "0";
+    if (category === "Students") return presentationMode === "online" ? "250" : "350";
+    if (category === "Postdoc/Academia/Industry") return presentationMode === "online" ? "350" : "450";
+    if (category === "Attendee") return presentationMode === "online" ? "150" : "250";
+    return "0";
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    const form = new FormData(e.target);
-
-    // Format expiry date from MM/YY to YYYY-MM
-    let expiryVal = form.get("cardExpiry");
-    if (expiryVal && expiryVal.includes("/")) {
-      const [month, year] = expiryVal.split("/");
-      if (month && year) {
-        expiryVal = `20${year.trim()}-${month.trim()}`;
-      }
-    }
-
-    const payload = {
-      cardNo: form.get("cardNumber")?.replace(/[\s-]/g, ""), 
-      expiry: expiryVal, 
-      cardHolderName: form.get("cardHolderName"), 
-      category: form.get("category"), 
-      type: form.get("presentationMode"),
-      name: form.get("name"),
-      email: form.get("email"),
-      phoneNo: form.get("phone"),
-      designation: form.get("designation"),
-      instituteOrCompany: form.get("institute"),
-      address: form.get("address"),
-      paperId: form.get("paperId")
-    };
-    // const url = "https://iem-singapore-backend.smartsociety.org";
-    const url = "http://192.168.1.226:5000";
-
-    try {
-      const response = await fetch(`${url}/api/v1/payments/paypal-card-payment`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (response.ok) {
-        alert("Registration submitted successfully!");
-        e.target.reset();
-        setSelectedFile(null); // Optional: clear file if selected
-      } else {
-        const errorData = await response.json();
-        alert(`Payment failed: ${errorData.message || "Please try again."}`);
-      }
-    } catch (error) {
-      console.error("Error submitting registration:", error);
-      alert("An error occurred during submission. Please check your network connection.");
-    } finally {
-      setIsSubmitting(false);
+    if (step === 1) {
+      setStep(2);
     }
   };
 
@@ -211,297 +154,280 @@ export default function Registration() {
       </div>
 
       <div className="w-full rounded-3xl shadow-md border border-gray-300 lg:p-16 md:p-12 p-8 flex flex-col md:gap-10 gap-10 ">
+        <div className="flex justify-between items-center w-full pb-4 border-b border-gray-200">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-800 poppins">
+            {step === 1 && "Participant Information"}
+            {step === 2 && "Payment Details"}
+          </h2>
+          <span className="text-sm font-semibold text-blue-theme poppins">
+            Step {step} of 2
+          </span>
+        </div>
         <form
+          ref={formRef}
           onSubmit={handleSubmit}
           onReset={handleReset}
-          className="flex flex-col gap-6 poppins"
+          className="flex flex-col poppins"
         >
           <input type="hidden" />
 
-          <div className="flex flex-col md:flex-row gap-4 w-full">
-            <div className="flex flex-col gap-2 w-full md:w-1/2">
-              <label
-                htmlFor="name"
-                className="font-semibold text-gray-800 text-sm"
-              >
-                Full Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                id="name"
-                type="text"
-                name="name"
-                placeholder="Full Name"
-                required
-                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
-              />
+          {/* STEP 1: Personal info */}
+          <div className={step === 1 ? "flex flex-col gap-6 pt-4" : "hidden"}>
+            <div className="flex flex-col md:flex-row gap-4 w-full">
+              <div className="flex flex-col gap-2 w-full md:w-1/2">
+                <label htmlFor="name" className="font-semibold text-gray-800 text-sm">
+                  Full Name <span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Full Name"
+                  required={step === 1}
+                  className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+                />
+              </div>
+              <div className="flex flex-col gap-2 w-full md:w-1/2">
+                <label htmlFor="address" className="font-semibold text-gray-800 text-sm">
+                  Address <span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="address"
+                  type="text"
+                  name="address"
+                  placeholder="Full Address"
+                  required={step === 1}
+                  className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+                />
+              </div>
             </div>
-            <div className="flex flex-col gap-2 w-full md:w-1/2">
-              <label
-                htmlFor="address"
-                className="font-semibold text-gray-800 text-sm"
-              >
-                Address <span className="text-red-500">*</span>
-              </label>
-              <input
-                id="address"
-                type="text"
-                name="address"
-                placeholder="Full Address"
-                required
-                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
-              />
-            </div>
-          </div>
 
-          <div className="flex flex-col md:flex-row gap-4 w-full">
-            <div className="flex flex-col gap-2 w-full md:w-1/2">
-              <label
-                htmlFor="institute"
-                className="font-semibold text-gray-800 text-sm"
-              >
-                Institute/Company <span className="text-red-500">*</span>
-              </label>
-              <input
-                id="institute"
-                type="text"
-                name="institute"
-                placeholder="Institute / Company"
-                required
-                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
-              />
+            <div className="flex flex-col md:flex-row gap-4 w-full">
+              <div className="flex flex-col gap-2 w-full md:w-1/2">
+                <label htmlFor="institute" className="font-semibold text-gray-800 text-sm">
+                  Institute/Company <span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="institute"
+                  type="text"
+                  name="institute"
+                  placeholder="Institute / Company"
+                  required={step === 1}
+                  className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+                />
+              </div>
+              <div className="flex flex-col gap-2 w-full md:w-1/2">
+                <label htmlFor="designation" className="font-semibold text-gray-800 text-sm">
+                  Designation <span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="designation"
+                  type="text"
+                  name="designation"
+                  placeholder="Designation"
+                  required={step === 1}
+                  className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+                />
+              </div>
             </div>
-            <div className="flex flex-col gap-2 w-full md:w-1/2">
-              <label
-                htmlFor="designation"
-                className="font-semibold text-gray-800 text-sm"
-              >
-                Designation <span className="text-red-500">*</span>
-              </label>
-              <input
-                id="designation"
-                type="text"
-                name="designation"
-                placeholder="Designation"
-                required
-                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
-              />
-            </div>
-          </div>
 
-          <div className="flex flex-col md:flex-row gap-4 w-full">
-            <div className="flex flex-col gap-2 w-full md:w-1/2">
-              <label
-                htmlFor="email"
-                className="font-semibold text-gray-800 text-sm"
-              >
-                Email <span className="text-red-500">*</span>
-              </label>
-              <input
-                id="email"
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                required
-                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
-              />
+            <div className="flex flex-col md:flex-row gap-4 w-full">
+              <div className="flex flex-col gap-2 w-full md:w-1/2">
+                <label htmlFor="email" className="font-semibold text-gray-800 text-sm">
+                  Email <span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  required={step === 1}
+                  className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+                />
+              </div>
+              <div className="flex flex-col gap-2 w-full md:w-1/2">
+                <label htmlFor="phone" className="font-semibold text-gray-800 text-sm">
+                  Phone Number <span className="text-red-500">*</span>
+                </label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  required={step === 1}
+                  className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
+                />
+              </div>
             </div>
-            <div className="flex flex-col gap-2 w-full md:w-1/2">
-              <label
-                htmlFor="phone"
-                className="font-semibold text-gray-800 text-sm"
-              >
-                Phone Number <span className="text-red-500">*</span>
-              </label>
-              <input
-                id="phone"
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                required
-                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
-              />
-            </div>
-          </div>
 
-          <div className="flex flex-col md:flex-row gap-4 w-full">
-            <div className="flex flex-col gap-2 w-full md:w-1/2">
-              <label
-                htmlFor="category"
-                className="font-semibold text-gray-800 text-sm"
-              >
-                Registration Category <span className="text-red-500">*</span>
-              </label>
-              <select
-                id="category"
-                name="category"
-                required
-                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none bg-white"
-              >
-                <option value="">Select Category</option>
-                <option value="Students">Students (UG, PG, PhD)</option>
-                <option value="Postdoc/Academia/Industry">Postdoc / Academia / Industry</option>
-                <option value="Attendee">Attendee</option>
-                <option value="Developing Countries">Developing Countries</option>
-              </select>
+            <div className="flex flex-col md:flex-row gap-4 w-full">
+              <div className="flex flex-col gap-2 w-full md:w-1/2">
+                <label htmlFor="category" className="font-semibold text-gray-800 text-sm">
+                  Registration Category <span className="text-red-500">*</span>
+                </label>
+                <select
+                  id="category"
+                  name="category"
+                  required={step === 1}
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                  className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none bg-white"
+                >
+                  <option value="">Select Category</option>
+                  <option value="Students">Students (UG, PG, PhD)</option>
+                  <option value="Postdoc/Academia/Industry">Postdoc / Academia / Industry</option>
+                  <option value="Attendee">Attendee</option>
+                  <option value="Developing Countries">Developing Countries</option>
+                </select>
+              </div>
+              <div className="flex flex-col gap-2 w-full md:w-1/2">
+                <label htmlFor="presentationMode" className="font-semibold text-gray-800 text-sm">
+                  Mode of Presentation <span className="text-red-500">*</span>
+                </label>
+                <select
+                  id="presentationMode"
+                  name="presentationMode"
+                  required={step === 1}
+                  value={presentationMode}
+                  onChange={(e) => setPresentationMode(e.target.value)}
+                  className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none bg-white"
+                >
+                  <option value="">Select Mode</option>
+                  <option value="online">Online</option>
+                  <option value="offline">Offline</option>
+                </select>
+              </div>
             </div>
-            <div className="flex flex-col gap-2 w-full md:w-1/2">
-              <label
-                htmlFor="presentationMode"
-                className="font-semibold text-gray-800 text-sm"
-              >
-                Mode of Presentation <span className="text-red-500">*</span>
-              </label>
-              <select
-                id="presentationMode"
-                name="presentationMode"
-                required
-                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none bg-white"
-              >
-                <option value="">Select Mode</option>
-                <option value="online">Online</option>
-                <option value="offline">Offline</option>
-              </select>
-            </div>
-            
-          </div><div className="flex flex-col gap-2 w-full">
-              <label
-                htmlFor="paperId"
-                className="font-semibold text-gray-800 text-sm"
-              >
+            <div className="flex flex-col gap-2 w-full">
+              <label htmlFor="paperId" className="font-semibold text-gray-800 text-sm">
                 Paper ID <span className="text-red-500">*</span>
               </label>
               <input
-              required
                 id="paperId"
                 type="text"
                 name="paperId"
+                required={step === 1}
                 placeholder="Paper ID"
                 className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
               />
             </div>
 
-          {/* Payment Section */}
-          <div className="flex flex-col gap-4 w-full mt-4 pt-4 border-t border-gray-200">
-            <h3 className="font-semibold text-gray-800 text-lg">
-              Payment Details
-            </h3>
-
-            <div className="flex flex-col gap-2 w-full">
-              <label
-                htmlFor="cardHolderName"
-                className="font-semibold text-gray-800 text-sm"
+            <div className="flex flex-row-reverse items-center gap-4 w-full ">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="px-8 py-2.5 justify-center flex bg-blue-theme rounded-lg text-white font-medium text-center poppins text-sm h-fit w-fit whitespace-nowrap cursor-pointer hover:bg-[#102768] transition-colors disabled:bg-blue-300 disabled:cursor-not-allowed"
               >
-                Card Holder Name
-              </label>
-              <input
-                id="cardHolderName"
-                name="cardHolderName"
-                type="text"
-                placeholder="John Doe"
-                className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
-              />
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-4 w-full items-end">
-              <div className="flex flex-col gap-2 w-full md:w-1/2">
-                <label
-                  htmlFor="cardNumber"
-                  className="font-semibold text-gray-800 text-sm"
-                >
-                  Card Number
-                </label>
-                <input
-                  id="cardNumber"
-                  name="cardNumber"
-                  type="text"
-                  placeholder="XXXX-XXXX-XXXX-XXXX"
-                  className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
-                />
-              </div>
-              <div className="flex flex-col gap-2 w-full md:w-1/2">
-                <label
-                  htmlFor="cardExpiry"
-                  className="font-semibold text-gray-800 text-sm"
-                >
-                  Expiry Date
-                </label>
-                <input
-                  id="cardExpiry"
-                  name="cardExpiry"
-                  type="text"
-                  placeholder="MM/YY"
-                  className="w-full p-3 border border-gray-300 text-gray-700 rounded-lg shadow-md text-sm outline-none"
-                />
-              </div>
-              {/* <div className="w-full md:w-1/7">
-                <button
-                  type="button"
-                  className="w-full p-3 bg-blue-theme text-white font-semibold rounded-lg shadow-md text-sm outline-none hover:bg-[#102768] transition-colors"
-                >
-                  Pay
-                </button>
-              </div> */}
+                Proceed to Payment
+              </button>
+              <button
+                type="reset"
+                className="px-6 py-2.5 justify-center flex bg-gray-200 rounded-lg text-gray-700 font-medium text-center poppins text-sm h-fit w-fit whitespace-nowrap cursor-pointer hover:bg-gray-300 transition-colors"
+              >
+                Cancel
+              </button>
             </div>
           </div>
 
-          <div className="flex flex-col gap-2">
-            <label className="font-semibold text-gray-800 text-sm">
-              Upload Screenshot of Payment Proof{" "}
-              {/* <span className="text-red-500">*</span> */}
-            </label>
-            <div
-              className={`w-full p-6 gap-3 border-2 border-dashed rounded-lg shadow-sm text-center flex flex-col items-center justify-center transition-colors ${
-                isDragging
-                  ? "border-[#102768] bg-blue-50"
-                  : "border-gray-300 bg-gray-50 hover:bg-gray-100"
-              }`}
-              onDragOver={handleDragOver}
-              onDragLeave={handleDragLeave}
-              onDrop={handleDrop}
-            >
+          {/* STEP 2: Payment Details */}
+          <div className={step === 2 ? "flex flex-col gap-6 pt-4" : "hidden"}>
+            <div className="flex flex-col gap-4 w-full">
+              <h3 className="font-semibold text-gray-800 text-lg">
+                Complete Payment via PayPal
+              </h3>
               <p className="text-sm text-gray-600 poppins">
-                {selectedFile ? (
-                  <span className="font-medium text-blue-theme">
-                    {selectedFile.name}
-                  </span>
-                ) : (
-                  "Drag and drop your payment screenshot here, or"
-                )}
+                Amount to pay: <span className="font-bold">{getAmount()} SGD</span>
               </p>
-              <label
-                htmlFor="file-upload"
-                className="px-6 py-2.5 bg-blue-theme text-white rounded-xl text-sm font-medium cursor-pointer hover:bg-[#102768] transition-colors poppins"
-              >
-                {selectedFile ? "Change File" : "Browse Files"}
-              </label>
-              <input
-                id="file-upload"
-                type="file"
-                name="paymentProof"
-                accept="image/*,.pdf"
-                // required={!selectedFile}
-                className="hidden"
-                ref={fileInputRef}
-                onChange={handleFileChange}
-              />
-            </div>
-          </div>
 
-          {/* Submit and Cancel Buttons */}
-          <div className="flex flex-row-reverse items-center gap-4">
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="px-6 py-2.5 justify-center flex bg-blue-theme rounded-lg text-white font-medium text-center poppins text-sm h-fit w-fit whitespace-nowrap cursor-pointer hover:bg-[#102768] transition-colors disabled:bg-blue-300 disabled:cursor-not-allowed"
-            >
-              {isSubmitting ? "Submitting..." : "Submit Registration"}
-            </button>
-            <button
-              type="reset"
-              className="px-6 py-2.5 justify-center flex bg-gray-200 rounded-lg text-gray-700 font-medium text-center poppins text-sm h-fit w-fit whitespace-nowrap cursor-pointer hover:bg-gray-300 transition-colors"
-            >
-              Cancel
-            </button>
+              <div className="w-full max-w-md mx-auto z-0 relative mt-4">
+                {/* Replace "test" with your actual PayPal Client ID */}
+                <PayPalScriptProvider options={{ "client-id": "Aah2l1-Xa_YA21dFnL47HOSSh1IceW6cTz8VqaGh-9jqGlIpqSaX_nJMQOk6goFhf3kfQpDc33z5r_Mp", currency: "SGD", intent: "capture" }}>
+                  <PayPalButtons
+                    style={{ layout: "vertical", color: "blue", shape: "rect", label: "pay" }}
+                    disabled={getAmount() === "0" || isSubmitting}
+                    
+                    // 🔹 STEP 1: CREATE ORDER (calls your backend)
+                    createOrder={async () => {
+                      try {
+                        const form = new FormData(formRef.current);
+                        const payload = {
+                          category: form.get("category"), 
+                          type: form.get("presentationMode"),
+                          name: form.get("name"),
+                          email: form.get("email"),
+                          phoneNo: form.get("phone"),
+                          designation: form.get("designation"),
+                          instituteOrCompany: form.get("institute"),
+                          address: form.get("address"),
+                          paperId: form.get("paperId")
+                        };
+                        
+                        const res = await fetch(`${url}/api/v1/payments/create-order`, {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify(payload)
+                        });
+                        
+                        const data = await res.json();
+                        if (!data.success) {
+                          throw new Error(data.message || "Failed to create order");
+                        }
+                        
+                        const { orderId, paymentId: newPaymentId } = data.data;
+                        paymentIdRef.current = newPaymentId; // Using ref to guarantee freshness in onApprove
+                        setPaymentId(newPaymentId);
+                        
+                        return orderId;
+                      } catch (err) {
+                        console.error("Create Order Error:", err);
+                        alert(`Error: ${err.message || "Failed to initiate payment."}`);
+                      }
+                    }}
+                    
+                    // 🔹 STEP 2: ON APPROVE
+                    onApprove={async (data, actions) => {
+                      try {
+                        console.log("Approved:", data.orderID);
+                        
+                        // 🔥 Directly capture (recommended for PayPal button flow)
+                        const res = await fetch(`${url}/api/v1/payments/capture-order`, {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify({ paymentId: paymentIdRef.current })
+                        });
+                        
+                        const result = await res.json();
+                        console.log("Capture Success:", result);
+                        
+                        if (!result.success) {
+                           throw new Error(result.message || "Capture failed on server.");
+                        }
+                        
+                        alert("Payment Successful 🎉");
+                        formRef.current.reset();
+                        handleReset();
+                      } catch (err) {
+                        console.error("Capture Error:", err);
+                        alert(`Capture Error: ${err.message || "Please contact support."}`);
+                      }
+                    }}
+                    onError={(err) => {
+                        console.error("PayPal Error:", err);
+                    }}
+                  />
+                </PayPalScriptProvider>
+              </div>
+            </div>
+
+            <div className="flex flex-row-reverse items-center gap-4 w-full ">
+              <button
+                type="button"
+                onClick={() => setStep(1)}
+                className="px-6 py-2.5 justify-center flex bg-gray-200 rounded-lg text-gray-700 font-medium text-center poppins text-sm h-fit w-fit whitespace-nowrap cursor-pointer hover:bg-gray-300 transition-colors"
+              >
+                Back
+              </button>
+            </div>
           </div>
         </form>
       </div>
