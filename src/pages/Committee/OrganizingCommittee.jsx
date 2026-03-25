@@ -21,20 +21,27 @@ const committeeData = [
       },
     ],
   },
-  // {
-  //   title: "Honorary Chair",
-  //   data: [
-  //     {
-  //       name: "Prof. (Dr.) Tingwen Huang",
-  //       affiliation: "FIEEE, Texas A&M University, Qatar",
-  //     },
-  //   ],
-  // },
+  {
+    title: "Honorary Chair",
+    data: [
+      {
+        name: "Dr. Tan Kian Hua",
+        affiliation: "LiGGS University, Singapore",
+      },
+      {
+        name: "Dr. Peter Leong",
+        affiliation: "Singapore Polytechnic, Singapore",
+      },
+    ],
+  },
   {
     title: "General Chairs",
     data: [
       { name: "Dr. Amartya Mukherjee", affiliation: "IEM Kolkata, India" },
-      // { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
+      {
+        name: "Dr. Chua Mathew ",
+        affiliation: "National University of Singapore, Singapore",
+      },
       { name: "Dr. Deepsubhra Guha Roy", affiliation: "IEM Kolkata, India" },
     ],
   },
@@ -50,7 +57,6 @@ const committeeData = [
   {
     title: "TPC Chair",
     data: [
-
       { name: "Dr. Amartya Mukherjee", affiliation: "IEM Kolkata, India" },
       // { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
     ],
@@ -103,8 +109,7 @@ const committeeData = [
       },
       {
         name: "Dr. Gabor Benedek",
-        affiliation:
-          "Lynx Analytics, Singapore",
+        affiliation: "Lynx Analytics, Singapore",
       },
     ],
   },
