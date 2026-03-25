@@ -124,7 +124,7 @@ const committeeData = [
   //   ],
   // },
   {
-    title: "Organizing Committee",
+    title: "Internal Organizing Committee",
     data: [
       { name: "Dr. Ayan Kr. Panja", affiliation: "IEM Kolkata, India" },
       { name: "Dr. Amartya Mukherjee", affiliation: "IEM Kolkata, India" },
@@ -138,7 +138,7 @@ const committeeData = [
       // { name: "Mr. Subhadip Chandra", affiliation: "IEM Kolkata, India" },
       { name: "Mr. Pabak Indu", affiliation: "IEM Kolkata, India" },
       { name: "Mrs. Bipasha Guha Roy", affiliation: "IEM Kolkata, India" },
-      { name: "Dr. Sreya Ghosh", affiliation: "IEM Kolkata, India" },
+      // { name: "Dr. Sreya Ghosh", affiliation: "IEM Kolkata, India" },
       // { name: "Mrs. Ankita Ray Chowdhury", affiliation: "IEM Kolkata, India" },
       // { name: "Dr. Somenath Kuiry", affiliation: "IEM Kolkata, India" },
       // { name: "Dr. Sukanya Mitra", affiliation: "IEM Kolkata, India" },
