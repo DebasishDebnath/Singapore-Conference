@@ -57,14 +57,14 @@ function Submission() {
             </span>{" "}
             <br />
             <a
-              href="#" // TODO: Update with actual LaTeX template path
+              href="https://iem-singapore-conference.s3.ap-south-1.amazonaws.com/cmic-template.docx" // TODO: Update with actual LaTeX template path
               download
               className="hover:text-blue-600 w-fit"
             >
               Click here to download
             </a>
             <br /> <br />
-            <span className="text-blue-theme font-bold">
+            {/* <span className="text-blue-theme font-bold">
               Bentham Science paper template
             </span>{" "}
             <br />
@@ -75,14 +75,14 @@ function Submission() {
             >
               Click here to download
             </a>
-            <br /> <br />
+            <br /> <br /> */}
             Further details about the conference themes and topics can be found
             in the{" "}
             <span className="text-blue-theme font-bold">Call for Papers</span>.
             <br /> <br />
             Call for Papers:{" "}
             <a
-              href="#" // TODO: Update with actual LaTeX template path
+              href="" // TODO: Update with actual LaTeX template path
               download
               className="hover:text-blue-600 w-fit"
             >
