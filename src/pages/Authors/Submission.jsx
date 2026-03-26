@@ -69,7 +69,7 @@ function Submission() {
             </span>{" "}
             <br />
             <a
-              href="public/Docs/cmic-template.docx" // TODO: Update with actual LaTeX template path
+              href="https://iem-singapore-conference.s3.ap-south-1.amazonaws.com/cmic-template.docx" // TODO: Update with actual LaTeX template path
               download
               className="hover:text-blue-600 w-fit"
             >
