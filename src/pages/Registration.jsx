@@ -452,20 +452,20 @@ export default function Registration() {
                 </div>
               )}
 
-              <div className="flex flex-row-reverse items-center gap-4 w-full pt-2">
-                <button
-                  type="submit"
-                  disabled={isSubmitting || amount === "0"}
-                  className="px-8 py-2.5 bg-blue-theme rounded-lg text-white font-medium text-center poppins text-sm whitespace-nowrap cursor-pointer hover:bg-[#102768] transition-colors disabled:bg-blue-300 disabled:cursor-not-allowed"
-                >
-                  Proceed to Payment →
-                </button>
+              <div className="flex md:flex-row flex-col items-center justify-end gap-4 w-full pt-2">
                 <button
                   type="reset"
                   onClick={handleReset}
-                  className="px-6 py-2.5 bg-gray-200 rounded-lg text-gray-700 font-medium poppins text-sm whitespace-nowrap cursor-pointer hover:bg-gray-300 transition-colors"
+                  className="px-6 py-2.5 md:w-fit w-full bg-gray-200 rounded-lg text-gray-700 font-medium poppins text-sm whitespace-nowrap cursor-pointer hover:bg-gray-300 transition-colors"
                 >
                   Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={isSubmitting || amount === "0"}
+                  className="px-8 py-2.5 md:w-fit w-full bg-blue-theme rounded-lg text-white font-medium text-center poppins text-sm whitespace-nowrap cursor-pointer hover:bg-[#102768] transition-colors disabled:bg-blue-300 disabled:cursor-not-allowed"
+                >
+                  Proceed to Payment →
                 </button>
               </div>
             </form>
@@ -534,7 +534,7 @@ export default function Registration() {
                     setStep(1);
                     setError("");
                   }}
-                  className="px-6 py-2.5 bg-gray-200 rounded-lg text-gray-700 font-medium poppins text-sm whitespace-nowrap hover:bg-gray-300 transition-colors"
+                  className="px-6 py-2.5 md:w-fit w-full bg-gray-200 rounded-lg text-gray-700 font-medium poppins text-sm whitespace-nowrap hover:bg-gray-300 transition-colors"
                 >
                   ← Back
                 </button>
