@@ -23,11 +23,13 @@ import TechnicalCommittee from "./pages/Committee/TechnicalCommittee";
 import PreviousConference from "./pages/PreviousConference";
 import TechnicalSponsors from "./pages/TechnicalSponsors";
 import Contact from "./pages/Contact";
+import Admin from "./pages/Admin/Dashboard";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MainLayout />}>
       <Route index element={<Home />} />
+      <Route path="/admindashboard" element={<Admin />} />
       <Route path="/authors/call-for-papers" element={<CallForPapers />} />
       <Route path="/authors/submission-n-publication" element={<Submission />} />
       {/* <Route path="/authors/submit-your-manuscript" element={<PaperSubmission />} /> */}

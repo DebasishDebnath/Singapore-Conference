@@ -361,7 +361,7 @@ function PaginationControls({ currentPage, totalPages, onPageChange }) {
             onClick={() => onPageChange(page)}
             className={`w-9 h-9 rounded-md text-sm font-medium transition-colors border ${
               page === currentPage
-                ? "bg-blue-600 text-white border-blue-600"
+                ? "bg-[#102768] text-white border-[#102768]"
                 : "border-gray-300 text-gray-600 hover:bg-gray-50"
             }`}
           >

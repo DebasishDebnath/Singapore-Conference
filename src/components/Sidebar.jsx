@@ -3,10 +3,10 @@ import SidebarCard from './SidebarCard'
 
 const content1=[
   {Date: 'April 10th, 2026', Detail: 'Full Paper Submission Deadline'},
-  {Date: 'May 5th, 2026', Detail: 'Notification of Acceptance'},
+  {Date: 'May 1th, 2026', Detail: 'Notification of Acceptance'},
   // {Date: 'May 15th - 22nd, 2026', Detail: 'Early Bird Registration'},
-  {Date: 'May 15th, 2026', Detail: 'Camera Ready Paper Submission'},
-  {Date: 'May 20th, 2026', Detail: 'Author Registration Deadline'},
+  {Date: 'May 10th, 2026', Detail: 'Camera Ready Paper Submission'},
+  {Date: 'May 15th, 2026', Detail: 'Author Registration Deadline'},
   {Date: 'June 9th, 10th  & 11th, 2026', Detail: 'Conference Dates'},
 ];
 

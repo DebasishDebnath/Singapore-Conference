@@ -56,35 +56,38 @@ function Submission() {
               Microsoft Word Template (US Letter)
             </span>{" "}
             <br />
-            <span
-              className="hover:text-blue-600 cursor-pointer w-fit"
-              onClick={() => navigate("#")}
+            <a
+              href="#" // TODO: Update with actual LaTeX template path
+              download
+              className="hover:text-blue-600 w-fit"
             >
               Click here to download
-            </span>
+            </a>
             <br /> <br />
             <span className="text-blue-theme font-bold">
-              LaTeX Template
+              Bentham Science paper template
             </span>{" "}
             <br />
-            <span
-              className="hover:text-blue-600 cursor-pointer w-fit"
-              onClick={() => navigate("#")}
+            <a
+              href="public/Docs/cmic-template.docx" // TODO: Update with actual LaTeX template path
+              download
+              className="hover:text-blue-600 w-fit"
             >
               Click here to download
-            </span>
+            </a>
             <br /> <br />
             Further details about the conference themes and topics can be found
             in the{" "}
             <span className="text-blue-theme font-bold">Call for Papers</span>.
             <br /> <br />
             Call for Papers:{" "}
-            <span
-              className="hover:text-blue-600 cursor-pointer w-fit"
-              onClick={() => navigate("#")}
+            <a
+              href="#" // TODO: Update with actual LaTeX template path
+              download
+              className="hover:text-blue-600 w-fit"
             >
               Click here to download
-            </span>
+            </a>
           </div>
         </div>
         <div className="flex flex-col">
@@ -97,12 +100,13 @@ function Submission() {
               Conference Brochure:
             </span>{" "}
             <br /> <br />
-            <span
-              className="hover:text-blue-600 cursor-pointer w-fit"
-              onClick={() => navigate("#")}
+            <a
+              href="#" // TODO: Update with actual LaTeX template path
+              download
+              className="hover:text-blue-600 w-fit"
             >
               Click here to download
-            </span>
+            </a>
           </div>
         </div>
         <div className="flex flex-col">
@@ -204,20 +208,22 @@ function Submission() {
             Required documents:
             <br /> <br />
             Publishing Agreement Form (Copyright Form) –{" "}
-            <span
-              className="hover:text-blue-600 cursor-pointer w-fit"
-              onClick={() => navigate("#")}
+            <a
+              href="#" // TODO: Update with actual LaTeX template path
+              download
+              className="hover:text-blue-600 w-fit"
             >
               Click here to download
-            </span>
+            </a>
             <br />
             Permission Guidelines –{" "}
-            <span
-              className="hover:text-blue-600 cursor-pointer w-fit"
-              onClick={() => navigate("#")}
+            <a
+              href="#" // TODO: Update with actual LaTeX template path
+              download
+              className="hover:text-blue-600 w-fit"
             >
               Click here to download
-            </span>
+            </a>
             <br /> <br />
             Failure to submit these documents within the specified deadline may
             result in the{" "}
@@ -273,12 +279,13 @@ function Submission() {
           </h2>
           <div className=" text-gray-800 font-semibold">
             PPT Template of the Conference:{" "}
-            <span
-              className="hover:text-blue-600 cursor-pointer w-fit"
-              onClick={() => navigate("#")}
+            <a
+              href="#" // TODO: Update with actual LaTeX template path
+              download
+              className="hover:text-blue-600 w-fit"
             >
               Click here to download
-            </span>
+            </a>
           </div>
         </div>
         <div className="flex flex-col">
