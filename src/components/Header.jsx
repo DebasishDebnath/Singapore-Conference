@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
-import { CalendarDays, MapPin } from "lucide-react";
+import { CalendarDays, MapPin, Monitor } from "lucide-react";
 function Header() {
   return (
     <>
@@ -8,7 +8,7 @@ function Header() {
 
       <div className="w-full relative">
         {/* Background Image */}
-        <div className="relative h-[400px] md:h-[460px]">
+        <div className="relative h-[440px] md:h-[500px]">
           <div
             className="absolute inset-0"
             style={{
@@ -83,6 +83,7 @@ function Header() {
           </div>
 
           {/* Location + Date */}
+          {/* <p className="text-white text-base sm:text-lg md:text-xl flex flex-col flex-wrap items-start gap-2 sm:gap-3 mt-4 poppins-regular font-semibold pb-6"> */}
           <p className="text-white text-base sm:text-lg md:text-xl flex flex-col flex-wrap items-start gap-2 sm:gap-3 mt-4 poppins-regular font-semibold">
             <span className="flex gap-1">
               <MapPin className="w-5 h-5 mt-0.5 md:mt-1" />
@@ -93,6 +94,10 @@ function Header() {
             <span className="flex gap-1">
               <CalendarDays className="w-5 h-5 mt-0.5 md:mt-1" />
               <span className="">9th - 11th June 2026</span>
+            </span>
+            <span className="flex gap-1">
+              <Monitor className="w-5 h-5 mt-0.5 md:mt-1 text-[19px]" />
+              <span>Presentation - Hybrid mode (Online/Offline)</span>
             </span>
           </p>
         </div>
