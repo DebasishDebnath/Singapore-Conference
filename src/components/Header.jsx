@@ -64,6 +64,11 @@ function Header() {
                   alt="Wiley"
                   className="h-12 md:h-18 object-contain"
                 />
+                <img
+                  src="/scopus.png"
+                  alt="Scopus"
+                  className="h-12 md:h-18 object-contain"
+                />
               </div>
             </div>
           </div>
