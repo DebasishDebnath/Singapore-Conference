@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import SidebarCard from './SidebarCard'
 
 const content1=[
-  {Date: 'April 20th, 2026', Detail: 'Full Paper Submission Deadline'},
-  {Date: 'May 5th, 2026', Detail: 'Notification of Acceptance'},
+  {Date: 'May 2nd, 2026', Detail: 'Full Paper Submission Deadline'},
+  {Date: 'May 12nd, 2026', Detail: 'Notification of Acceptance'},
   // {Date: 'May 15th - 22nd, 2026', Detail: 'Early Bird Registration'},
   // {Date: 'May 10th, 2026', Detail: 'Camera Ready Paper Submission'},
   {Date: 'May 15th, 2026', Detail: 'Author Registration Deadline'},
