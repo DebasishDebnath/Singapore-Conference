@@ -29,6 +29,11 @@ function KeynoteSpeakers() {
       image: "./Dr. Tan Kian Hua.jpg",
       description: "Senior Cybersecurity Leader LPS Singapore",
     },
+    {
+      name: "Shilajit Das",
+      image: "./Shilajit Das.jpeg",
+      description: "Senior Security Engineer (India Lead), C2treds"
+    },
   ];
 
   return (
