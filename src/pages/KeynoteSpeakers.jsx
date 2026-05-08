@@ -10,8 +10,8 @@ function KeynoteSpeakers() {
       description: "Data Scientist Partner at Lynx Analytics and Thesys SEA",
     },
     {
-      name: "Reveled soon...",
-      image: "./Picture2.jpg",
+      name: "Dr. Mathew Chua",
+      image: "./Dr. Mathew Chua.jpg",
       description: "Associate Professor, National University of Singapore",
     },
     {
