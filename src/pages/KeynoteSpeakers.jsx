@@ -34,6 +34,11 @@ function KeynoteSpeakers() {
       image: "./Shilajit Das.jpeg",
       description: "Senior Security Engineer (India Lead), C2treds"
     },
+    {
+      name: "Nanda Dulal Jana",
+      image: "./Nanda Dulal Jana.jpeg",
+      description: "Associate Professor, National Institute of Technology Durgapur, India"
+    },
   ];
 
   return (
