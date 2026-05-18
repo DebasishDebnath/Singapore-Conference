@@ -34,6 +34,16 @@ function KeynoteSpeakers() {
       image: "./Shilajit Das.jpeg",
       description: "Senior Security Engineer (India Lead), C2treds"
     },
+    {
+      name: "Nanda Dulal Jana",
+      image: "./Nanda Dulal Jana.jpeg",
+      description: "Associate Professor, National Institute of Technology Durgapur, India"
+    },
+    {
+      name: "Anand Mukhopadhyay",
+      image: "./Anand Mukhopadhyay.jpeg",
+      description: "Senior Engineer - Education Team, MathWorks India Pvt. Ltd."
+    },
   ];
 
   return (
@@ -44,14 +54,16 @@ function KeynoteSpeakers() {
           <span className="text-blue-theme font-bold">To be announced</span>
         </p>
         <img src="/comming_soon.png" alt="comming soon" className="mx-auto" /> */}
-        {speakers.map((speaker) => (
-          <SpeakerCard
-            key={`${speaker.name}-${speaker.image}`}
-            imageSrc={speaker.image}
-            name={speaker.name}
-            description={speaker.description}
-          />
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+          {speakers.map((speaker) => (
+            <SpeakerCard
+              key={`${speaker.name}-${speaker.image}`}
+              imageSrc={speaker.image}
+              name={speaker.name}
+              description={speaker.description}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
