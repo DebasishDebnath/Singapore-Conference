@@ -122,6 +122,13 @@ function Navbar() {
               Registration
             </NavLink>
 
+            <NavLink
+              to="/program-schedule"
+              className={({ isActive }) => (isActive ? "font-bold" : "")}
+            >
+              Program Schedule
+            </NavLink>
+
             {/* COMMITTEE DROPDOWN */}
             <div
               className="relative inline-block"

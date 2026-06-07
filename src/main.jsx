@@ -18,6 +18,7 @@ import Submission from "./pages/Authors/Submission";
 import KeynoteSpeakers from "./pages/KeynoteSpeakers";
 import Gallery from "./pages/Gallery";
 // import VideoLinksForSessions from "./pages/VideoLinksForSessions";
+import Schedule from "./pages/Schedule";
 import Registration from "./pages/Registration";
 import TechnicalCommittee from "./pages/Committee/TechnicalCommittee";
 import PreviousConference from "./pages/PreviousConference";
@@ -35,6 +36,7 @@ const router = createBrowserRouter(
       {/* <Route path="/authors/submit-your-manuscript" element={<PaperSubmission />} /> */}
       {/* <Route path="/technical-programs" element={<TechnicalPrograms />} /> */}
       <Route path="/keynote-speakers" element={<KeynoteSpeakers />} />
+      <Route path="/program-schedule" element={<Schedule/>}/>
       <Route path="/gallery" element={<Gallery />} />
       {/* <Route
         path="/video-links-for-sessions"
